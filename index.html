@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,20 +30,20 @@
 		<header>
 			<nav class="nav">
 				<div class="nav__cont-ppal">
-					<div class="nav__cont-log">
+					<div class="nav__cont-log" id="sección-inicio">
 						<img class="nav__logo" src="img/tj_br_icon.png" alt="" />
 						<h1 class="nav__nombre">Teacher JOB</h1>
 					</div>
 
 					<!-- Menú hamb -->
 					<div class="nav__cont-hamb">
-						<button class="nav__boton" id="abrir">
+						<button class="nav__boton" id="nav-btn-abrir">
 							<span class="nav__boton-span material-symbols-outlined"
 								>menu</span
 							>
 						</button>
 
-						<button hidden class="nav__boton" id="cerrar">
+						<button hidden class="nav__boton" id="nav-btn-cerrar">
 							<span class="nav__boton-span material-symbols-outlined"
 								>close</span
 							>
@@ -52,15 +52,29 @@
 				</div>
 
 				<div class="nav__cont-menu ocultar" id="nav-cont-menu">
-					<a class="nav__enlace" href="#">INICIO</a>
-					<a class="nav__enlace" href="#">BÚSQUEDA</a>
-					<a class="nav__enlace" href="#">INSCRIPCIÓN</a>
+					<a class="nav__enlace--s" id="enlace-inicio" href="#">INICIO</a>
+					<a class="nav__enlace--s" id="enlace-busquedas" href="#">BÚSQUEDA</a>
+					<a class="nav__enlace--p" id="enlace-inscripcion" href="#"
+						>INSCRIPCIÓN</a
+					>
 				</div>
 			</nav>
 		</header>
 
-		<main></main>
+		<main class="main">
+			<section class="main__seccion" id="menu-inicio">
+				<h2>Inicio</h2>
+			</section>
+			<section class="main__seccion ocultar" id="menu-busquedas">
+				<h2>Búsqudas</h2>
+			</section>
+			<section class="main__seccion ocultar" id="menu-inscripcion">
+				<h2>Inscripción</h2>
+			</section>
+		</main>
 
 		<footer></footer>
 	</body>
+	<!-- JavaScript -->
+	<script src="js/main.js"></script>
 </html>

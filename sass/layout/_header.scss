@@ -11,11 +11,11 @@ header {
 		&__cont-ppal {
 			@include flex-dir-al-jus(flex, row, x, x);
 			width: 100%;
-			padding: 15px;
+			padding: 10px 15px;
 		}
 		&__cont-log {
 			@include flex-dir-al-jus(flex, row, center, x);
-			width: 60%;
+			width: 70%;
 		}
 
 		&__logo {
@@ -34,7 +34,9 @@ header {
 
 		&__cont-menu {
 			@include flex-dir-al-jus(flex, column, center, center);
+			transition: padding-top 0.3s, padding-bottom 0.3s;
 			letter-spacing: 1.2px;
+			padding-bottom: 15px;
 			&.ocultar {
 				display: none;
 			}
@@ -72,6 +74,7 @@ header {
 
 			&__cont-menu {
 				width: 50%;
+				padding-bottom: 0px;
 				@include flex-dir-al-jus(flex, row, center, flex-end);
 				&.ocultar {
 					display: flex;
