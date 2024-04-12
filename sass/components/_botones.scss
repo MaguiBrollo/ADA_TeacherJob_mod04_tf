@@ -1,0 +1,26 @@
+.nav__boton {
+	right: 0px;
+	padding: 5px;
+	text-transform: uppercase;
+	color: white;
+	border: 0;
+	background-color: var(--rojo);
+	border-radius: 3px;
+
+	cursor: pointer;
+}
+
+.nav__boton-span {
+	font-size: 1.4rem;
+}
+
+.nav__enlace {
+	font-size: 1rem;
+	right: 0px;
+	padding: 14px;
+	text-transform: uppercase;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: transparent;
+}

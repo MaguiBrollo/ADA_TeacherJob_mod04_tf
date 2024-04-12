@@ -1,0 +1,31 @@
+@mixin boton-ppal {
+	font-size: 90%;
+	font-weight: 700;
+	padding: 0.75em 0;
+	letter-spacing: 1px;
+	color: white;
+}
+
+@mixin boton-fantas {
+	font-size: 90%;
+	font-weight: 700;
+	padding: 0.75em 0;
+	letter-spacing: 1px;
+	color: white;
+}
+
+
+@mixin flex-dir-al-jus($tipo, $dir, $posA, $posJ) {
+	@if $tipo != "x" {
+		display: #{$tipo};
+	}
+	@if $dir != "x" {
+		flex-direction: #{$dir};
+	}
+	@if $posA != "x" {
+		align-items: #{$posA};
+	}
+	@if $posJ != "x" {
+		justify-content: #{$posJ};
+	}
+}

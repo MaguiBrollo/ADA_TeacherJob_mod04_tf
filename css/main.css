@@ -27,7 +27,21 @@ body {
   font-variation-settings: "wdth" 100;
 }
 /*====================================================================*/
+/*--------------- << _variables: Variables globales >> ---------------*/
+:root {
+  --col-nav-sm-back: #212529;
+  --col-nav-md-back: #2125296b;
+  --rojo: #fa0130;
+  --md: 768;
+  --lg: 1024;
+}
+
+/*====================================================================*/
 /*--------------------------  << HOME  >>  ---------------------------*/
+.ocultar {
+  display: none;
+}
+
 .nota-sans, body {
   font-family: "Noto Sans";
   font-weight: 600;
@@ -38,7 +52,116 @@ body {
   min-height: 100%;
   font-family: "Montserrat";
   font-size: 1.8rem;
-  background-color: #FA0130;
+  background-color: var(--rojo);
+}
+
+header .nav {
+  background-color: var(--col-nav-sm-back);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+}
+header .nav__cont-ppal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 15px;
+}
+header .nav__cont-log {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+}
+header .nav__logo {
+  width: 10%;
+  margin-right: 15px;
+}
+header .nav__nombre {
+  color: white;
+  font-size: 1.8rem;
+  white-space: nowrap;
+}
+header .nav__cont-hamb {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .nav__cont-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.2px;
+}
+header .nav__cont-menu.ocultar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  header .nav {
+    padding: 20px;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: var(--col-nav-md-back);
+    max-height: 120px;
+    display: flex;
+    flex-direction: row;
+  }
+  header .nav__cont-ppal {
+    width: 60%;
+    padding: 0px;
+  }
+  header .nav__logo {
+    width: 50px;
+  }
+  header .nav__nombre {
+    font-size: 2rem;
+    width: 100%;
+  }
+  header .nav__cont-hamb {
+    display: none;
+  }
+  header .nav__cont-menu {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  header .nav__cont-menu.ocultar {
+    display: flex;
+  }
+}
+.nav__boton {
+  right: 0px;
+  padding: 5px;
+  text-transform: uppercase;
+  color: white;
+  border: 0;
+  background-color: var(--rojo);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.nav__boton-span {
+  font-size: 1.4rem;
+}
+
+.nav__enlace {
+  font-size: 1rem;
+  right: 0px;
+  padding: 14px;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 /*# sourceMappingURL=main.css.map */

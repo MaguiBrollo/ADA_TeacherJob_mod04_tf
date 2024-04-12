@@ -1,0 +1,15 @@
+/*====================================================================*/
+/*--------------- << _variables: Variables globales >> ---------------*/
+
+$sm: 576; // => @media (min-width: 576px) { ... }
+$md: 768; // => @media (min-width: 768px) { ... }
+$lg: 1024; // => @media (min-width: 1024px) { ... }
+
+:root {
+	--col-nav-sm-back: #212529;
+	--col-nav-md-back: #2125296b;
+   --rojo: #fa0130;
+   
+	--md: #{$md};
+	--lg: #{$lg};
+}

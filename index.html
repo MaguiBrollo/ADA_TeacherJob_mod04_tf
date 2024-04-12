@@ -25,8 +25,39 @@
 		<!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
+	<!-- ===================================================== -->
 	<body>
-		<header>Teacher JOB</header>
+		<header>
+			<nav class="nav">
+				<div class="nav__cont-ppal">
+					<div class="nav__cont-log">
+						<img class="nav__logo" src="img/tj_br_icon.png" alt="" />
+						<h1 class="nav__nombre">Teacher JOB</h1>
+					</div>
+
+					<!-- Menú hamb -->
+					<div class="nav__cont-hamb">
+						<button class="nav__boton" id="abrir">
+							<span class="nav__boton-span material-symbols-outlined"
+								>menu</span
+							>
+						</button>
+
+						<button hidden class="nav__boton" id="cerrar">
+							<span class="nav__boton-span material-symbols-outlined"
+								>close</span
+							>
+						</button>
+					</div>
+				</div>
+
+				<div class="nav__cont-menu ocultar" id="nav-cont-menu">
+					<a class="nav__enlace" href="#">INICIO</a>
+					<a class="nav__enlace" href="#">BÚSQUEDA</a>
+					<a class="nav__enlace" href="#">INSCRIPCIÓN</a>
+				</div>
+			</nav>
+		</header>
 
 		<main></main>
 
