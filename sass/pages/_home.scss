@@ -1,0 +1,17 @@
+/*====================================================================*/
+/*--------------------------  << HOME  >>  ---------------------------*/
+
+.nota-sans{
+   font-family: "Noto Sans";
+   font-weight: 600;
+}
+
+body {
+	background-color: var(--colFondoMain);
+	min-height: 100%;
+	font-family: "Montserrat";
+	@extend .nota-sans; 
+   font-size: 1.8rem;
+   background-color: #FA0130;
+}
+

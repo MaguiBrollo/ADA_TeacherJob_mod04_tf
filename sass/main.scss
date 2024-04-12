@@ -1,0 +1,13 @@
+/* main.scss*/
+@charset 'utf-8'; //codificación UTF-8
+
+/* @import  */
+@import "base/reset";
+@import "base/fonts";
+
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "pages/home";
+@import "layout/header";
+@import "layout/footer";

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* main.scss*/
+/* @import  */
+/*=====================================================================*/
+/*------------------- << Estilos Básicos >> -------------------*/
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  transition: var(--transition);
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+@font-face {
+  font-family: "Noto Sans", sans-serif;
+  src: url("../fonts/NotoSans-VariableFont_wdth,wght.ttf");
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+/*====================================================================*/
+/*--------------------------  << HOME  >>  ---------------------------*/
+.nota-sans, body {
+  font-family: "Noto Sans";
+  font-weight: 600;
+}
+
+body {
+  background-color: var(--colFondoMain);
+  min-height: 100%;
+  font-family: "Montserrat";
+  font-size: 1.8rem;
+  background-color: #FA0130;
+}
+
+/*# sourceMappingURL=main.css.map */
