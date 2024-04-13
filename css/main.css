@@ -45,7 +45,7 @@ body {
   right: 0px;
   padding: 5px;
   text-transform: uppercase;
-  color: white;
+  color: var(--colFuente);
   border: 0;
   background-color: var(--rojo);
   border-radius: 3px;
@@ -62,7 +62,7 @@ body {
   padding: 10px 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: white;
+  color: var(--colFuente);
   cursor: pointer;
   text-decoration: none;
   background-color: transparent;
@@ -75,7 +75,7 @@ body {
   padding: 10px 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: white;
+  color: var(--colFuente);
   cursor: pointer;
   text-decoration: none;
   background-color: transparent;
@@ -124,7 +124,7 @@ body {
 
 .nav-button {
   background-color: var(--col-footer-back);
-  color: white;
+  color: var(--colFuente);
   border: none;
   padding: 3px 10px;
   cursor: pointer;
@@ -160,7 +160,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: var(--padding-main-sm);
-  min-height: calc(100vh - var(--padding-main-sm) - 23px);
+  min-height: calc(100vh - var(--padding-main-sm) - 21px);
 }
 .main__seccion.ocultar {
   display: none;
@@ -168,7 +168,7 @@ body {
 @media (min-width: 768px) {
   .main {
     padding-top: var(--padding-main-md);
-    min-height: calc(100vh - var(--padding-main-md) + 27px);
+    min-height: calc(100vh - var(--padding-main-md) + 29px);
   }
 }
 
@@ -189,7 +189,7 @@ body {
 .inicio__cont-texto {
   padding: 20px 5px;
   width: 80%;
-  color: white;
+  color: var(--colFuente);
   font-weight: 200;
 }
 .inicio__texto-titulo {
@@ -257,7 +257,7 @@ header .nav__logo {
   margin-right: 15px;
 }
 header .nav__nombre {
-  color: white;
+  color: var(--colFuente);
   font-size: 1.8rem;
   text-shadow: 5px 5px 5px rgb(10, 6, 6);
   white-space: nowrap;
@@ -317,16 +317,11 @@ header .nav__cont-menu.ocultar {
     display: flex;
   }
 }
-.color-fuente, .footer__h3, .footer__link-red-social {
-  color: white;
-  font-size: 1.1rem;
-}
-
 .footer {
   padding: 10px 0;
   text-align: center;
   background-color: var(--col-footer-back);
-  color: white;
+  color: var(--colFuente);
   width: 100%;
   text-align: center;
 }
@@ -344,6 +339,8 @@ header .nav__cont-menu.ocultar {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: var(--colFuente);
+  font-size: 1.1rem;
 }
 .footer__icono-red-social {
   color: var(--colFuente);
@@ -362,9 +359,11 @@ header .nav__cont-menu.ocultar {
   color: var(--col-footer-back);
   background-color: var(--colFuente);
 }
-.footer__span {
+.footer__h3 {
   color: var(--colRojo);
   font-size: 1rem;
+}
+.footer__span {
   font-weight: bold;
 }
 

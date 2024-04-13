@@ -23,7 +23,7 @@ header {
 			margin-right: 15px;
 		}
 		&__nombre {
-			color: white;
+			color: var(--colFuente);
 			font-size: 1.8rem;
 			text-shadow: 5px 5px 5px rgb(10, 6, 6);
 			white-space: nowrap; //evita que ocupe 2 líneas

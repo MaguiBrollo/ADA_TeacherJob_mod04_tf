@@ -19,7 +19,7 @@ body {
 .main {
 	@include flex-dir-al-jus(flex, x, center, center);
 	padding-top: var(--padding-main-sm);
-	min-height: calc(100vh - var(--padding-main-sm) - 23px);
+	min-height: calc(100vh - var(--padding-main-sm) - 21px);
 	&__seccion {
 		&.ocultar {
 			display: none;
@@ -28,6 +28,6 @@ body {
 
 	@media (min-width: #{$md}px) {
 		padding-top: var(--padding-main-md);
-		min-height: calc(100vh - var(--padding-main-md) - (-27px));
+		min-height: calc(100vh - var(--padding-main-md) - (-29px));
 	}
 }
