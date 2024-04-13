@@ -1,0 +1,32 @@
+@mixin enlace($tipo) {
+	font-size: 1rem;
+	padding: 10px 15px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: transparent;
+	border-radius: 50px;
+	@if $tipo == "ppal" {
+		border: solid 3px #ff0030;
+	}
+	@if $tipo == "sec" {
+		margin: 3px;
+	}
+}
+
+@mixin flex-dir-al-jus($tipo, $dir, $posA, $posJ) {
+	@if $tipo != "x" {
+		display: #{$tipo};
+	}
+	@if $dir != "x" {
+		flex-direction: #{$dir};
+	}
+	@if $posA != "x" {
+		align-items: #{$posA};
+	}
+	@if $posJ != "x" {
+		justify-content: #{$posJ};
+	}
+}
