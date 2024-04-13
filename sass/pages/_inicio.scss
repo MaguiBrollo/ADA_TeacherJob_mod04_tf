@@ -1,19 +1,30 @@
 .inicio {
 	max-width: var(--max-width-cont-ppal);
 	width: 90%;
-	padding: 5px 0px;
+	padding: 15px 0px;
 	background-color: var(--col-nav-md-back);
 	@include flex-dir-al-jus(flex, column, center, center);
+   border-radius: 5px;
+	&.ocultar {
+		display: none;
+	}
 
 	&__cont-texto {
 		padding: 20px 5px;
 		width: 80%;
-		font-size: 1.2rem;
+		color: white;
+		font-weight: 200;
+	}
+	&__texto-titulo {
+		font-size: 2.5rem;
+      text-shadow: 5px 5px 5px rgb(6, 5, 5);
 	}
 	&__texto-frase {
+		font-style: italic;
 		font-size: 1rem;
+      text-shadow: 5px 5px 5px rgb(6, 5, 5);
 	}
-	
+
 	&__cont-carrusel {
 		@include flex-dir-al-jus(flex, x, center, center);
 		width: 50%;
@@ -27,15 +38,14 @@
 		@include flex-dir-al-jus(flex, row, center, center);
 
 		&__cont-texto {
-			padding: 20px;
+			padding: 40px;
 			width: 70%;
-			font-size: 2rem;
 		}
 		&__cont-carrusel {
 			width: 30%;
 		}
-      &__texto-frase {
-		font-size: 1.5rem;
-	}
+		&__texto-frase {
+			font-size: 1.5rem;
+		}
 	}
 }

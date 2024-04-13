@@ -22,7 +22,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   src: url("../fonts/NotoSans-VariableFont_wdth,wght.ttf");
   font-optical-sizing: auto;
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -90,19 +90,16 @@ body {
 
 /* Estilo básico para el Slider*/
 .gallery {
-  padding-top: 20px;
-  font-size: 0.8rem;
   width: 80%;
+  height: auto;
   margin: auto;
   overflow: hidden;
+  background-color: var(--col-footer-back);
+  box-shadow: 0px 0px 30px var(--col-footer-back);
 }
 
 .gallery-container {
   display: flex;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -114,6 +111,7 @@ body {
 .gallery-item img {
   width: 100%;
   display: block;
+  padding: 20px 20px 0px 20px;
 }
 
 /* Navegación del Slider */
@@ -121,45 +119,39 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
-  top: -50px;
+  top: -25px;
 }
 
 .nav-button {
-  font-size: 0.5rem;
-  width: 50px;
   background-color: var(--col-footer-back);
   color: white;
   border: none;
-  padding: 5px;
+  padding: 3px 10px;
   cursor: pointer;
   border-radius: 5px;
 }
-
-.nav-button:hover {
-  background-color: #005f5f;
+.nav-button span {
+  font-size: 0.8rem;
 }
 
-/* @media (min-width: 768px) {
-	.gallery {
-		width: 20%;
-	}
-} */
+.nav-button:hover {
+  background-color: white;
+  color: black;
+}
+
 /*====================================================================*/
 /*--------------------------  << HOME  >>  ---------------------------*/
 .ocultar {
   display: none;
 }
 
-.nota-sans, body {
+.noto-sans, body {
   font-family: "Noto Sans";
   font-weight: 600;
 }
 
 body {
-  background-color: var(--colFondoMain);
   min-height: 100%;
-  font-family: "Montserrat";
-  font-size: 1.8rem;
   background-color: var(--rojo);
 }
 
@@ -168,7 +160,7 @@ body {
   align-items: center;
   justify-content: center;
   padding-top: var(--padding-main-sm);
-  min-height: calc(100vh - var(--padding-main-sm) - 20px);
+  min-height: calc(100vh - var(--padding-main-sm) - 23px);
 }
 .main__seccion.ocultar {
   display: none;
@@ -176,27 +168,38 @@ body {
 @media (min-width: 768px) {
   .main {
     padding-top: var(--padding-main-md);
-    min-height: calc(100vh - var(--padding-main-md) + 30px);
+    min-height: calc(100vh - var(--padding-main-md) + 27px);
   }
 }
 
 .inicio {
   max-width: var(--max-width-cont-ppal);
   width: 90%;
-  padding: 5px 0px;
+  padding: 15px 0px;
   background-color: var(--col-nav-md-back);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+}
+.inicio.ocultar {
+  display: none;
 }
 .inicio__cont-texto {
   padding: 20px 5px;
   width: 80%;
-  font-size: 1.2rem;
+  color: white;
+  font-weight: 200;
+}
+.inicio__texto-titulo {
+  font-size: 2.5rem;
+  text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
 .inicio__texto-frase {
+  font-style: italic;
   font-size: 1rem;
+  text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
 .inicio__cont-carrusel {
   display: flex;
@@ -216,9 +219,8 @@ body {
     justify-content: center;
   }
   .inicio__cont-texto {
-    padding: 20px;
+    padding: 40px;
     width: 70%;
-    font-size: 2rem;
   }
   .inicio__cont-carrusel {
     width: 30%;
@@ -257,6 +259,7 @@ header .nav__logo {
 header .nav__nombre {
   color: white;
   font-size: 1.8rem;
+  text-shadow: 5px 5px 5px rgb(10, 6, 6);
   white-space: nowrap;
 }
 header .nav__cont-hamb {
