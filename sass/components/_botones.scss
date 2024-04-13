@@ -2,7 +2,7 @@
 	right: 0px;
 	padding: 5px;
 	text-transform: uppercase;
-	color: white;
+	color: var(--colFuente);
 	border: 0;
 	background-color: var(--rojo);
 	border-radius: 3px;
@@ -16,13 +16,15 @@
 
 .nav__enlace--p {
 	@include enlace("ppal");
+	text-shadow: 5px 5px 15px var(--col-footer-back);
 }
 
 .nav__enlace--s {
 	@include enlace("sec");
+	text-shadow: 5px 5px 15px var(--col-footer-back); 
 }
 .nav__enlace--p:hover,
-.nav__enlace--s:hover
-{
-	background-color: var(--rojo)
+.nav__enlace--s:hover {
+	background-color: var(--rojo);
+	box-shadow: 5px 5px 15px var(--col-footer-back); 
 }

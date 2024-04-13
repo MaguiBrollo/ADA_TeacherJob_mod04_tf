@@ -9,9 +9,13 @@ $lg: 1024; // => @media (min-width: 1024px) { ... }
 	--col-nav-sm-back: #212529;
 	--col-nav-md-back: #2125296b;
 	--rojo: #fa0130;
+	--colFuente: white;
+	--col-footer-back: #212529;
 
-	--padding-main-sm:80px ;
-	--padding-main-md:110px ;
+	--padding-main-sm: 60px;
+	--padding-main-md: 110px;
+
+	--max-width-cont-ppal:1200px;
 
 	--md: #{$md};
 	--lg: #{$lg};

@@ -5,23 +5,22 @@
 	display: none;
 }
 
-.nota-sans {
+.noto-sans {
 	font-family: "Noto Sans";
 	font-weight: 600;
 }
 
 body {
-	background-color: var(--colFondoMain);
 	min-height: 100%;
-	font-family: "Montserrat";
-	@extend .nota-sans;
-	font-size: 1.8rem;
+	@extend .noto-sans;
 	background-color: var(--rojo);
 }
 
 .main {
+	height: 85%;
+	@include flex-dir-al-jus(flex, x, center, center);
 	padding-top: var(--padding-main-sm);
-
+	min-height: calc(100vh - var(--padding-main-sm) - 21px);
 	&__seccion {
 		&.ocultar {
 			display: none;
@@ -30,5 +29,6 @@ body {
 
 	@media (min-width: #{$md}px) {
 		padding-top: var(--padding-main-md);
+		min-height: calc(100vh - var(--padding-main-md) - (-29px));
 	}
 }

@@ -19,12 +19,16 @@ header {
 		}
 
 		&__logo {
-			width: 10%;
+			width: 15%;
 			margin-right: 15px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 5px var(--colFuente); 
+
 		}
 		&__nombre {
-			color: white;
-			font-size: 1.8rem;
+			color: var(--colFuente);
+			font-size: 1.7rem;
+			text-shadow: 2px 2px 5px var(--rojo); //rgb(10, 6, 6);
 			white-space: nowrap; //evita que ocupe 2 líneas
 		}
 		&__cont-hamb {
@@ -63,10 +67,12 @@ header {
 
 			&__logo {
 				width: 50px;
+				box-shadow: 5px 5px 15px var(--col-footer-back);
 			}
 			&__nombre {
-				font-size: 2rem;
+				font-size: 2.5rem;
 				width: 100%;
+				text-shadow: 5px 5px 5px var(--col-footer-back);
 			}
 			&__cont-hamb {
 				display: none;
