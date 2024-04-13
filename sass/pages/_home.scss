@@ -21,7 +21,7 @@ body {
 
 .main {
 	padding-top: var(--padding-main-sm);
-
+	min-height: calc(100vh - var(--padding-main-sm) - 20px);
 	&__seccion {
 		&.ocultar {
 			display: none;
@@ -30,5 +30,6 @@ body {
 
 	@media (min-width: #{$md}px) {
 		padding-top: var(--padding-main-md);
+		min-height: calc(100vh - var(--padding-main-md) - (-30px));
 	}
 }
