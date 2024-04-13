@@ -36,6 +36,7 @@ body {
   --col-footer-back: #212529;
   --padding-main-sm: 60px;
   --padding-main-md: 110px;
+  --max-width-cont-ppal:1200px;
   --md: 768;
   --lg: 1024;
 }
@@ -88,14 +89,20 @@ body {
 }
 
 /* Estilo básico para el Slider*/
-#gallery {
-  width: 25%;
+.gallery {
+  padding-top: 20px;
+  font-size: 0.8rem;
+  width: 80%;
   margin: auto;
   overflow: hidden;
 }
 
 .gallery-container {
   display: flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -118,10 +125,12 @@ body {
 }
 
 .nav-button {
-  background-color: #008CBA;
+  font-size: 0.5rem;
+  width: 50px;
+  background-color: var(--col-footer-back);
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 5px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -130,6 +139,11 @@ body {
   background-color: #005f5f;
 }
 
+/* @media (min-width: 768px) {
+	.gallery {
+		width: 20%;
+	}
+} */
 /*====================================================================*/
 /*--------------------------  << HOME  >>  ---------------------------*/
 .ocultar {
@@ -150,6 +164,9 @@ body {
 }
 
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-top: var(--padding-main-sm);
   min-height: calc(100vh - var(--padding-main-sm) - 20px);
 }
@@ -160,6 +177,54 @@ body {
   .main {
     padding-top: var(--padding-main-md);
     min-height: calc(100vh - var(--padding-main-md) + 30px);
+  }
+}
+
+.inicio {
+  max-width: var(--max-width-cont-ppal);
+  width: 90%;
+  padding: 5px 0px;
+  background-color: var(--col-nav-md-back);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inicio__cont-texto {
+  padding: 20px 5px;
+  width: 80%;
+  font-size: 1.2rem;
+}
+.inicio__texto-frase {
+  font-size: 1rem;
+}
+.inicio__cont-carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .inicio {
+    max-width: var(--max-width-cont-ppal);
+    width: 100%;
+    padding: 50px 0px;
+    background-color: var(--col-nav-md-back);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .inicio__cont-texto {
+    padding: 20px;
+    width: 70%;
+    font-size: 2rem;
+  }
+  .inicio__cont-carrusel {
+    width: 30%;
+  }
+  .inicio__texto-frase {
+    font-size: 1.5rem;
   }
 }
 
