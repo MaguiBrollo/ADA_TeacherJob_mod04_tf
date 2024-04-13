@@ -8,9 +8,12 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
+@import "components/botones";
+@import "components/carrusel";
+
 @import "pages/home";
 
 @import "layout/header";
 @import "layout/footer";
 
-@import "components/botones";
+
