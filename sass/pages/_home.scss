@@ -1,6 +1,5 @@
-/*====================================================================*/
-/*--------------------------  << HOME  >>  ---------------------------*/
-
+// ================================
+// Home
 .ocultar {
 	display: none;
 }
@@ -17,8 +16,8 @@ body {
 }
 
 .main {
-	height: 85%;
-	@include flex-dir-al-jus(flex, x, center, center);
+	height: auto;
+	@include flex-dir-al-jus(flex, x, x, center);
 	padding-top: var(--padding-main-sm);
 	min-height: calc(100vh - var(--padding-main-sm) - 21px);
 	&__seccion {

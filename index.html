@@ -25,8 +25,11 @@
 		<!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
-	<!-- ===================================================== -->
+	<!-- ============================================== -->
 	<body>
+		<!-- ============================================== -->
+		<!--                   HEADER                       -->
+		<!-- ============================================== -->
 		<header>
 			<nav class="nav">
 				<div class="nav__cont-ppal">
@@ -61,8 +64,12 @@
 			</nav>
 		</header>
 
+		<!-- ============================================== -->
+		<!--                   MAIN                         -->
+		<!-- ============================================== -->
 		<main class="main">
-			<section class="inicio" id="menu-inicio">
+			<!-- ================ inicio ======================= -->
+			<section class="inicio ocultar" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
 					<p class="inicio__texto-frase">
@@ -72,16 +79,13 @@
 					</p>
 				</div>
 				<div class="inicio__cont-carrusel">
-					<!-- carrusel (sccs, js: independientes) -->
 					<div class="gallery" id="gallery">
 						<div class="gallery-container">
 							<div class="gallery-item">
 								<img src="img/profesora.jpg" alt="Profesora" />
-								<!-- <figcaption>Profesora</figcaption> -->
 							</div>
 							<div class="gallery-item">
 								<img src="img/profesor.jpg" alt="Profesor" />
-								<!-- <figcaption>Profesora</figcaption> -->
 							</div>
 							<div class="gallery-item">
 								<img src="img/profesora2.jpg" alt="Profesora eneñando" />
@@ -102,19 +106,109 @@
 						</nav>
 					</div>
 				</div>
-				<!-- ============================================== -->
+
+				<!-- ================ búsquedas==================== -->
 			</section>
-			<section class="main__seccion ocultar" id="menu-busquedas">
-				<h2>Búsqudas</h2>
+			<section class="busqueda" id="menu-busquedas">
+				<!-- contenedor TITULO-FILTRO -->
+				<div class="busqueda__cont-filtros">
+					<div class="busqueda__cont-filtro-encab">
+						<a href="#" class="busqueda__filtro-tit" id="ocultar-filtros">
+							<p>Filtros</p>
+							<div class="busqueda__i-ojos" id="busqueda-i">
+								<i class="fa-regular fa-eye"></i><p>Mostrar</p>
+							</div>
+						</a>
+						<div class="busqueda__cont-orden">
+							<label class="" for="filtro-tipo">Puntaje</label>
+							<div class="busqueda__orden-select">
+								<select
+									class="busqueda__select"
+									id="filtro-orden"
+									aria-label="Seleccionar orden del puntaje"
+								>
+									<option value="MAYOR" selected>Mayor</option>
+									<option value="MENOR">Menor</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- contenedor FILTROS (se oculta) -->
+					<div class="busqueda__cont-fil-todos ocultar" id="contenedor-filtros">
+						<div class="busqueda__cont-select">
+							<label class="busqueda__label" for="filtro-area">Área...</label>
+							<div class="">
+								<select
+									class="busqueda__select"
+									id="filtro-area"
+									aria-label="Seleccionar por área"
+								>
+									<option value="Seleccione" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="busqueda__cont-select">
+							<label class="busqueda__label" for="filtro-regional"
+								>Regional...</label
+							>
+							<div class="">
+								<select
+									class="busqueda__select"
+									id="filtro-regional"
+									aria-label="Seleccionar por regional"
+								>
+									<option value="Seleccione" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="busqueda__cont-select">
+							<label class="busqueda__label" for="filtro-horas"
+								>Horas diponibles (mínimo)...</label
+							>
+							<div class="">
+								<select
+									class="busqueda__select"
+									id="filtro-horas"
+									aria-label="Seleccionar por horas disponibles (mínimo)"
+								>
+									<option value="Seleccione" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="busqueda__cont-select">
+							<label class="busqueda__label" for="filtro-sexo">Sexo (Educ.Física)...</label>
+							<div class="">
+								<select
+									disabled
+									class="busqueda__select"
+									id="filtro-sexo"
+									aria-label="Seleccionar por sexo"
+								>
+									<option value="S" selected>Seleccione...</option>
+									<option value="F">Femenino</option>
+									<option value="M">Masculino</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="busqueda__cont-listado">listado</div>
 			</section>
 			<section class="main__seccion ocultar" id="menu-inscripcion">
 				<h2>Inscripción</h2>
 			</section>
 		</main>
 
-		<!-- ==========================================  -->
-		<!-- ================== FOOTER ================  -->
-
+		<!-- ============================================== -->
+		<!--                   FOOTER                       -->
+		<!-- ============================================== -->
 		<footer class="footer">
 			<nav class="footer__nav">
 				<a
@@ -149,4 +243,5 @@
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
 	<script src="js/carrusel.js"></script>
+	<script src="js/busquedas.js"></script>
 </html>

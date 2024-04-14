@@ -1,7 +1,11 @@
+// ================================
+// Menú Inicio
+
 .inicio {
+	margin: auto;
 	max-width: var(--max-width-cont-ppal);
 	width: 90%;
-	height: 85%;
+	height: 100%;
 	padding: 15px 0px;
 	background-color: var(--col-nav-md-back);
 	@include flex-dir-al-jus(flex, column, center, center);
@@ -18,12 +22,12 @@
 		font-weight: 200;
 	}
 	&__texto-titulo {
-		font-size: 2rem;
+		font-size: clamp(2rem, 1.5945rem + 1.1244vw, 3rem);
 		text-shadow: 5px 5px 5px rgb(6, 5, 5);
 	}
 	&__texto-frase {
 		font-style: italic;
-		font-size: 1rem;
+		font-size: clamp(0.5rem, -0.087rem + 5.7971vw, 1.2rem);
 		text-shadow: 5px 5px 5px rgb(6, 5, 5);
 	}
 
@@ -34,6 +38,7 @@
 
 	//-------------------------------
 	@media (min-width: #{$sm}px) {
+		margin: auto 15px;
 		&__texto-titulo {
 			font-size: 2rem;
 		}
@@ -50,7 +55,7 @@
 		max-width: var(--max-width-cont-ppal);
 		width: 100%;
 		padding: 50px 0px;
-		margin: 0px 15px;
+		margin: auto 15px;
 		background-color: var(--col-nav-md-back);
 		@include flex-dir-al-jus(flex, row, center, center);
 
@@ -59,10 +64,12 @@
 			width: 65%;
 		}
 		&__texto-titulo {
-			font-size: 3rem;
+			font-size: clamp(2.8rem, 0.8764rem + 0.8989vw, 3.5rem);
+			margin-bottom: 15px;
 		}
 		&__texto-frase {
-			font-size: 2rem;
+			font-size: clamp(1.2rem, 0.8764rem + 0.8989vw, 2rem);
+			line-height: 3rem;
 		}
 		&__cont-carrusel {
 			width: 30%;

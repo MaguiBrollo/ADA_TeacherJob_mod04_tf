@@ -38,7 +38,9 @@ $("#enlace-inicio").addEventListener("click", () => {
 $("#enlace-busquedas").addEventListener("click", () => {
 	cerrarMenuNav();
 	mostrar($("#menu-busquedas"));
+	funcionesBusquedas(); //busquedas.js
 });
+
 $("#enlace-inscripcion").addEventListener("click", () => {
 	cerrarMenuNav();
 	mostrar($("#menu-inscripcion"));

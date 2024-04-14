@@ -19,16 +19,15 @@ header {
 		}
 
 		&__logo {
-			width: 15%;
+			width: 35px;
 			margin-right: 15px;
 			border-radius: 50%;
-			box-shadow: 0px 0px 5px var(--colFuente); 
-
+			box-shadow: 0px 0px 5px var(--colFuente);
 		}
 		&__nombre {
 			color: var(--colFuente);
-			font-size: 1.7rem;
-			text-shadow: 2px 2px 5px var(--rojo); //rgb(10, 6, 6);
+			font-size: clamp(1.5rem, 0.9565rem + 2.8986vw, 2rem);
+			text-shadow: 2px 2px 5px var(--rojo);
 			white-space: nowrap; //evita que ocupe 2 líneas
 		}
 		&__cont-hamb {
@@ -70,7 +69,7 @@ header {
 				box-shadow: 5px 5px 15px var(--col-footer-back);
 			}
 			&__nombre {
-				font-size: 2.5rem;
+				font-size: clamp(2rem, 1.5945rem + 1.1244vw, 2.5rem);
 				width: 100%;
 				text-shadow: 5px 5px 5px var(--col-footer-back);
 			}
