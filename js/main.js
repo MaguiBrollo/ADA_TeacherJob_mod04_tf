@@ -24,8 +24,8 @@ $("#nav-btn-cerrar").addEventListener("click", cerrarMenuNav);
 
 function mostrar(mostrar) {
 	$("#menu-inicio").classList.add("ocultar");
-	$("#menu-busquedas").classList.add("ocultar");
-	$("#menu-inscripcion").classList.add("ocultar");
+	$("#menu-aspirantes").classList.add("ocultar");
+	$("#menu-sesion").classList.add("ocultar");
 
 	mostrar.classList.remove("ocultar");
 }
@@ -35,15 +35,15 @@ $("#enlace-inicio").addEventListener("click", () => {
 	mostrar($("#menu-inicio"));
 });
 
-$("#enlace-busquedas").addEventListener("click", () => {
+$("#enlace-aspirantes").addEventListener("click", () => {
 	cerrarMenuNav();
-	mostrar($("#menu-busquedas"));
-	funcionesBusquedas(); //busquedas.js
+	mostrar($("#menu-aspirantes"));
+	funcionesAspirantes(); //aspirantes.js
 });
 
-$("#enlace-inscripcion").addEventListener("click", () => {
+$("#enlace-sesion").addEventListener("click", () => {
 	cerrarMenuNav();
-	mostrar($("#menu-inscripcion"));
+	mostrar($("#menu-sesion"));
 });
 
 /* ------------------------------------------------------------------------------------------------ */

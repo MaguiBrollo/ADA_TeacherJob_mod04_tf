@@ -41,24 +41,22 @@
 					<!-- Menú hamb -->
 					<div class="nav__cont-hamb">
 						<button class="nav__boton" id="nav-btn-abrir">
-							<span class="nav__boton-span material-symbols-outlined"
-								>menu</span
-							>
+							<span class="boton-span material-symbols-outlined">menu</span>
 						</button>
 
 						<button hidden class="nav__boton" id="nav-btn-cerrar">
-							<span class="nav__boton-span material-symbols-outlined"
-								>close</span
-							>
+							<span class="boton-span material-symbols-outlined">close</span>
 						</button>
 					</div>
 				</div>
 
 				<div class="nav__cont-menu ocultar" id="nav-cont-menu">
-					<a class="nav__enlace--s" id="enlace-inicio" href="#">INICIO</a>
-					<a class="nav__enlace--s" id="enlace-busquedas" href="#">BÚSQUEDA</a>
-					<a class="nav__enlace--p" id="enlace-inscripcion" href="#"
-						>INSCRIPCIÓN</a
+					<a class="boton__enlace--s" id="enlace-inicio" href="#">INICIO</a>
+					<a class="boton__enlace--s" id="enlace-aspirantes" href="#"
+						>aspirantes</a
+					>
+					<a class="boton__enlace--p" id="enlace-sesion" href="#"
+						>Iniciar Sesión</a
 					>
 				</div>
 			</nav>
@@ -106,103 +104,155 @@
 						</nav>
 					</div>
 				</div>
-
-				<!-- ================ búsquedas==================== -->
 			</section>
-			<section class="busqueda" id="menu-busquedas">
+
+			<!-- ================ búsquedas==================== -->
+			<section class="aspirante" id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
-				<div class="busqueda__cont-filtros">
-					<div class="busqueda__cont-filtro-encab">
-						<a href="#" class="busqueda__filtro-tit" id="ocultar-filtros">
-							<p>Filtros</p>
-							<div class="busqueda__i-ojos" id="busqueda-i">
-								<i class="fa-regular fa-eye"></i><p>Mostrar</p>
+				<div class="aspirante__cont-filtros">
+					<div class="aspirante__cont-filtro-encab">
+						<a href="#" class="aspirante__filtro-tit" id="ocultar-filtros">
+							<h3>Filtros</h3>
+							<div class="aspirante__i-ojos" id="aspirante-i">
+								<i class="fa-regular fa-eye"></i>
+								<p>Mostrar</p>
 							</div>
 						</a>
-						<div class="busqueda__cont-orden">
+						<div class="aspirante__cont-orden">
 							<label class="" for="filtro-tipo">Puntaje</label>
-							<div class="busqueda__orden-select">
+							<div class="aspirante__orden-select">
 								<select
-									class="busqueda__select"
+									class="aspirante__select"
 									id="filtro-orden"
 									aria-label="Seleccionar orden del puntaje"
 								>
-									<option value="MAYOR" selected>Mayor</option>
-									<option value="MENOR">Menor</option>
+									<option value="MAY" selected>Mayor</option>
+									<option value="MEN">Menor</option>
 								</select>
 							</div>
 						</div>
 					</div>
 					<!-- contenedor FILTROS (se oculta) -->
-					<div class="busqueda__cont-fil-todos ocultar" id="contenedor-filtros">
-						<div class="busqueda__cont-select">
-							<label class="busqueda__label" for="filtro-area">Área...</label>
+					<div
+						class="aspirante__cont-fil-todos ocultar"
+						id="contenedor-filtros"
+					>
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-area">Área...</label>
 							<div class="">
 								<select
-									class="busqueda__select"
+									class="aspirante__select"
 									id="filtro-area"
 									aria-label="Seleccionar por área"
 								>
-									<option value="Seleccione" selected>Seleccione...</option>
+									<option value="SELEC" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
 								</select>
 							</div>
 						</div>
 
-						<div class="busqueda__cont-select">
-							<label class="busqueda__label" for="filtro-regional"
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-regional"
 								>Regional...</label
 							>
 							<div class="">
 								<select
-									class="busqueda__select"
+									class="aspirante__select"
 									id="filtro-regional"
 									aria-label="Seleccionar por regional"
 								>
-									<option value="Seleccione" selected>Seleccione...</option>
+									<option value="SELEC" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
 								</select>
 							</div>
 						</div>
 
-						<div class="busqueda__cont-select">
-							<label class="busqueda__label" for="filtro-horas"
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-horas"
 								>Horas diponibles (mínimo)...</label
 							>
 							<div class="">
 								<select
-									class="busqueda__select"
+									class="aspirante__select"
 									id="filtro-horas"
 									aria-label="Seleccionar por horas disponibles (mínimo)"
 								>
-									<option value="Seleccione" selected>Seleccione...</option>
+									<option value="SELEC" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
 								</select>
 							</div>
 						</div>
 
-						<div class="busqueda__cont-select">
-							<label class="busqueda__label" for="filtro-sexo">Sexo (Educ.Física)...</label>
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-sexo"
+								>Sexo (Educ.Física)...</label
+							>
 							<div class="">
 								<select
 									disabled
-									class="busqueda__select"
+									class="aspirante__select"
 									id="filtro-sexo"
 									aria-label="Seleccionar por sexo"
 								>
-									<option value="S" selected>Seleccione...</option>
-									<option value="F">Femenino</option>
-									<option value="M">Masculino</option>
+									<option value="SELEC" selected>Seleccione...</option>
+									<option value="fem">Femenino</option>
+									<option value="mas">Masculino</option>
+									<option value="mix">Mixto</option>
 								</select>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="busqueda__cont-listado">listado</div>
+				<!-- contenedor SIN/CON Aspirantes -->
+				<div class="aspirante__cont-sin-con-aspi">
+					<div class="aspirante__encabezado">
+						<div class="aspirante__titulo">
+							<h3>Aspirantes</h3>
+						</div>
+						<div class="aspirante__btn-nueva-aspi-cont">
+							<button class="boton__enlace--p" id="btn-nueva-aspi">
+								<span class="material-symbols-outlined aspirante__btn-mas"
+									>add_circle</span
+								>
+								INSCRIBIR
+							</button>
+						</div>
+					</div>
+
+					<!-- para el spinner -->
+					<div hidden id="spinner"></div>
+
+					<!-- contenedor SIN Aspirantes -->
+					<div class="aspirante__cont-sin-aspi" id="cont-sin-aspi">
+						<img
+							class="aspirante__img img_js"
+							src="img/teacher.svg"
+							alt="Imagen de Profesor"
+							aria-label="Imagen de Profesor"
+						/>
+
+						<p class="aspirante__p-sin-aspi">
+							No se puede generar el listado de Aspirantes.<br />
+							Diríjase a "Inscribir" y registre nuevos Aspirantes. O seleccione
+							los "Filtros" deseadas.
+						</p>
+					</div>
+
+					<!-- contenedor CON Aspirantes -->
+					<div class="aspirante__listado ocultar" id="cont-con-aspi">
+						<div class="aspirante__cont-card" id="aspirante-cont-card">
+							<!--
+						
+									se completará en .js
+						
+							-->
+						</div>
+					</div>
+				</div>
 			</section>
-			<section class="main__seccion ocultar" id="menu-inscripcion">
-				<h2>Inscripción</h2>
+			<section class="main__seccion ocultar" id="menu-sesion">
+				<h2>Próximamente MODAL: Inicio Sesión</h2>
 			</section>
 		</main>
 
@@ -243,5 +293,5 @@
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
 	<script src="js/carrusel.js"></script>
-	<script src="js/busquedas.js"></script>
+	<script src="js/aspirantes.js"></script>
 </html>

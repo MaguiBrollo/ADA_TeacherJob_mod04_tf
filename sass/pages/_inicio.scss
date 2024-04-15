@@ -2,15 +2,12 @@
 // Menú Inicio
 
 .inicio {
+	@include flex-dir-al-jus(flex, column, center, center);
 	margin: auto;
 	max-width: var(--max-width-cont-ppal);
 	width: 90%;
 	height: 100%;
-	padding: 15px 0px;
-	background-color: var(--col-nav-md-back);
-	@include flex-dir-al-jus(flex, column, center, center);
-	border-radius: 5px;
-	box-shadow: 0px 0px 15px var(--col-footer-back);
+	@include caja;
 	&.ocultar {
 		display: none;
 	}

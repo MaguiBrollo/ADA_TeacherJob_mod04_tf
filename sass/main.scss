@@ -10,10 +10,11 @@
 
 @import "components/botones";
 @import "components/carrusel";
-
-@import "pages/home";
-@import "pages/inicio";
-@import "pages/busquedas";
+@import "components/spinner";
 
 @import "layout/header";
 @import "layout/footer";
+
+@import "pages/home";
+@import "pages/inicio";
+@import "pages/aspirante";
