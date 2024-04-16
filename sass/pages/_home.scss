@@ -1,22 +1,8 @@
 // ================================
-// Home
-.ocultar {
-	display: none;
-}
-
-.noto-sans {
-	font-family: "Noto Sans";
-	font-weight: 600;
-}
-
-body {
-	min-height: 100%;
-	@extend .noto-sans;
-	background-color: var(--rojo);
-}
+// Home - inicio
 
 .main {
-	height: auto;
+//	height: auto;
 	@include flex-dir-al-jus(flex, x, x, center);
 	padding-top: var(--padding-main-sm);
 	min-height: calc(100vh - var(--padding-main-sm) - 21px);
@@ -27,6 +13,7 @@ body {
 	}
 
 	@media (min-width: #{$md}px) {
+		margin-bottom: 15px;
 		padding-top: var(--padding-main-md);
 		min-height: calc(100vh - var(--padding-main-md) - (-29px));
 	}

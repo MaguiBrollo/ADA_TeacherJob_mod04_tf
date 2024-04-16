@@ -159,6 +159,7 @@ function listarAspirantes() {
 // ===================================================
 // Muestra spinner
 function mostrarTodosAspirantes() {
+	$("#aspirante-cont-card").innerHTML = "";
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
 
