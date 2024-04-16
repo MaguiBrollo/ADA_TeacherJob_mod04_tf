@@ -5,7 +5,7 @@
 	min-height: calc(100vh - var(--padding-main-sm) - 180px);
 	max-width: var(--max-width-cont-ppal);
 	gap: 20px;
-	padding: 20px 0px;
+	padding: 15px 0px;
 	width: 90%;
 	height: 100%;
 	color: var(--colFuente);
@@ -163,9 +163,9 @@
 		&__encabezado {
 			margin: 20px;
 		}
-		&__cont-sin-aspi {
-			//height: 80%;
-		}
+		// &__cont-sin-aspi {
+		// 	//height: 80%;
+		// }
 
 		&__cont-listado {
 			width: 70%;
