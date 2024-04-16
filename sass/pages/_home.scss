@@ -2,10 +2,10 @@
 // Home - inicio
 
 .main {
-//	height: auto;
+	//	height: auto;
 	@include flex-dir-al-jus(flex, x, x, center);
 	padding-top: var(--padding-main-sm);
-	min-height: calc(100vh - var(--padding-main-sm) - 21px);
+	min-height: calc(100vh - var(--padding-main-sm) - 15px);
 	&__seccion {
 		&.ocultar {
 			display: none;
@@ -15,6 +15,6 @@
 	@media (min-width: #{$md}px) {
 		margin-bottom: 15px;
 		padding-top: var(--padding-main-md);
-		min-height: calc(100vh - var(--padding-main-md) - (-29px));
+		min-height: calc(100vh - var(--padding-main-md) - (-14px));
 	}
 }

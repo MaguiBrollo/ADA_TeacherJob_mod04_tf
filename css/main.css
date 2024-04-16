@@ -326,7 +326,7 @@ header .nav__cont-menu.ocultar {
   display: flex;
   justify-content: center;
   padding-top: var(--padding-main-sm);
-  min-height: calc(100vh - var(--padding-main-sm) - 21px);
+  min-height: calc(100vh - var(--padding-main-sm) - 15px);
 }
 .main__seccion.ocultar {
   display: none;
@@ -335,7 +335,7 @@ header .nav__cont-menu.ocultar {
   .main {
     margin-bottom: 15px;
     padding-top: var(--padding-main-md);
-    min-height: calc(100vh - var(--padding-main-md) + 29px);
+    min-height: calc(100vh - var(--padding-main-md) + 14px);
   }
 }
 
