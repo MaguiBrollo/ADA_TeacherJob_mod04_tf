@@ -44,7 +44,7 @@ const reg = [
 	{ cod: 7, nom: "R VII     C. Elisa" },
 	{ cod: 8, nom: "R VIII    Las Breñas" },
 	{ cod: 9, nom: "R IX      V. Ángela" },
-	{ cod: 10, nom: "R X       Resistencia" },
+	{ cod: 10, nom: "R X      Resistencia" },
 ];
 
 function cargarRegional(input_select) {
@@ -137,20 +137,38 @@ const buscarRegional = (busco) => {
 };
 
 // ===================================================
-//  listar aspirantes.
+//  listar aspirantes.  src="${asp.foto_perfil}"
 function listarAspirantes() {
 	$("#aspirante-cont-card").innerHTML = "";
 	for (const asp of aspiListado) {
 		$("#aspirante-cont-card").innerHTML += `
-			<div class="aspirante__card">
-				<div class="">Apellidos: ${asp.apellidos}</div>
-				<div class="">Nombres: ${asp.nombres}</div>
-				<img class="aspirante__foto" src=" ${asp.foto_perfil}" alt="Foto Perfil">
-				<div class="">Regional: ${buscarRegional(asp.regional).nom}</div>
-				<div class="">Área: ${buscarArea(asp.area).nom}</div>
-				<div class="">Hs. Dispon: ${asp.horas_dispo}</div>
-				<div class="">Puntaje: ${asp.puntaje}</div>
-				<div class="">Título: ${asp.titulo_area}</div>
+
+			<div class="tarjeta">
+				<div class="tarjeta__encabezado">
+					<div class="tarjeta__circulo"></div>
+					<div class="tarjeta__img">
+						<img
+							class="tarjeta__img-img"
+							src="${asp.foto_perfil}"
+							alt=""
+						/>
+					</div>
+				</div>
+
+				<div class="tarjeta__descripcion">
+					<h4 class="tarjeta__descripcion-h3">${asp.apellidos}</h4>
+					<h4 class="tarjeta__descripcion-h4">${asp.nombres}</h4>
+					<p class="tarjeta__descripcion-p">${asp.titulo_area}</p>	
+					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${
+			asp.horas_dispo}</p>	
+					
+				</div>
+
+				<div class="tarjeta__btn-ver-mas">
+						<button class="boton__enlace--p" id="btn-ver-mas">
+							ver más
+						</button>
+					</div>
 			</div>
 			`;
 	}

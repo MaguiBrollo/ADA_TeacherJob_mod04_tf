@@ -3,7 +3,7 @@
 	right: 0px;
 	padding: 5px;
 	text-transform: uppercase;
-	color: var(--colFuente);
+	color: var(--blanco);
 	border: none;
 	background-color: var(--rojo);
 	border-radius: 3px;
@@ -17,19 +17,17 @@
 		//@include enlace("ppal"); //ver mixins
 		&--p {
 			@include enlace("ppal");
-			height: 40px;
 			white-space: nowrap; //evita que ocupe 2 líneas
-			text-shadow: 5px 5px 15px var(--col-footer-back);
+			text-shadow: 5px 5px 15px var(--negro);
 		}
 		&--s {
 			@include enlace("sec");
-			height: 40px;
-			text-shadow: 5px 5px 15px var(--col-footer-back);
+			text-shadow: 5px 5px 15px var(--negro);
 		}
 		&--p:hover,
 		&--s:hover {
 			background-color: var(--rojo);
-			box-shadow: 5px 5px 15px var(--col-footer-back);
+			box-shadow: 5px 5px 15px var(--negro);
 		}
 	}
 }

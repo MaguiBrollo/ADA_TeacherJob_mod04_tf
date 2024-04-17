@@ -1,9 +1,10 @@
 @mixin enlace($tipo) {
 	font-size: 0.8rem;
-	padding: 10px 15px;
+	padding: 0px 10px;
+	height: 35px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: var(--colFuente);
+	color: var(--blanco);
 	cursor: pointer;
 	text-decoration: none;
 	background-color: transparent;
@@ -11,9 +12,11 @@
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	
 	@extend .noto-sans;
 	@if $tipo == "ppal" {
-		border: solid 3px #ff0030;
+		border: solid 3px var(--rojo);
+		background-color: var(--rojo);
 	}
 	@if $tipo == "sec" {
 		margin: 3px;
@@ -39,5 +42,5 @@
 	padding: 15px;
 	background-color: var(--col-nav-md-back);
 	border-radius: 5px;
-	box-shadow: 0px 0px 15px var(--col-footer-back);
+	box-shadow: 0px 0px 15px var(--negro);
 }
