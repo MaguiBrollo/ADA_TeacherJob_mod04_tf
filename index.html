@@ -107,7 +107,7 @@
 			</section>
 
 			<!-- ================ búsquedas==================== -->
-			<section class="aspirante" id="menu-aspirantes">
+			<section class="aspirante ocultar" id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
 					<div class="aspirante__cont-filtro-encab">
@@ -242,7 +242,10 @@
 					<!-- contenedor CON Aspirantes -->
 					<div class="ocultar" id="cont-con-aspi">
 						<div class="aspirante__filtrado-por" id="filtrado-por">
-							<p>Filtros: Lengua y Literatura - R VIII Las Breñas - Hs: 3 - Sexo: F.</p>
+							<p>
+								Filtros: Lengua y Literatura - R VIII Las Breñas - Hs: 3 - Sexo:
+								F.
+							</p>
 						</div>
 						<div class="aspirante__cont-card" id="aspirante-cont-card">
 							<!-- ********************** -->
@@ -282,6 +285,169 @@
 					</div>
 				</div>
 			</section>
+			<!-- ================ Nuevo Aspirante ==================== -->
+			<section>
+				<div class="inscripcion" id="cont-inscripcion">
+					<div class="inscripcion__titulo">
+						<h2 class="inscripcion__h2" id="inscripcion-tit">Inscripción</h2>
+					</div>
+
+					<div class="inscripcion__borde">
+						<div class="inscripcion__campo">
+							<label for="apellidos">Apellidos</label>
+							<input
+								type="text"
+								class="inscripcion__campo--cu"
+								id="apellidos"
+								aria-label="Ingresar apellidos"
+								placeholder="Apellidos"
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="nombres">Nombres</label>
+							<input
+								type="text"
+								class="inscripcion__campo--cu"
+								id="nombres"
+								aria-label="Ingresar nombres"
+								placeholder="Nombres"
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="url-foto">URL Foto:</label>
+							<input
+								type="url"
+								class="inscripcion__campo--cu"
+								id="url-foto"
+								aria-label="Ingresar la dirección web de la foto de perfil"
+								placeholder="URL de la foto de perfil."
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="area">Área...</label>
+							<select
+								class="inscripcion__campo--cu"
+								id="area"
+								aria-label="Seleccionar el área"
+							>
+								<option value="SELEC" selected>Seleccione...</option>
+								<!-- Se completa con un array en el js -->
+							</select>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="regional">Regional...</label>
+							<select
+								class="inscripcion__campo--cu"
+								id="regional"
+								min="1"
+								max="10"
+								aria-label="Seleccionar la regional"
+							>
+								<option value="SELEC" selected>Seleccione...</option>
+								<!-- Se completa con un array en el js -->
+							</select>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="hs-dispo">Hs.Disponibles:</label>
+							<input
+								type="number"
+								class="inscripcion__campo--cu"
+								id="hs-dispo"
+								aria-label="Ingrese cantidad de horas disponibles"
+								min="1"
+								max="30"
+								placeholder="De 1 a 30."
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="sexo">Sexo</label>
+							<select
+								class="inscripcion__campo--cu"
+								id="sexo"
+								aria-label="Seleccione sexo"
+							>
+								<option value="SELEC" selected>Seleccione...</option>
+								<option value="fem">Femenino</option>
+								<option value="mas">Masculino</option>
+							</select>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="puntaje">Puntaje:</label>
+							<input
+								type="number"
+								class="inscripcion__campo--cu"
+								id="puntaje"
+								aria-label="Ingrese puntaje"
+								min="1"
+								max="150"
+								placeholder="De 1 a 150."
+							/>
+						</div>
+
+						<div>
+							<label for="titulo">Título:</label>
+							<textarea id="titulo" rows="2" cols="50">
+									Título del área seleccionada.
+							</textarea
+							>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="telefono">Teléfono:</label>
+							<input
+								type="tel"
+								class="inscripcion__campo--cu"
+								id="telefono"
+								aria-label="Ingrese número de teléfono"
+								placeholder="364 4 999999."
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="correo">E-mail:</label>
+							<input
+								type="email"
+								class="inscripcion__campo--cu"
+								id="correo"
+								aria-label="Ingrese dirección de correo electrónico"
+								placeholder="xxxx@xxx.xxx"
+							/>
+						</div>
+
+						<!-- botones -->
+						<div class="inscripcion__botones">
+							<button
+								class="inscripcion__btn inscripcion__btn--agr"
+								id="btn-agregar-oper"
+							>
+								<span class="material-symbols-outlined"> add_circle </span>
+							</button>
+
+							<button
+								class="inscripcion__btn inscripcion__btn--edi"
+								id="btn-editar-oper"
+							>
+								<span class="material-symbols-outlined"> check_circle </span>
+							</button>
+
+							<button
+								class="inscripcion__btn inscripcion__btn--can"
+								id="btn-cancelar-oper"
+							>
+								<span class="material-symbols-outlined"> cancel</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<section class="main__seccion ocultar" id="menu-sesion">
 				<h2>Próximamente MODAL: Inicio Sesión</h2>
 			</section>
