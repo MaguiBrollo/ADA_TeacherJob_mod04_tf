@@ -67,7 +67,7 @@
 		<!-- ============================================== -->
 		<main class="main">
 			<!-- ================ inicio ======================= -->
-			<section class="inicio" id="menu-inicio">
+			<section class="inicio ocultar" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
 					<p class="inicio__texto-frase">
@@ -256,13 +256,14 @@
 				</div>
 			</section>
 			<!-- ================ Nuevo Aspirante ==================== -->
-			<section class="inscripcion ocultar" id="cont-inscripcion">
+			<section class="inscripcion" id="cont-inscripcion">
 				<div class="inscripcion__cont-ppal">
 					<div class="inscripcion__titulo">
 						<p class="titulos">Nueva Inscripción</p>
 					</div>
 
-					<div class="inscripcion__borde">
+					<!-- <div class="inscripcion__borde"> -->
+					<form action="" class="inscripcion__borde" id="nueva-alumna-form">
 						<div class="inscripcion__subtit">
 							<p>DATOS PERSONALES</p>
 						</div>
@@ -273,8 +274,11 @@
 									type="text"
 									class="inscripcion__campo--cu"
 									id="apellidos"
-									aria-label="Ingresar apellidos"
-									placeholder="Apellidos"
+									required
+									minlength="2"
+									maxlength="30"
+									aria-label="Ingrese los apellidos."
+									placeholder="Apellidos (hasta 30 caracteres)."
 								/>
 							</div>
 
@@ -284,8 +288,11 @@
 									type="text"
 									class="inscripcion__campo--cu"
 									id="nombres"
-									aria-label="Ingresar nombres"
-									placeholder="Nombres"
+									required
+									minlength="2"
+									maxlength="30"
+									aria-label="Ingrese los nombres."
+									placeholder="Nombres (hasta 30 caracteres)."
 								/>
 							</div>
 						</div>
@@ -309,8 +316,10 @@
 									type="tel"
 									class="inscripcion__campo--cu"
 									id="telefono"
-									aria-label="Ingrese número de teléfono"
-									placeholder="364 4 999999."
+									required
+									pattern="[0-9]{3}-[0-9]{7}"
+									aria-label="Ingrese el número de teléfono."
+									placeholder="364-4999999."
 								/>
 							</div>
 						</div>
@@ -321,8 +330,9 @@
 								type="email"
 								class="inscripcion__campo--cu"
 								id="correo"
-								aria-label="Ingrese dirección de correo electrónico"
-								placeholder="xxxx@xxx.xxx"
+								required
+								aria-label="Ingrese la dirección de correo electrónico."
+								placeholder="usuario@ejemplo.com"
 							/>
 						</div>
 
@@ -332,7 +342,7 @@
 								type="url"
 								class="inscripcion__campo--cu"
 								id="url-foto"
-								aria-label="Ingresar la dirección web de la foto de perfil"
+								aria-label="Ingrese la dirección web de la foto de perfil."
 								placeholder="URL de la foto de perfil."
 							/>
 						</div>
@@ -346,7 +356,8 @@
 								<select
 									class="inscripcion__campo--cu"
 									id="area"
-									aria-label="Seleccionar el área"
+									required
+									aria-label="Seleccie el área."
 								>
 									<option value="SELEC" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
@@ -358,9 +369,10 @@
 								<select
 									class="inscripcion__campo--cu"
 									id="regional"
+									required
 									min="1"
 									max="10"
-									aria-label="Seleccionar la regional"
+									aria-label="Seleccione la regional."
 								>
 									<option value="SELEC" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
@@ -373,10 +385,11 @@
 							<textarea
 								class="inscripcion__campo--cu-tArea"
 								id="titulo"
-								aria-label="Ingrese título del área seleccionada."
-								placeholder="Título del área seleccionada..."
-							>
-							</textarea>
+								minlength="6"
+								maxlength="80"
+								aria-label="Ingrese nombre del título del área seleccionada."
+								placeholder="Título del área seleccionada (hasta 80 caracteres)."
+							></textarea>
 						</div>
 
 						<div class="inscripcion__cont-ter">
@@ -386,7 +399,8 @@
 									type="number"
 									class="inscripcion__campo--cu"
 									id="hs-dispo"
-									aria-label="Ingrese cantidad de horas disponibles"
+									required
+									aria-label="Ingrese cantidad de horas disponibles."
 									min="1"
 									max="30"
 									placeholder="De 1 a 30."
@@ -399,7 +413,8 @@
 									type="number"
 									class="inscripcion__campo--cu"
 									id="puntaje"
-									aria-label="Ingrese puntaje"
+									required
+									aria-label="Ingrese el puntaje."
 									min="1"
 									max="150"
 									placeholder="De 1 a 150."
@@ -408,25 +423,39 @@
 						</div>
 						<!-- botones -->
 						<div class="inscripcion__botones">
-							<button class="inscripcion__btn" id="btn-agregar-insc">
+							<button
+								type="submit"
+								class="inscripcion__btn"
+								id="btn-agregar-insc"
+							>
 								<span class="boton-span material-symbols-outlined">
 									add_circle
 								</span>
 							</button>
 
-							<button hidden class="inscripcion__btn" id="btn-editar-insc">
+							<button
+								hidden
+								type="submit"
+								class="inscripcion__btn"
+								id="btn-editar-insc"
+							>
 								<span class="boton-span material-symbols-outlined">
 									check_circle
 								</span>
 							</button>
 
-							<button class="inscripcion__btn" id="btn-cancelar-insc">
+							<button
+								type="button"
+								class="inscripcion__btn"
+								id="btn-cancelar-insc"
+							>
 								<span class="boton-span material-symbols-outlined">
 									cancel</span
 								>
 							</button>
 						</div>
-					</div>
+					</form>
+					<!-- </div> -->
 				</div>
 			</section>
 
