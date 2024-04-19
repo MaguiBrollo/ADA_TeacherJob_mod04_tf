@@ -40,11 +40,11 @@
 
 					<!-- Menú hamb -->
 					<div class="nav__cont-hamb">
-						<button class="nav__boton" id="nav-btn-abrir">
+						<button class="" id="nav-btn-abrir">
 							<span class="boton-span material-symbols-outlined">menu</span>
 						</button>
 
-						<button hidden class="nav__boton" id="nav-btn-cerrar">
+						<button hidden class="" id="nav-btn-cerrar">
 							<span class="boton-span material-symbols-outlined">close</span>
 						</button>
 					</div>
@@ -67,7 +67,7 @@
 		<!-- ============================================== -->
 		<main class="main">
 			<!-- ================ inicio ======================= -->
-			<section class="inicio ocultar" id="menu-inicio">
+			<section class="inicio" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
 					<p class="inicio__texto-frase">
@@ -112,7 +112,7 @@
 				<div class="aspirante__cont-filtros">
 					<div class="aspirante__cont-filtro-encab">
 						<a href="#" class="aspirante__filtro-tit" id="ocultar-filtros">
-							<h3>Filtros</h3>
+							<p class="titulos">Filtros</p>
 							<div class="aspirante__i-ojos" id="aspirante-i">
 								<i class="fa-regular fa-eye"></i>
 								<p>Mostrar</p>
@@ -208,10 +208,10 @@
 				<div class="aspirante__cont-sin-con-aspi">
 					<div class="aspirante__encabezado">
 						<div class="aspirante__titulo">
-							<h3>Aspirantes</h3>
+							<p class="titulos">Aspirantes</p>
 						</div>
 						<div class="aspirante__btn-nueva-aspi-cont">
-							<button class="boton__enlace--p" id="btn-nueva-aspi">
+							<button class="boton__enlace--p" id="btn-nueva-inscri">
 								<span class="material-symbols-outlined aspirante__btn-mas"
 									>add_circle</span
 								>
@@ -244,41 +244,11 @@
 						<div class="aspirante__filtrado-por" id="filtrado-por">
 							<p>
 								Filtros: Lengua y Literatura - R VIII Las Breñas - Hs: 3 - Sexo:
-								F.
+								F. - Orden: Mayor puntaje.
 							</p>
 						</div>
 						<div class="aspirante__cont-card" id="aspirante-cont-card">
-							<!-- ********************** -->
-							<!-- <div class="tarjeta">
-								<div class="tarjeta__encabezado">
-									<div class="tarjeta__circulo"></div>
-									<div class="tarjeta__img">
-										<img
-											class="tarjeta__img-img"
-											src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1049&q=80"
-											alt=""
-										/>
-									</div>
-								</div>
-
-								<div class="tarjeta__descripcion">
-									<h3 class="tarjeta__descripcion-h3">María Polo</h3>
-									<h4 class="tarjeta__descripcion-h4">System Engineer</h4>
-									<p class="tarjeta__descripcion-p">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit.
-										Dolore, eligendi!
-									</p>
-								</div>
-
-								<div class="tarjeta__btn-ver-mas">
-									<button class="boton__enlace--p" id="btn-ver-mas">
-										ver más
-									</button>
-								</div>
-							</div> -->
-
-							<!-- ********************** -->
-							<!--
+							<!-- ********************** 
 									se completará en .js
 							-->
 						</div>
@@ -286,32 +256,73 @@
 				</div>
 			</section>
 			<!-- ================ Nuevo Aspirante ==================== -->
-			<section>
-				<div class="inscripcion" id="cont-inscripcion">
+			<section class="inscripcion ocultar" id="cont-inscripcion">
+				<div class="inscripcion__cont-ppal">
 					<div class="inscripcion__titulo">
-						<h2 class="inscripcion__h2" id="inscripcion-tit">Inscripción</h2>
+						<p class="titulos">Nueva Inscripción</p>
 					</div>
 
 					<div class="inscripcion__borde">
-						<div class="inscripcion__campo">
-							<label for="apellidos">Apellidos</label>
-							<input
-								type="text"
-								class="inscripcion__campo--cu"
-								id="apellidos"
-								aria-label="Ingresar apellidos"
-								placeholder="Apellidos"
-							/>
+						<div class="inscripcion__subtit">
+							<p>DATOS PERSONALES</p>
+						</div>
+						<div class="inscripcion__cont-sec">
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="apellidos">Apellidos:</label>
+								<input
+									type="text"
+									class="inscripcion__campo--cu"
+									id="apellidos"
+									aria-label="Ingresar apellidos"
+									placeholder="Apellidos"
+								/>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="nombres">Nombres:</label>
+								<input
+									type="text"
+									class="inscripcion__campo--cu"
+									id="nombres"
+									aria-label="Ingresar nombres"
+									placeholder="Nombres"
+								/>
+							</div>
+						</div>
+						<div class="inscripcion__cont-ter">
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="sexo">Sexo:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="sexo"
+									aria-label="Seleccione sexo"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<option value="fem">Femenino</option>
+									<option value="mas">Masculino</option>
+								</select>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="telefono">Teléfono:</label>
+								<input
+									type="tel"
+									class="inscripcion__campo--cu"
+									id="telefono"
+									aria-label="Ingrese número de teléfono"
+									placeholder="364 4 999999."
+								/>
+							</div>
 						</div>
 
 						<div class="inscripcion__campo">
-							<label for="nombres">Nombres</label>
+							<label class="" for="correo">E-mail:</label>
 							<input
-								type="text"
+								type="email"
 								class="inscripcion__campo--cu"
-								id="nombres"
-								aria-label="Ingresar nombres"
-								placeholder="Nombres"
+								id="correo"
+								aria-label="Ingrese dirección de correo electrónico"
+								placeholder="xxxx@xxx.xxx"
 							/>
 						</div>
 
@@ -326,122 +337,93 @@
 							/>
 						</div>
 
-						<div class="inscripcion__campo">
-							<label for="area">Área...</label>
-							<select
-								class="inscripcion__campo--cu"
-								id="area"
-								aria-label="Seleccionar el área"
-							>
-								<option value="SELEC" selected>Seleccione...</option>
-								<!-- Se completa con un array en el js -->
-							</select>
+						<div class="inscripcion__subtit">
+							<p>DATOS LABORALES</p>
 						</div>
+						<div class="inscripcion__cont-sec">
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="area">Área:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="area"
+									aria-label="Seleccionar el área"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
 
-						<div class="inscripcion__campo">
-							<label for="regional">Regional...</label>
-							<select
-								class="inscripcion__campo--cu"
-								id="regional"
-								min="1"
-								max="10"
-								aria-label="Seleccionar la regional"
-							>
-								<option value="SELEC" selected>Seleccione...</option>
-								<!-- Se completa con un array en el js -->
-							</select>
-						</div>
-
-						<div class="inscripcion__campo">
-							<label class="" for="hs-dispo">Hs.Disponibles:</label>
-							<input
-								type="number"
-								class="inscripcion__campo--cu"
-								id="hs-dispo"
-								aria-label="Ingrese cantidad de horas disponibles"
-								min="1"
-								max="30"
-								placeholder="De 1 a 30."
-							/>
-						</div>
-
-						<div class="inscripcion__campo">
-							<label class="" for="sexo">Sexo</label>
-							<select
-								class="inscripcion__campo--cu"
-								id="sexo"
-								aria-label="Seleccione sexo"
-							>
-								<option value="SELEC" selected>Seleccione...</option>
-								<option value="fem">Femenino</option>
-								<option value="mas">Masculino</option>
-							</select>
-						</div>
-
-						<div class="inscripcion__campo">
-							<label class="" for="puntaje">Puntaje:</label>
-							<input
-								type="number"
-								class="inscripcion__campo--cu"
-								id="puntaje"
-								aria-label="Ingrese puntaje"
-								min="1"
-								max="150"
-								placeholder="De 1 a 150."
-							/>
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="regional">Regional:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="regional"
+									min="1"
+									max="10"
+									aria-label="Seleccionar la regional"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
 						</div>
 
 						<div>
 							<label for="titulo">Título:</label>
-							<textarea id="titulo" rows="2" cols="50">
-									Título del área seleccionada.
-							</textarea
+							<textarea
+								class="inscripcion__campo--cu-tArea"
+								id="titulo"
+								aria-label="Ingrese título del área seleccionada."
+								placeholder="Título del área seleccionada..."
 							>
+							</textarea>
 						</div>
 
-						<div class="inscripcion__campo">
-							<label class="" for="telefono">Teléfono:</label>
-							<input
-								type="tel"
-								class="inscripcion__campo--cu"
-								id="telefono"
-								aria-label="Ingrese número de teléfono"
-								placeholder="364 4 999999."
-							/>
-						</div>
+						<div class="inscripcion__cont-ter">
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="hs-dispo">Hs.Disponibles:</label>
+								<input
+									type="number"
+									class="inscripcion__campo--cu"
+									id="hs-dispo"
+									aria-label="Ingrese cantidad de horas disponibles"
+									min="1"
+									max="30"
+									placeholder="De 1 a 30."
+								/>
+							</div>
 
-						<div class="inscripcion__campo">
-							<label class="" for="correo">E-mail:</label>
-							<input
-								type="email"
-								class="inscripcion__campo--cu"
-								id="correo"
-								aria-label="Ingrese dirección de correo electrónico"
-								placeholder="xxxx@xxx.xxx"
-							/>
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="puntaje">Puntaje:</label>
+								<input
+									type="number"
+									class="inscripcion__campo--cu"
+									id="puntaje"
+									aria-label="Ingrese puntaje"
+									min="1"
+									max="150"
+									placeholder="De 1 a 150."
+								/>
+							</div>
 						</div>
-
 						<!-- botones -->
 						<div class="inscripcion__botones">
-							<button
-								class="inscripcion__btn inscripcion__btn--agr"
-								id="btn-agregar-oper"
-							>
-								<span class="material-symbols-outlined"> add_circle </span>
+							<button class="inscripcion__btn" id="btn-agregar-insc">
+								<span class="boton-span material-symbols-outlined">
+									add_circle
+								</span>
 							</button>
 
-							<button
-								class="inscripcion__btn inscripcion__btn--edi"
-								id="btn-editar-oper"
-							>
-								<span class="material-symbols-outlined"> check_circle </span>
+							<button hidden class="inscripcion__btn" id="btn-editar-insc">
+								<span class="boton-span material-symbols-outlined">
+									check_circle
+								</span>
 							</button>
 
-							<button
-								class="inscripcion__btn inscripcion__btn--can"
-								id="btn-cancelar-oper"
-							>
-								<span class="material-symbols-outlined"> cancel</span>
+							<button class="inscripcion__btn" id="btn-cancelar-insc">
+								<span class="boton-span material-symbols-outlined">
+									cancel</span
+								>
 							</button>
 						</div>
 					</div>
@@ -491,4 +473,5 @@
 	<script src="js/main.js"></script>
 	<script src="js/carrusel.js"></script>
 	<script src="js/aspirant.js"></script>
+	<script src="js/insciption.js"></script>
 </html>

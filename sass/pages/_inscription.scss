@@ -1,0 +1,124 @@
+// ================================
+// Inscripcion de Aspirantes Crear-Editar-Borrar
+
+.inscripcion {
+	@include flex-dir-al-jus(flex, column, center, center);
+	min-height: calc(100vh - var(--padding-main-sm) - 180px);
+	margin: auto 15px;
+	max-width: var(--max-width-cont-ppal);
+	width: 90%;
+	&.ocultar {
+		display: none;
+	}
+
+	&__cont-ppal {
+		margin: 15px 0px;
+		width: 100%;
+		color: var(--blanco);
+		@include caja;
+	}
+
+	&__titulo {
+		margin-bottom: 20px;
+		text-shadow: 5px 5px 5px rgb(6, 5, 5);
+	}
+
+	&__subtit{
+		margin-top: 20px;
+		text-shadow: 5px 5px 5px rgb(6, 5, 5);
+		border-bottom: 1px solid var(--blanco);
+	}
+
+	&__borde {
+		border: 1px solid var(--blanco);
+		border-radius: 5px;
+		padding: 0 10px 10px 10px;
+	}
+
+	&__campo {
+		margin: 10px 0px;
+		font-weight: 300;
+
+		&--cu {
+			height: 25px;
+			border: 1px solid var(--blanco);
+			border-radius: 5px;
+			width: 100%;
+			padding-left: 5px;
+		}
+		&--cu-tArea {
+			border: 1px solid var(--blanco);
+			width: 100%;
+			margin-top: 3px;
+			padding-left: 5px;
+			resize: none;
+			overflow-y: scroll;
+			font-size: 1rem;
+		}
+
+		&--cu-tArea:hover,
+		&--cu:hover {
+			background-color: rgb(203, 201, 201);
+			box-shadow: 0 0 1px 2px var(--negro);
+		}
+
+		&--cu-ta:focus,
+		&--cu:focus {
+			box-shadow: 0 0 1px 2px var(--negro);
+			outline: none;
+		}
+	}
+
+	&__botones {
+		@include flex-dir-al-jus(flex, row, x, flex-end);
+	}
+	&__btn {
+		margin: 0px 10px;
+	}
+
+	&__cont-sec {
+		width: 100%;
+		@include flex-dir-al-jus(flex, column, x, x);
+
+		&--cu {
+			width: 100%;
+			gap: 5px;
+		}
+	}
+
+	&__cont-ter {
+		width: 100%;
+		@include flex-dir-al-jus(flex, row, x, space-between);
+
+		&--cu {
+			width: 49%;
+			gap: 5px;
+		}
+	}
+
+	//================================== 576
+	@media (min-width: #{$sm}px) {
+		&__cont-ppal {
+			width: 90%;
+		}
+	}
+
+	//================================== 768
+	@media (min-width: #{$md}px) {
+		width: 100%;
+
+		&__cont-ppal {
+			width: 70%;
+		}
+
+		&__cont-sec {
+			width: 100%;
+			@include flex-dir-al-jus(flex, row, x, space-between);
+
+			&--cu {
+				width: 49%;
+				gap: 5px;
+			}
+		}
+	}
+}

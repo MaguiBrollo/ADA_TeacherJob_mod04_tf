@@ -1,8 +1,6 @@
-/* =========== VARIABLES GRALES ============= */
-let aspiListado = [];
-let urlBase = "https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/";
+//======== Variables globales (main.js) =========
 
-// ===================================================
+// ============================================
 // Input Select - Area
 const area = [
 	{ cod: "mate", nom: "Matemática" },
@@ -33,7 +31,8 @@ function cargarArea(input_select) {
 	input_select.innerHTML = area_listado;
 }
 
-// ========================
+// ============================================
+// Input Select - Regional
 const reg = [
 	{ cod: 1, nom: "R I       Pompeya" },
 	{ cod: 2, nom: "R II      Castelli" },
@@ -56,7 +55,7 @@ function cargarRegional(input_select) {
 	input_select.innerHTML = reg_listado;
 }
 
-// ===================================================
+// ============================================
 // Input Select - Hs Disponibles (mínimo)
 function cargarHsDispoMin(input_select) {
 	let hs_listado = `<option value="SELEC" selected>Seleccione...</option>`;
@@ -83,7 +82,7 @@ $("#ocultar-filtros").addEventListener("click", () => {
 });
 
 // ===================================================
-// Busca RODOS los ASPIRANTES de la API (MOCKAPI.IO)
+// Buscar ASPIRANTES (MOCKAPI.IO)
 function buscarTodosAspirantes() {
 	fetch(urlBase + "teacher", {
 		method: "GET",
@@ -120,24 +119,9 @@ function filtrar() {
 	} else {
 		$("#filtro-sexo").setAttribute("disabled", "");
 	}
-
-	if (aspiListado.length > 0) {
-		console.log(" hay aspirantes");
-	} else {
-		console.log(" NOOOOOOOOOO hay aspirantes");
-	}
 }
 
-//---------------------------------------
-const buscarArea = (busco) => {
-	return area.find((e) => e.cod === busco) ?? -1;
-};
-const buscarRegional = (busco) => {
-	return reg.find((e) => e.cod === busco) ?? -1;
-};
-
 // ===================================================
-//  listar aspirantes.  src="${asp.foto_perfil}"
 function listarAspirantes() {
 	$("#aspirante-cont-card").innerHTML = "";
 	for (const asp of aspiListado) {
@@ -159,8 +143,7 @@ function listarAspirantes() {
 					<h4 class="tarjeta__descripcion-h3">${asp.apellidos}</h4>
 					<h4 class="tarjeta__descripcion-h4">${asp.nombres}</h4>
 					<p class="tarjeta__descripcion-p">${asp.titulo_area}</p>	
-					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${
-			asp.horas_dispo}</p>	
+					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${asp.horas_dispo}</p>	
 					
 				</div>
 
@@ -173,6 +156,14 @@ function listarAspirantes() {
 			`;
 	}
 }
+
+// ===================================================
+//  Nueva inscripción
+$("#btn-nueva-inscri").addEventListener("click", () => {
+	$("#menu-aspirantes").classList.add("ocultar");
+	$("#cont-inscripcion").classList.remove("ocultar");
+	funcionesInscrpcion();
+});
 
 // ===================================================
 // Muestra spinner
@@ -199,7 +190,7 @@ function mostrarTodosAspirantes() {
 }
 
 // ====================================
-// Vienes de main.js
+// Viene de main.js
 function funcionesAspirantes() {
 	cargarArea($("#filtro-area"));
 	cargarRegional($("#filtro-regional"));

@@ -12,6 +12,10 @@
 	font-size: 1.2rem;
 }
 
+.boton-span:hover {
+	box-shadow: 0px 0px 15px var(--blanco);
+}
+
 .boton {
 	&__enlace {
 		//@include enlace("ppal"); //ver mixins

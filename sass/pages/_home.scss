@@ -18,3 +18,22 @@
 		min-height: calc(100vh - var(--padding-main-md) - (-14px));
 	}
 }
+
+.titulos {
+	font-size: 1.4rem;
+	text-shadow: 5px 5px 5px rgb(6, 5, 5);
+}
+
+//================================== 576
+@media (min-width: #{$sm}px) {
+	.titulos {
+		font-size: 1.5rem;
+	}
+}
+
+//================================== 768
+@media (min-width: #{$md}px) {
+	.titulos {
+		font-size: 1.6rem;
+	}
+}

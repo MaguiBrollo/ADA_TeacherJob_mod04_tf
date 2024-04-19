@@ -14,6 +14,7 @@
 		display: none;
 	}
 
+	//Filtros aspirantes
 	&__cont-filtros {
 		width: 100%;
 		@include flex-dir-al-jus(flex, column, x, x);
@@ -27,13 +28,14 @@
 	&__filtro-tit {
 		@include flex-dir-al-jus(flex, column, center, x);
 		width: 50%;
-		font-size: 1.3rem;
-		cursor: pointer;
-		gap: 10px;
 		text-decoration: none;
+		gap: 10px;
 		color: var(--blanco);
 	}
+	
+
 	&__i-ojos {
+		cursor: pointer;
 		font-size: 0.8rem;
 		gap: 5px;
 		@include flex-dir-al-jus(flex, row, center, space-between);
@@ -66,13 +68,13 @@
 		background-color: rgb(203, 201, 201);
 		box-shadow: 0 0 1px 2px var(--negro);
 	}
-	
+
 	&__select:focus {
 		box-shadow: 0 0 1px 2px var(--negro);
 		outline: none;
 	}
 
-	//----------------- aspirantes
+	//Listar aspirantes
 	&__cont-sin-con-aspi {
 		min-height: calc(100vh - var(--padding-main-sm) - 250px);
 		@include caja;
@@ -96,7 +98,7 @@
 		margin-right: 5px;
 	}
 
-	//sin aspirantes
+	//Ssin aspirantes
 	&__cont-sin-aspi {
 		height: 85%;
 		@include flex-dir-al-jus(flex, column, center, space-around);
@@ -116,10 +118,10 @@
 	}
 
 	//CON aspirantes
-	&__filtrado-por{
+	&__filtrado-por {
 		font-size: 0.8rem;
 		margin-bottom: 3px;
-		padding: 5px ;
+		padding: 5px;
 		border-radius: 3px;
 		font-weight: 300;
 	}
@@ -127,7 +129,7 @@
 	&__cont-card {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap:5px;
+		gap: 5px;
 	}
 	//estilos para CARD, ver card.scss
 	//-------------------------
