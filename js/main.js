@@ -26,7 +26,9 @@ function mostrar(mostrar) {
 	$("#menu-inicio").classList.add("ocultar");
 	$("#menu-aspirantes").classList.add("ocultar");
 	$("#menu-sesion").classList.add("ocultar");
-	$("#cont-inscripcion").classList.add("ocultar");//nueva inscripcion
+	$("#cont-inscripcion").classList.add("ocultar"); //inscripcion
+	$("#cont-ver-mas").classList.add("ocultar"); //inscripcion
+	$("#ver-mas-un").classList.add("ocultar"); //inscripcion
 
 	mostrar.classList.remove("ocultar");
 }

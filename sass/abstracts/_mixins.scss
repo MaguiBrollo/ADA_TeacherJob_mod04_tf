@@ -15,11 +15,12 @@
 	
 	@extend .noto-sans;
 	@if $tipo == "ppal" {
-		border: solid 3px var(--rojo);
+		border: 1px solid var(--blanco);
 		background-color: var(--rojo);
 	}
 	@if $tipo == "sec" {
 		margin: 3px;
+		border: none;
 	}
 }
 

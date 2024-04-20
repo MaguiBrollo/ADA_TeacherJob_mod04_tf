@@ -66,7 +66,7 @@
 		<!--                   MAIN                         -->
 		<!-- ============================================== -->
 		<main class="main">
-			<!-- ================ inicio ======================= -->
+			<!-- =============== Menú Inicio ================== -->
 			<section class="inicio ocultar" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
@@ -106,8 +106,8 @@
 				</div>
 			</section>
 
-			<!-- ================ búsquedas==================== -->
-			<section class="aspirante ocultar" id="menu-aspirantes">
+			<!-- ================= Aspirantes ================= -->
+			<section class="aspirante " id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
 					<div class="aspirante__cont-filtro-encab">
@@ -221,7 +221,7 @@
 					</div>
 
 					<!-- para el spinner -->
-					<div hidden id="spinner"></div>
+					<div hidden class="spinner" id="spinner"></div>
 
 					<!-- contenedor SIN Aspirantes -->
 					<div class="aspirante__cont-sin-aspi" id="cont-sin-aspi">
@@ -255,14 +255,14 @@
 					</div>
 				</div>
 			</section>
-			<!-- ================ Nuevo Aspirante ==================== -->
-			<section class="inscripcion" id="cont-inscripcion">
+
+			<!-- ============= Nuevo Aspirante ================ -->
+			<section class="inscripcion ocultar" id="cont-inscripcion">
 				<div class="inscripcion__cont-ppal">
 					<div class="inscripcion__titulo">
 						<p class="titulos">Nueva Inscripción</p>
 					</div>
 
-					<!-- <div class="inscripcion__borde"> -->
 					<form action="" class="inscripcion__borde" id="nueva-alumna-form">
 						<div class="inscripcion__subtit">
 							<p>DATOS PERSONALES</p>
@@ -421,44 +421,86 @@
 								/>
 							</div>
 						</div>
+
 						<!-- botones -->
 						<div class="inscripcion__botones">
 							<button
-								type="submit"
-								class="inscripcion__btn"
-								id="btn-agregar-insc"
-							>
-								<span class="boton-span material-symbols-outlined">
-									add_circle
-								</span>
-							</button>
-
-							<button
-								hidden
-								type="submit"
-								class="inscripcion__btn"
-								id="btn-editar-insc"
-							>
-								<span class="boton-span material-symbols-outlined">
-									check_circle
-								</span>
-							</button>
-
-							<button
 								type="button"
-								class="inscripcion__btn"
+								class="boton__enlace--s"
 								id="btn-cancelar-insc"
 							>
-								<span class="boton-span material-symbols-outlined">
-									cancel</span
-								>
+								Cancelar
+							</button>
+
+							<button
+								type="submit"
+								class="boton__enlace--p"
+								id="btn-agregar-insc"
+							>
+								Guardar
 							</button>
 						</div>
 					</form>
-					<!-- </div> -->
 				</div>
 			</section>
 
+			<!-- ============ Ver Mas Aspirante =============== -->
+			<section class="vermas ocultar" id="cont-ver-mas">
+				<!-- para el spinner -->
+				<div hidden class="spinner" id="spinner-ver-mas"></div>
+				<div class="vermas__cont-ppal ocultar" id="ver-mas-un">
+					<div class="vermas__uno">
+						<div id="ver-mas-un-aspi">
+							<!-- ver inscription.js -->
+						</div>
+						<!-- botones -->
+						<div class="vermas__botones">
+							<button class="boton__enlace--s" id="btn-volver-ver">
+								Volver
+							</button>
+
+							<button class="boton__enlace--s" id="btn-borrar-ver">
+								Borrar
+							</button>
+
+							<button class="boton__enlace--p" id="btn-editar-ver">
+								Editar
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ============= Modal Elimnar ================== -->
+			<section class="modal-eliminar ocultar" id="modal-eliminar">
+				<div class="modal-eliminar__cont">
+					<div class="modal-eliminar__cont-info">
+						<div class="modal-eliminar__btn-cerrar" id="modal-eliminar-btn-cerrar">
+							<span class="boton-span material-symbols-outlined">close</span>
+						</div>
+						<div class="modal-eliminar__texto">
+							<p class="titulos">Eliminar Aspirante</p>
+							<p>
+								¿Está seguro que desea eliminar definitivamente los datos del
+								aspirante?
+							</p>
+						</div>
+
+						<!-- botones -->
+						<div class="modal-eliminar__botones">
+							<button class="boton__enlace--s" id="btn-eliminar-aspi">
+								Eliminar
+							</button>
+
+							<button class="boton__enlace--p" id="btn-cancelar-Eliminar-aspi">
+								Cancelar
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ================ Iniciar Sesión ============== -->
 			<section class="main__seccion ocultar" id="menu-sesion">
 				<h2>Próximamente MODAL: Inicio Sesión</h2>
 			</section>

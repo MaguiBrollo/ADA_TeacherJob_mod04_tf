@@ -34,16 +34,16 @@ function cargarArea(input_select) {
 // ============================================
 // Input Select - Regional
 const reg = [
-	{ cod: 1, nom: "R I       Pompeya" },
-	{ cod: 2, nom: "R II      Castelli" },
-	{ cod: 3, nom: "R III     Bermejo" },
-	{ cod: 4, nom: "R IV      S. Peña" },
-	{ cod: 5, nom: "R V       San Martín" },
-	{ cod: 6, nom: "R VI      La Leonesa" },
-	{ cod: 7, nom: "R VII     C. Elisa" },
-	{ cod: 8, nom: "R VIII    Las Breñas" },
-	{ cod: 9, nom: "R IX      V. Ángela" },
-	{ cod: 10, nom: "R X      Resistencia" },
+	{ cod: 1, nom: "RI - Pompeya" },
+	{ cod: 2, nom: "RII - Castelli" },
+	{ cod: 3, nom: "RIII - Bermejo" },
+	{ cod: 4, nom: "RIV - S. Peña" },
+	{ cod: 5, nom: "RV - San Martín" },
+	{ cod: 6, nom: "RVI - La Leonesa" },
+	{ cod: 7, nom: "RVII - C. Elisa" },
+	{ cod: 8, nom: "RVIII - Las Breñas" },
+	{ cod: 9, nom: "RIX - V. Ángela" },
+	{ cod: 10, nom:"RX - Resistencia" },
 ];
 
 function cargarRegional(input_select) {
@@ -148,21 +148,35 @@ function listarAspirantes() {
 				</div>
 
 				<div class="tarjeta__btn-ver-mas">
-						<button class="boton__enlace--p" id="btn-ver-mas">
-							ver más
+						<button class="boton__enlace--p btn-ver-mas" data-idAspirante="${asp.id}">
+							Ver más
 						</button>
 					</div>
 			</div>
 			`;
 	}
+	generarVerMas(document.querySelectorAll(".btn-ver-mas"));
 }
+
+// ===================================================
+// BOTON Ver Más
+function generarVerMas(btns) {
+	btns.forEach((btn) =>
+		btn.addEventListener("click", () => {
+
+			//--- inscription.js
+			verMasAspirante(btn.getAttribute("data-idAspirante"));
+		})
+	);
+}
+
 
 // ===================================================
 //  Nueva inscripción
 $("#btn-nueva-inscri").addEventListener("click", () => {
 	$("#menu-aspirantes").classList.add("ocultar");
 	$("#cont-inscripcion").classList.remove("ocultar");
-	funcionesInscrpcion();
+	funcionesInscrpcion(); //inscription.js
 });
 
 // ===================================================

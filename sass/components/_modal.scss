@@ -1,0 +1,43 @@
+.modal-eliminar {
+	@include flex-dir-al-jus(flex, x, center, center);
+	background-color: rgba(130, 130, 130, 0.7);
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: fixed;
+	padding: 20px;
+	z-index: 100;
+	&.ocultar {
+		display: none;
+	}
+
+	&__cont {
+		min-width: 300px;
+		max-width: 80%;
+		min-height: 200px;
+		max-height: 50%;
+		position: relative;
+	}
+	&__cont-info {
+		background-color: var(--blanco);
+		border-radius: 10px;
+	}
+
+	&__btn-cerrar {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		cursor: pointer;
+	}
+
+	&__texto {
+		padding: 30px 15px;
+	}
+	&__botones {
+		background-color: var(--negro);
+		@include flex-dir-al-jus(flex, row, center, center);
+		padding: 10px 0px 10px 0px;
+		border-radius: 0px 0px 10px 10px;
+	}
+}
