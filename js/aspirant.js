@@ -1,4 +1,39 @@
 //======== Variables globales (main.js) =========
+/* ======================== BREAKPOINT ========================  */
+let breakPoint768 = () =>
+	parseInt(getComputedStyle(document.documentElement).getPropertyValue("--md"));
+
+// ============================================
+// Mantener vsible los filtros a pantalla >= 768
+function mostrarFiltros768() {
+	if (
+		window.innerWidth >= breakPoint768() &&
+		$("#contenedor-filtros").classList.contains("ocultar")
+	) {
+		$(
+			"#ocultar-filtros"
+		).innerHTML = `<i class="fa-regular fa-eye-slash"></i><p>Ocultar </p>`;
+		$("#contenedor-filtros").classList.remove("ocultar");
+	}
+}
+window.visualViewport.addEventListener("resize", () => {
+	if (
+		window.innerWidth >= breakPoint768() &&
+		$("#contenedor-filtros").classList.contains("ocultar")
+	) {
+		$(
+			"#ocultar-filtros"
+		).innerHTML = `<i class="fa-regular fa-eye-slash"></i><p>Ocultar </p>`;
+		$("#contenedor-filtros").classList.remove("ocultar");
+	}
+
+	if (window.innerWidth < breakPoint768()) {
+		$(
+			"#ocultar-filtros"
+		).innerHTML = `<i class="fa-regular fa-eye"></i><p>Mostrar </p>`;
+		$("#contenedor-filtros").classList.add("ocultar");
+	}
+});
 
 // ============================================
 // Input Select - Area
@@ -81,9 +116,32 @@ $("#ocultar-filtros").addEventListener("click", () => {
 	}
 });
 
+// ===================================================
+// Limpiar Filtros
 $("#limpiar-filtros").addEventListener("click", () => {
 	$("#contenedor-filtros").reset();
+	//----------------------------------------------------------------------------
+	//FALTAAAAAAAAAAAAAAAAA  CONTROLAR
+	mostrarTodosAspirantes();
 });
+
+// ===================================================
+//  función de filtrado.
+let filtrar = () => {
+	// para educación física
+	if ($("#filtro-area").value === "edfi") {
+		$("#filtro-sexo").removeAttribute("disabled");
+	} else {
+		$("#filtro-sexo").setAttribute("disabled", "");
+	}
+};
+// ===================================================
+//  Seleccionar Filtros
+$("#filtro-orden").addEventListener("change", filtrar);
+$("#filtro-area").addEventListener("change", filtrar);
+$("#filtro-regional").addEventListener("change", filtrar);
+$("#filtro-horas").addEventListener("change", filtrar);
+$("#filtro-sexo").addEventListener("change", filtrar);
 
 // ===================================================
 // Buscar ASPIRANTES (MOCKAPI.IO)
@@ -107,22 +165,15 @@ let buscarTodosAspirantes = () => {
 };
 
 // ===================================================
-//  función de filtrado.
-let filtrar = () => {
-	// para educación física
-	if ($("#filtro-area").value === "edfi") {
-		$("#filtro-sexo").removeAttribute("disabled");
-	} else {
-		$("#filtro-sexo").setAttribute("disabled", "");
-	}
+// BOTON Ver Más
+let generarVerMas = (btns) => {
+	btns.forEach((btn) =>
+		btn.addEventListener("click", () => {
+			//--- inscription.js
+			verMasAspirante(btn.getAttribute("data-idAspirante"));
+		})
+	);
 };
-// ===================================================
-//  Seleccionar Filtros
-$("#filtro-orden").addEventListener("change", filtrar);
-$("#filtro-area").addEventListener("change", filtrar);
-$("#filtro-regional").addEventListener("change", filtrar);
-$("#filtro-horas").addEventListener("change", filtrar);
-$("#filtro-sexo").addEventListener("change", filtrar);
 
 // ===================================================
 let listarAspirantes = () => {
@@ -162,30 +213,6 @@ let listarAspirantes = () => {
 };
 
 // ===================================================
-// BOTON Ver Más
-let generarVerMas = (btns) => {
-	btns.forEach((btn) =>
-		btn.addEventListener("click", () => {
-			//--- inscription.js
-			verMasAspirante(btn.getAttribute("data-idAspirante"));
-		})
-	);
-};
-
-// ===================================================
-//  Nueva inscripción
-$("#btn-nueva-inscri").addEventListener("click", () => {
-	$("#menu-aspirantes").classList.add("ocultar");
-	$("#cont-inscripcion").classList.remove("ocultar");
-	//Habilita título y botones
-	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
-	$("#btn-editar-aspi").classList.add("ocultar");
-	$("#btn-nuevo-aspi").classList.remove("ocultar");
-
-	funcionesInscrpcion(); //inscription.js
-});
-
-// ===================================================
 // Muestra spinner
 let mostrarTodosAspirantes = () => {
 	$("#aspirante-cont-card").innerHTML = "";
@@ -209,6 +236,20 @@ let mostrarTodosAspirantes = () => {
 	}, 2000);
 };
 
+// ===================================================
+//  Nueva inscripción
+$("#btn-nueva-inscri").addEventListener("click", () => {
+	$("#menu-aspirantes").classList.add("ocultar");
+	$("#cont-inscripcion").classList.remove("ocultar");
+	$("#cont-inscripcion").reset();
+	//Habilita título y botones
+	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
+	$("#btn-editar-aspi").classList.add("ocultar");
+	$("#btn-nuevo-aspi").classList.remove("ocultar");
+
+	funcionesInscrpcion(); //inscription.js
+});
+
 // ====================================
 // Viene de main.js
 let funcionesAspirantes = () => {
@@ -216,5 +257,6 @@ let funcionesAspirantes = () => {
 	cargarRegional($("#filtro-regional"));
 	cargarHsDispoMin($("#filtro-horas"));
 	//--------------------------------------
+	mostrarFiltros768();
 	mostrarTodosAspirantes();
 };

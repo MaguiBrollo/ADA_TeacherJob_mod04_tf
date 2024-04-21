@@ -51,7 +51,6 @@ let mostrarVerMas = (aspi) => {
 }
 //---------------------
 let mostrarUno = (asp) => {
-	//src="${asp.foto_perfil}"
 	console.log("aqui ", $("#ver-mas-un-aspi"));
 	$("#ver-mas-un-aspi").innerHTML = `
 	<div>	
@@ -92,18 +91,23 @@ $("#btn-volver-ver").addEventListener("click", () => {
 	$("#cont-ver-mas").classList.add("ocultar");
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
+	$("#cont-inscripcion").classList.add("ocultar");
 	mostrarTodosAspirantes(); //aspirant.js
 });
 
 // ===================================================
 // VER MAS -  Eliminar
 $("#btn-borrar-ver").addEventListener("click", () => {
+	$("#cont-inscripcion").classList.add("ocultar");
 	$("#modal-eliminar").classList.remove("ocultar");
 });
+
 $("#modal-eliminar-btn-cerrar").addEventListener("click", () => {
 	$("#modal-eliminar").classList.add("ocultar");
 });
+
 $("#btn-eliminar-aspi").addEventListener("click", async () => {
+	$("#cont-inscripcion").classList.add("ocultar");
 	//funcion eliminar
 	await borrarAspirante();
 	$("#modal-eliminar").classList.add("ocultar");

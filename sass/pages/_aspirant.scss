@@ -28,20 +28,19 @@
 	}
 	&__filtro-tit {
 		@include flex-dir-al-jus(flex, row, center, x);
-		gap: 10px;
 	}
 	&__titulos {
 		@include titulos;
 	}
 
 	&__ocu-lim {
-		width: 45%;
+		width: 50%;
 		cursor: pointer;
 		font-size: 0.8rem;
 		margin-top: 10px;
-		padding: 0px 25px;
+		padding: 0px 35px;
 		gap: 5px;
-		@include flex-dir-al-jus(flex, row, center, space-between);
+		@include flex-dir-al-jus(flex, row, center, center);
 	}
 
 	&__label {
@@ -125,9 +124,8 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 5px;
+		//estilos para CARD, ver card.scss
 	}
-	//estilos para CARD, ver card.scss
-	//-------------------------
 
 	//================================== 576
 	@media (min-width: #{$sm}px) {
@@ -142,7 +140,7 @@
 	@media (min-width: #{$md}px) {
 		padding: 10px 0px;
 		max-width: var(--max-width-cont-ppal);
-		width: 100%;
+		width: 95%;
 		margin: 0px 15px;
 		@include flex-dir-al-jus(flex, row, x, center);
 
@@ -158,6 +156,14 @@
 			margin: 10px;
 		}
 
+		&__cont-card {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	//================================== 1024
+	@media (min-width: #{$lg}px) {
+		width: 95%;
 		&__cont-card {
 			grid-template-columns: 1fr 1fr 1fr;
 		}

@@ -20,6 +20,7 @@ $lg: 1024; // => @media (min-width: 1024px) { ... }
 
 	--max-width-cont-ppal:1200px;
 
+	--sm: #{$sm};
 	--md: #{$md};
 	--lg: #{$lg};
 }
