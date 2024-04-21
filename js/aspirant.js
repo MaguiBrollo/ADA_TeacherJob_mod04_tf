@@ -19,7 +19,7 @@ const area = [
 	{ cod: "ingl", nom: "Inglés" },
 ];
 
-function cargarArea(input_select) {
+let cargarArea = (input_select) => {
 	let area_listado = `<option value="SELEC" selected>Seleccione...</option>`;
 	area.sort((a, b) => {
 		return a.nom.localeCompare(b.nom);
@@ -29,7 +29,7 @@ function cargarArea(input_select) {
 			`<option value="` + area[i].cod + `">` + area[i].nom + `</option>`;
 	}
 	input_select.innerHTML = area_listado;
-}
+};
 
 // ============================================
 // Input Select - Regional
@@ -46,25 +46,25 @@ const reg = [
 	{ cod: 10, nom: "RX - Resistencia" },
 ];
 
-function cargarRegional(input_select) {
+let cargarRegional = (input_select) => {
 	let reg_listado = `<option value="SELEC" selected>Seleccione...</option>`;
 	for (var i = 0; i < reg.length; i++) {
 		reg_listado +=
 			`<option value="` + reg[i].cod + `">` + reg[i].nom + `</option>`;
 	}
 	input_select.innerHTML = reg_listado;
-}
+};
 
 // ============================================
 // Input Select - Hs Disponibles (mínimo)
-function cargarHsDispoMin(input_select) {
+let cargarHsDispoMin = (input_select) => {
 	let hs_listado = `<option value="SELEC" selected>Seleccione...</option>`;
 	const hs = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 	for (var i = 0; i < hs.length; i++) {
 		hs_listado += `<option value="` + hs[i] + `">` + hs[i] + `</option>`;
 	}
 	input_select.innerHTML = hs_listado;
-}
+};
 
 // ===================================================
 // Ver-Ocultar Filtros
@@ -72,18 +72,22 @@ $("#ocultar-filtros").addEventListener("click", () => {
 	$("#contenedor-filtros").classList.toggle("ocultar");
 	if ($("#contenedor-filtros").classList.contains("ocultar")) {
 		$(
-			"#aspirante-i"
+			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye"></i><p>Mostrar </p>`;
 	} else {
 		$(
-			"#aspirante-i"
+			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye-slash"></i><p>Ocultar </p>`;
 	}
 });
 
+$("#limpiar-filtros").addEventListener("click", () => {
+	$("#contenedor-filtros").reset();
+});
+
 // ===================================================
 // Buscar ASPIRANTES (MOCKAPI.IO)
-function buscarTodosAspirantes() {
+let buscarTodosAspirantes = () => {
 	fetch(urlBase + "teacher", {
 		method: "GET",
 		headers: {
@@ -100,8 +104,18 @@ function buscarTodosAspirantes() {
 		.catch((error) => {
 			console.log("ERROR - BUSCAR TODOS LOS ASPIRANTES: ", error);
 		});
-}
+};
 
+// ===================================================
+//  función de filtrado.
+let filtrar = () => {
+	// para educación física
+	if ($("#filtro-area").value === "edfi") {
+		$("#filtro-sexo").removeAttribute("disabled");
+	} else {
+		$("#filtro-sexo").setAttribute("disabled", "");
+	}
+};
 // ===================================================
 //  Seleccionar Filtros
 $("#filtro-orden").addEventListener("change", filtrar);
@@ -111,18 +125,7 @@ $("#filtro-horas").addEventListener("change", filtrar);
 $("#filtro-sexo").addEventListener("change", filtrar);
 
 // ===================================================
-//  función de filtrado.
-function filtrar() {
-	// para educación física
-	if ($("#filtro-area").value === "edfi") {
-		$("#filtro-sexo").removeAttribute("disabled");
-	} else {
-		$("#filtro-sexo").setAttribute("disabled", "");
-	}
-}
-
-// ===================================================
-function listarAspirantes() {
+let listarAspirantes = () => {
 	$("#aspirante-cont-card").innerHTML = "";
 	for (const asp of aspiListado) {
 		$("#aspirante-cont-card").innerHTML += `
@@ -156,18 +159,18 @@ function listarAspirantes() {
 			`;
 	}
 	generarVerMas(document.querySelectorAll(".btn-ver-mas"));
-}
+};
 
 // ===================================================
 // BOTON Ver Más
-function generarVerMas(btns) {
+let generarVerMas = (btns) => {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
 			//--- inscription.js
 			verMasAspirante(btn.getAttribute("data-idAspirante"));
 		})
 	);
-}
+};
 
 // ===================================================
 //  Nueva inscripción
@@ -184,7 +187,7 @@ $("#btn-nueva-inscri").addEventListener("click", () => {
 
 // ===================================================
 // Muestra spinner
-function mostrarTodosAspirantes() {
+let mostrarTodosAspirantes = () => {
 	$("#aspirante-cont-card").innerHTML = "";
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
@@ -204,14 +207,14 @@ function mostrarTodosAspirantes() {
 			$("#cont-con-aspi").classList.add("ocultar");
 		}
 	}, 2000);
-}
+};
 
 // ====================================
 // Viene de main.js
-function funcionesAspirantes() {
+let funcionesAspirantes = () => {
 	cargarArea($("#filtro-area"));
 	cargarRegional($("#filtro-regional"));
 	cargarHsDispoMin($("#filtro-horas"));
 	//--------------------------------------
 	mostrarTodosAspirantes();
-}
+};

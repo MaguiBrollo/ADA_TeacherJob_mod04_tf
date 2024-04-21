@@ -111,30 +111,22 @@
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
 					<div class="aspirante__cont-filtro-encab">
-						<a href="#" class="aspirante__filtro-tit" id="ocultar-filtros">
-							<p class="aspirante__titulos">Filtros</p>
-							<div class="aspirante__i-ojos" id="aspirante-i">
+						<p class="aspirante__titulos">Filtros</p>
+						<div class="aspirante__filtro-tit">
+							<div class="aspirante__ocu-lim" id="ocultar-filtros">
 								<i class="fa-regular fa-eye"></i>
 								<p>Mostrar</p>
 							</div>
-						</a>
-						<div class="aspirante__cont-orden">
-							<label class="" for="filtro-tipo">Puntaje</label>
-							<div class="aspirante__orden-select">
-								<select
-									class="aspirante__select"
-									id="filtro-orden"
-									aria-label="Seleccionar orden del puntaje"
-								>
-									<option value="MAY" selected>Mayor</option>
-									<option value="MEN">Menor</option>
-								</select>
+
+							<div class="aspirante__ocu-lim" id="limpiar-filtros">
+								<i class="fa-solid fa-broom"></i>
+								<p>Limpiar</p>
 							</div>
 						</div>
 					</div>
 					<!-- contenedor FILTROS (se oculta) -->
-					<div
-						class="aspirante__cont-fil-todos ocultar"
+					
+					<form class="ocultar"
 						id="contenedor-filtros"
 					>
 						<div class="aspirante__cont-select">
@@ -201,7 +193,20 @@
 								</select>
 							</div>
 						</div>
-					</div>
+						<div class="aspirante__cont-select">
+							<label class="" for="filtro-tipo">Puntaje</label>
+							<div class="aspirante__orden-select">
+								<select
+									class="aspirante__select"
+									id="filtro-orden"
+									aria-label="Seleccionar orden del puntaje"
+								>
+									<option value="MAY" selected>Mayor</option>
+									<option value="MEN">Menor</option>
+								</select>
+							</div>
+						</div>
+					</form>
 				</div>
 
 				<!-- contenedor SIN/CON Aspirantes -->
@@ -463,17 +468,16 @@
 							>
 								Guardar
 							</button>
+						</div>
 
-							</div>
-
-						<div class="inscripcion__botones ocultar"  id="btn-editar-aspi">
+						<div class="inscripcion__botones ocultar" id="btn-editar-aspi">
 							<!-- editar -->
 							<button
 								type="button"
 								class="boton__enlace--s"
 								id="btn-cancelar-editar"
 							>
-								Cancelar E
+								Cancelar
 							</button>
 
 							<button
@@ -481,7 +485,7 @@
 								class="boton__enlace--p"
 								id="btn-agregar-editar"
 							>
-								Guardar E
+								Guardar
 							</button>
 						</div>
 					</form>
