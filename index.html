@@ -25,8 +25,11 @@
 		<!-- MIS ESTILOS, DEBEN IR ÚLTIMO -->
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
-	<!-- ===================================================== -->
+	<!-- ============================================== -->
 	<body>
+		<!-- ============================================== -->
+		<!--                   HEADER                       -->
+		<!-- ============================================== -->
 		<header>
 			<nav class="nav">
 				<div class="nav__cont-ppal">
@@ -37,32 +40,34 @@
 
 					<!-- Menú hamb -->
 					<div class="nav__cont-hamb">
-						<button class="nav__boton" id="nav-btn-abrir">
-							<span class="nav__boton-span material-symbols-outlined"
-								>menu</span
-							>
+						<button class="" id="nav-btn-abrir">
+							<span class="boton-span material-symbols-outlined">menu</span>
 						</button>
 
-						<button hidden class="nav__boton" id="nav-btn-cerrar">
-							<span class="nav__boton-span material-symbols-outlined"
-								>close</span
-							>
+						<button hidden class="" id="nav-btn-cerrar">
+							<span class="boton-span material-symbols-outlined">close</span>
 						</button>
 					</div>
 				</div>
 
 				<div class="nav__cont-menu ocultar" id="nav-cont-menu">
-					<a class="nav__enlace--s" id="enlace-inicio" href="#">INICIO</a>
-					<a class="nav__enlace--s" id="enlace-busquedas" href="#">BÚSQUEDA</a>
-					<a class="nav__enlace--p" id="enlace-inscripcion" href="#"
-						>INSCRIPCIÓN</a
+					<a class="boton__enlace--s" id="enlace-inicio" href="#">INICIO</a>
+					<a class="boton__enlace--s" id="enlace-aspirantes" href="#"
+						>aspirantes</a
+					>
+					<a class="boton__enlace--p" id="enlace-sesion" href="#"
+						>Iniciar Sesión</a
 					>
 				</div>
 			</nav>
 		</header>
 
+		<!-- ============================================== -->
+		<!--                   MAIN                         -->
+		<!-- ============================================== -->
 		<main class="main">
-			<section class="inicio" id="menu-inicio">
+			<!-- =============== Menú Inicio ================== -->
+			<section class="inicio ocultar" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
 					<p class="inicio__texto-frase">
@@ -72,16 +77,13 @@
 					</p>
 				</div>
 				<div class="inicio__cont-carrusel">
-					<!-- carrusel (sccs, js: independientes) -->
 					<div class="gallery" id="gallery">
 						<div class="gallery-container">
 							<div class="gallery-item">
 								<img src="img/profesora.jpg" alt="Profesora" />
-								<!-- <figcaption>Profesora</figcaption> -->
 							</div>
 							<div class="gallery-item">
 								<img src="img/profesor.jpg" alt="Profesor" />
-								<!-- <figcaption>Profesora</figcaption> -->
 							</div>
 							<div class="gallery-item">
 								<img src="img/profesora2.jpg" alt="Profesora eneñando" />
@@ -102,19 +104,431 @@
 						</nav>
 					</div>
 				</div>
-				<!-- ============================================== -->
 			</section>
-			<section class="main__seccion ocultar" id="menu-busquedas">
-				<h2>Búsqudas</h2>
+
+			<!-- ================= Aspirantes ================= -->
+			<section class="aspirante" id="menu-aspirantes">
+				<!-- contenedor TITULO-FILTRO -->
+				<div class="aspirante__cont-filtros">
+					<div class="aspirante__cont-filtro-encab">
+						<a href="#" class="aspirante__filtro-tit" id="ocultar-filtros">
+							<p class="aspirante__titulos">Filtros</p>
+							<div class="aspirante__i-ojos" id="aspirante-i">
+								<i class="fa-regular fa-eye"></i>
+								<p>Mostrar</p>
+							</div>
+						</a>
+						<div class="aspirante__cont-orden">
+							<label class="" for="filtro-tipo">Puntaje</label>
+							<div class="aspirante__orden-select">
+								<select
+									class="aspirante__select"
+									id="filtro-orden"
+									aria-label="Seleccionar orden del puntaje"
+								>
+									<option value="MAY" selected>Mayor</option>
+									<option value="MEN">Menor</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- contenedor FILTROS (se oculta) -->
+					<div
+						class="aspirante__cont-fil-todos ocultar"
+						id="contenedor-filtros"
+					>
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-area">Área...</label>
+							<div class="">
+								<select
+									class="aspirante__select"
+									id="filtro-area"
+									aria-label="Seleccionar por área"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-regional"
+								>Regional...</label
+							>
+							<div class="">
+								<select
+									class="aspirante__select"
+									id="filtro-regional"
+									aria-label="Seleccionar por regional"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-horas"
+								>Horas diponibles (mínimo)...</label
+							>
+							<div class="">
+								<select
+									class="aspirante__select"
+									id="filtro-horas"
+									aria-label="Seleccionar por horas disponibles (mínimo)"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="aspirante__cont-select">
+							<label class="aspirante__label" for="filtro-sexo"
+								>Sexo (Educ.Física)...</label
+							>
+							<div class="">
+								<select
+									disabled
+									class="aspirante__select"
+									id="filtro-sexo"
+									aria-label="Seleccionar por sexo"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<option value="fem">Femenino</option>
+									<option value="mas">Masculino</option>
+									<option value="mix">Mixto</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- contenedor SIN/CON Aspirantes -->
+				<div class="aspirante__cont-sin-con-aspi">
+					<div class="aspirante__encabezado">
+						<div class="aspirante__titulo">
+							<p class="aspirante__titulos">Aspirantes</p>
+						</div>
+						<div class="aspirante__btn-nueva-aspi-cont">
+							<button class="boton__enlace--p" id="btn-nueva-inscri">
+								INSCRIBIR
+							</button>
+						</div>
+					</div>
+
+					<!-- para el spinner -->
+					<div hidden class="spinner" id="spinner"></div>
+
+					<!-- contenedor SIN Aspirantes -->
+					<div class="aspirante__cont-sin-aspi" id="cont-sin-aspi">
+						<img
+							class="aspirante__img img_js"
+							src="img/teacher.svg"
+							alt="Imagen de Profesor"
+							aria-label="Imagen de Profesor"
+						/>
+
+						<p class="aspirante__p-sin-aspi">
+							No se puede generar el listado de Aspirantes.<br />
+							Diríjase a "Inscribir" y registre nuevos Aspirantes. O seleccione
+							los "Filtros" deseadas.
+						</p>
+					</div>
+
+					<!-- contenedor CON Aspirantes -->
+					<div class="ocultar" id="cont-con-aspi">
+						<div class="aspirante__filtrado-por" id="filtrado-por">
+							<p>
+								Filtros: Lengua y Literatura - R VIII Las Breñas - Hs: 3 - Sexo:
+								F. - Orden: Mayor puntaje.
+							</p>
+						</div>
+						<div class="aspirante__cont-card" id="aspirante-cont-card">
+							<!-- ********************** 
+									se completará en .js
+							-->
+						</div>
+					</div>
+				</div>
 			</section>
-			<section class="main__seccion ocultar" id="menu-inscripcion">
-				<h2>Inscripción</h2>
+
+			<!-- ============ Ver Mas Aspirante =============== -->
+			<section class="vermas ocultar" id="cont-ver-mas">
+				<!-- para el spinner -->
+				<div hidden class="spinner" id="spinner-ver-mas"></div>
+				<div class="vermas__cont-ppal ocultar" id="ver-mas-un">
+					<div class="vermas__uno">
+						<div id="ver-mas-un-aspi">
+							<!-- ver inscription.js -->
+						</div>
+						<!-- botones -->
+						<div class="vermas__botones">
+							<button class="boton__enlace--s" id="btn-borrar-ver">
+								Borrar
+							</button>
+
+							<button class="boton__enlace--s" id="btn-editar-ver">
+								Editar
+							</button>
+							<button class="boton__enlace--p" id="btn-volver-ver">
+								Volver
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============= Inscripcion (Nuevo Aspirante) =========== -->
+			<section class="inscripcion ocultar" id="cont-inscripcion">
+				<div class="inscripcion__cont-ppal">
+					<div class="inscripcion__titulos">
+						<p class="" id="inscripcion-titulo">Nueva Inscripción</p>
+					</div>
+
+					<form id="inscripcion-form">
+						<div class="inscripcion__subtit">
+							<p>DATOS PERSONALES</p>
+						</div>
+						<div class="inscripcion__cont-sec">
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="apellidos">Apellidos:</label>
+								<input
+									type="text"
+									class="inscripcion__campo--cu"
+									id="apellidos"
+									required
+									minlength="2"
+									maxlength="30"
+									aria-label="Ingrese los apellidos."
+									placeholder="Apellidos (hasta 30 caracteres)."
+								/>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="nombres">Nombres:</label>
+								<input
+									type="text"
+									class="inscripcion__campo--cu"
+									id="nombres"
+									required
+									minlength="2"
+									maxlength="30"
+									aria-label="Ingrese los nombres."
+									placeholder="Nombres (hasta 30 caracteres)."
+								/>
+							</div>
+						</div>
+						<div class="inscripcion__cont-ter">
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="sexo">Sexo:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="sexo"
+									aria-label="Seleccione sexo"
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<option value="fem">Femenino</option>
+									<option value="mas">Masculino</option>
+								</select>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="telefono">Teléfono:</label>
+								<input
+									type="tel"
+									class="inscripcion__campo--cu"
+									id="telefono"
+									required
+									pattern="[0-9]{3}-[0-9]{7}"
+									aria-label="Ingrese el número de teléfono."
+									placeholder="364-4999999."
+								/>
+							</div>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label class="" for="correo">E-mail:</label>
+							<input
+								type="email"
+								class="inscripcion__campo--cu"
+								id="correo"
+								required
+								aria-label="Ingrese la dirección de correo electrónico."
+								placeholder="usuario@ejemplo.com"
+							/>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="url-foto">URL Foto:</label>
+							<input
+								type="url"
+								class="inscripcion__campo--cu"
+								id="url-foto"
+								aria-label="Ingrese la dirección web de la foto de perfil."
+								placeholder="URL de la foto de perfil."
+							/>
+						</div>
+
+						<div class="inscripcion__subtit">
+							<p>DATOS LABORALES</p>
+						</div>
+						<div class="inscripcion__cont-sec">
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="area">Área:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="area"
+									required
+									aria-label="Seleccie el área."
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-sec--cu">
+								<label for="regional">Regional:</label>
+								<select
+									class="inscripcion__campo--cu"
+									id="regional"
+									required
+									min="1"
+									max="10"
+									aria-label="Seleccione la regional."
+								>
+									<option value="SELEC" selected>Seleccione...</option>
+									<!-- Se completa con un array en el js -->
+								</select>
+							</div>
+						</div>
+
+						<div class="inscripcion__campo">
+							<label for="titulo">Título:</label>
+							<textarea
+								class="inscripcion__campo--cu-tArea"
+								id="titulo"
+								minlength="6"
+								maxlength="80"
+								required
+								aria-label="Ingrese nombre del título del área seleccionada."
+								placeholder="Título del área seleccionada (hasta 80 caracteres)."
+							></textarea>
+						</div>
+
+						<div class="inscripcion__cont-ter">
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="hs-dispo">Hs.Disponibles:</label>
+								<input
+									type="number"
+									class="inscripcion__campo--cu"
+									id="hs-dispo"
+									required
+									aria-label="Ingrese cantidad de horas disponibles."
+									min="1"
+									max="30"
+									placeholder="De 1 a 30."
+								/>
+							</div>
+
+							<div class="inscripcion__campo inscripcion__cont-ter--cu">
+								<label class="" for="puntaje">Puntaje:</label>
+								<input
+									type="number"
+									class="inscripcion__campo--cu"
+									id="puntaje"
+									required
+									aria-label="Ingrese el puntaje."
+									min="1"
+									max="150"
+									placeholder="De 1 a 150."
+								/>
+							</div>
+						</div>
+
+						<!-- botones -->
+						<div class="inscripcion__botones ocultar" id="btn-nuevo-aspi">
+							<!-- nuevo -->
+							<button
+								type="button"
+								class="boton__enlace--s"
+								id="btn-cancelar-insc"
+							>
+								Cancelar
+							</button>
+
+							<button
+								type="submit"
+								class="boton__enlace--p"
+								id="btn-agregar-insc"
+							>
+								Guardar
+							</button>
+
+							</div>
+
+						<div class="inscripcion__botones ocultar"  id="btn-editar-aspi">
+							<!-- editar -->
+							<button
+								type="button"
+								class="boton__enlace--s"
+								id="btn-cancelar-editar"
+							>
+								Cancelar E
+							</button>
+
+							<button
+								type="button"
+								class="boton__enlace--p"
+								id="btn-agregar-editar"
+							>
+								Guardar E
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+
+			<!-- ============= Modal Elimnar ================== -->
+			<section class="modal-eliminar ocultar" id="modal-eliminar">
+				<div class="modal-eliminar__cont">
+					<div class="modal-eliminar__cont-info">
+						<div
+							class="modal-eliminar__btn-cerrar"
+							id="modal-eliminar-btn-cerrar"
+						>
+							<span class="boton-span material-symbols-outlined">close</span>
+						</div>
+						<div class="modal-eliminar__texto">
+							<p class="modal-eliminar__titulos">Eliminar Aspirante</p>
+							<p>
+								¿Está seguro que desea eliminar definitivamente los datos del
+								aspirante?
+							</p>
+						</div>
+
+						<!-- botones -->
+						<div class="modal-eliminar__botones">
+							<button class="boton__enlace--s" id="btn-eliminar-aspi">
+								Eliminar
+							</button>
+
+							<button class="boton__enlace--p" id="btn-cancelar-Eliminar-aspi">
+								Cancelar
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ================ Iniciar Sesión ============== -->
+			<section class="main__seccion ocultar" id="menu-sesion">
+				<h2>Próximamente MODAL: Inicio Sesión</h2>
 			</section>
 		</main>
 
-		<!-- ==========================================  -->
-		<!-- ================== FOOTER ================  -->
-
+		<!-- ============================================== -->
+		<!--                   FOOTER                       -->
+		<!-- ============================================== -->
 		<footer class="footer">
 			<nav class="footer__nav">
 				<a
@@ -149,4 +563,6 @@
 	<!-- JavaScript -->
 	<script src="js/main.js"></script>
 	<script src="js/carrusel.js"></script>
+	<script src="js/aspirant.js"></script>
+	<script src="js/insciption.js"></script>
 </html>

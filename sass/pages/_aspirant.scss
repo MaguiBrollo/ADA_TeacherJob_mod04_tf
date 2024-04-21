@@ -1,0 +1,172 @@
+// ================================
+// Menú Aspirantes
+
+.aspirante {
+	min-height: calc(100vh - var(--padding-main-sm) - 180px);
+	max-width: var(--max-width-cont-ppal);
+	gap: 20px;
+	padding: 15px 0px;
+	width: 90%;
+	height: 100%;
+	color: var(--blanco);
+	@include flex-dir-al-jus(flex, column, x, x);
+	&.ocultar {
+		display: none;
+	}
+
+	//Filtros aspirantes
+	&__cont-filtros {
+		width: 100%;
+		@include flex-dir-al-jus(flex, column, x, x);
+		@include caja;
+	}
+	&__cont-filtro-encab {
+		@include flex-dir-al-jus(flex, row, center, x);
+		padding-bottom: 5px;
+		border-bottom: 2px solid var(--blanco);
+	}
+	&__filtro-tit {
+		@include flex-dir-al-jus(flex, column, center, x);
+		width: 50%;
+		text-decoration: none;
+		gap: 10px;
+		color: var(--blanco);
+	}
+	&__titulos{
+		@include titulos;
+	}
+
+	&__i-ojos {
+		cursor: pointer;
+		font-size: 0.8rem;
+		gap: 5px;
+		@include flex-dir-al-jus(flex, row, center, space-between);
+	}
+	&__cont-orden {
+		border-left: 2px solid var(--blanco);
+		padding-left: 15px;
+		width: 50%;
+		@include flex-dir-al-jus(flex, column, center, space-between);
+	}
+	&__orden-select {
+		width: 100%;
+	}
+	&__label {
+		font-style: italic;
+		padding-left: 5px;
+	}
+	&__cont-select {
+		margin-bottom: 10px;
+	}
+	&__select {
+		color: var(--negro);
+		background-color: rgb(222, 217, 217);
+		border-radius: 5px;
+		width: 100%;
+		height: 30px;
+		border: 0;
+	}
+	&__select:hover {
+		background-color: rgb(203, 201, 201);
+		box-shadow: 0 0 1px 2px var(--negro);
+	}
+
+	&__select:focus {
+		box-shadow: 0 0 1px 2px var(--negro);
+		outline: none;
+	}
+
+	//Listar aspirantes
+	&__cont-sin-con-aspi {
+		min-height: calc(100vh - var(--padding-main-sm) - 250px);
+		@include caja;
+		width: 100%;
+	}
+	&__encabezado {
+		margin: 0px 5px;
+		@include flex-dir-al-jus(flex, row, center, space-between);
+	}
+	&__titulo {
+		font-size: 1.3rem;
+		@include flex-dir-al-jus(flex, x, center, space-between);
+	}
+
+	&__btn-nueva-aspi-cont {
+		@include flex-dir-al-jus(flex, x, x, flex-end);
+		margin: 10px 2px;
+	}
+
+	&__btn-mas {
+		margin-right: 5px;
+	}
+
+	//Ssin aspirantes
+	&__cont-sin-aspi {
+		height: 85%;
+		@include flex-dir-al-jus(flex, column, center, space-around);
+		&.ocultar {
+			display: none;
+		}
+	}
+	&__img {
+		margin: 15px;
+		width: 65%;
+		margin-bottom: 20px;
+	}
+	&__p-sin-aspi {
+		color: var(--colRojo);
+		text-align: center;
+		font-weight: 200;
+	}
+
+	//CON aspirantes
+	&__filtrado-por {
+		font-size: 0.8rem;
+		margin-bottom: 3px;
+		padding: 5px;
+		border-radius: 3px;
+		font-weight: 300;
+	}
+
+	&__cont-card {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 5px;
+	}
+	//estilos para CARD, ver card.scss
+	//-------------------------
+
+	//================================== 576
+	@media (min-width: #{$sm}px) {
+		padding: 25px 0px;
+
+		&__cont-card {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	//================================== 768
+	@media (min-width: #{$md}px) {
+		padding: 10px 0px;
+		max-width: var(--max-width-cont-ppal);
+		width: 100%;
+		margin: 0px 15px;
+		@include flex-dir-al-jus(flex, row, x, center);
+
+		&__cont-filtros {
+			width: 30%;
+		}
+
+		&__cont-sin-con-aspi {
+			min-height: calc(100vh - var(--padding-main-sm) - 180px);
+		}
+
+		&__encabezado {
+			margin: 10px;
+		}
+
+		&__cont-card {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+}

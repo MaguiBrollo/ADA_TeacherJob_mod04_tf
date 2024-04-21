@@ -1,24 +1,9 @@
-/*====================================================================*/
-/*--------------------------  << HOME  >>  ---------------------------*/
-
-.ocultar {
-	display: none;
-}
-
-.noto-sans {
-	font-family: "Noto Sans";
-	font-weight: 600;
-}
-
-body {
-	min-height: 100%;
-	@extend .noto-sans;
-	background-color: var(--rojo);
-}
+// ================================
+// Home - inicio
 
 .main {
-	height: 85%;
-	@include flex-dir-al-jus(flex, x, center, center);
+	//	height: auto;
+	@include flex-dir-al-jus(flex, column, center, center);
 	padding-top: var(--padding-main-sm);
 	min-height: calc(100vh - var(--padding-main-sm) - 21px);
 	&__seccion {
@@ -28,7 +13,22 @@ body {
 	}
 
 	@media (min-width: #{$md}px) {
+		margin-bottom: 15px;
 		padding-top: var(--padding-main-md);
-		min-height: calc(100vh - var(--padding-main-md) - (-29px));
+		min-height: calc(100vh - var(--padding-main-md) - (-14px));
+	}
+}
+
+//================================== 576
+@media (min-width: #{$sm}px) {
+	.titulos {
+		font-size: 1.5rem;
+	}
+}
+
+//================================== 768
+@media (min-width: #{$md}px) {
+	.titulos {
+		font-size: 1.6rem;
 	}
 }

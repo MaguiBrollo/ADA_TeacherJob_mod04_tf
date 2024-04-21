@@ -1,0 +1,73 @@
+// =========== CARD
+.tarjeta {
+	position: relative;
+	background: var(--blanco);
+	border-radius: 5px;
+	overflow: hidden;
+	transition: 0.5s;
+	margin: 5px;
+
+	&__encabezado {
+		height: 125px;
+		width: 100%;
+		position: relative;
+	}
+
+	&__circulo {
+		position: absolute;
+		width: 100%;
+		height: 300px;
+		border-radius: 50%;
+		background: var(--rojo);
+		bottom: 0;
+	}
+
+	&__img {
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		background: var(--negro);
+		padding: 5px;
+		border-radius: 50%;
+		bottom: -30%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	&__img-img {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	&__descripcion {
+		height: 190px;
+		@include flex-dir-al-jus(flex, column, center, space-around);
+		padding: 40px 10px 10px 10px;
+		text-align: center;
+		color: var(--negro);
+		//@include flex-dir-al-jus(flex, column, center, space-between);
+	}
+
+	&__descripcion-h4 {
+		color: var(--negro);
+	}
+
+	&__descripcion-p {
+		margin-top: 5px;
+		font-size: 0.7rem;
+	}
+
+	//-------  boton primario
+	&__btn-ver-mas {
+		background-color: var(--negro);
+		@include flex-dir-al-jus(flex, x, center, center);
+		padding: 10px 0px 10px 0px;
+	}
+}
+
+.tarjeta:hover {
+	box-shadow: 0px 0px 15px var(--negro);
+	transform: translateY(-10px);
+}

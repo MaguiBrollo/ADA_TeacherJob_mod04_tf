@@ -1,8 +1,8 @@
 .footer {
 	padding: 10px 0;
 	text-align: center;
-	background-color: var(--col-footer-back);
-	color: var(--colFuente);
+	background-color: var(--negro);
+	color: var(--blanco);
 	width: 100%;
 
 	text-align: center;
@@ -17,28 +17,28 @@
 		text-decoration: none;
 
 		@include flex-dir-al-jus(flex, row, center, center);
-		color: var(--colFuente);
+		color: var(--blanco);
 		font-size: 1.1rem;
 	}
 	&__icono-red-social {
-		color: var(--colFuente);
-		background-color: var(--col-footer-back);
+		color: var(--blanco);
+		background-color: var(--negro);
 
 		width: 1.8rem;
 		height: 1.8rem;
 		font-size: 1.2rem;
-		border: 1px solid var(--colFuente);
+		border: 1px solid var(--blanco);
 		border-radius: 50%;
 
 		@include flex-dir-al-jus(flex, row, center, center);
 	}
 	&__icono-red-social:hover {
-		color: var(--col-footer-back);
-		background-color: var(--colFuente);
+		color: var(--negro);
+		background-color: var(--blanco);
 	}
 
 	&__h3 {
-		color: var(--colRojo);
+		color: var(--blanco);
 		font-size: 1rem;
 	}
 	&__span {

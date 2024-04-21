@@ -4,8 +4,8 @@
 	height: auto;
 	margin: auto;
 	overflow: hidden;
-	background-color: var(--col-footer-back);
-	box-shadow: 0px 0px 30px var(--col-footer-back);
+	background-color: var(--negro);
+	box-shadow: 0px 0px 30px var(--negro);
 }
 
 .gallery-container {
@@ -33,8 +33,8 @@
 }
 
 .nav-button {
-	background-color: var(--col-footer-back);
-	color: var(--colFuente);
+	background-color: var(--negro);
+	color: var(--blanco);
 	border: none;
 	padding: 3px 10px;
 	cursor: pointer;
@@ -45,6 +45,6 @@
 }
 
 .nav-button:hover {
-	background-color: white;
-	color: black;
+	background-color: var(--blanco);
+	color: var(--negro);
 }
