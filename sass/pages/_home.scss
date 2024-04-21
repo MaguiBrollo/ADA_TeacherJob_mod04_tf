@@ -3,7 +3,7 @@
 
 .main {
 	//	height: auto;
-	@include flex-dir-al-jus(flex, x, x, center);
+	@include flex-dir-al-jus(flex, column, center, center);
 	padding-top: var(--padding-main-sm);
 	min-height: calc(100vh - var(--padding-main-sm) - 21px);
 	&__seccion {
@@ -17,11 +17,6 @@
 		padding-top: var(--padding-main-md);
 		min-height: calc(100vh - var(--padding-main-md) - (-14px));
 	}
-}
-
-.titulos {
-	font-size: 1.4rem;
-	text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
 
 //================================== 576

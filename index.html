@@ -107,12 +107,12 @@
 			</section>
 
 			<!-- ================= Aspirantes ================= -->
-			<section class="aspirante " id="menu-aspirantes">
+			<section class="aspirante" id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
 					<div class="aspirante__cont-filtro-encab">
 						<a href="#" class="aspirante__filtro-tit" id="ocultar-filtros">
-							<p class="titulos">Filtros</p>
+							<p class="aspirante__titulos">Filtros</p>
 							<div class="aspirante__i-ojos" id="aspirante-i">
 								<i class="fa-regular fa-eye"></i>
 								<p>Mostrar</p>
@@ -208,13 +208,10 @@
 				<div class="aspirante__cont-sin-con-aspi">
 					<div class="aspirante__encabezado">
 						<div class="aspirante__titulo">
-							<p class="titulos">Aspirantes</p>
+							<p class="aspirante__titulos">Aspirantes</p>
 						</div>
 						<div class="aspirante__btn-nueva-aspi-cont">
 							<button class="boton__enlace--p" id="btn-nueva-inscri">
-								<span class="material-symbols-outlined aspirante__btn-mas"
-									>add_circle</span
-								>
 								INSCRIBIR
 							</button>
 						</div>
@@ -256,14 +253,39 @@
 				</div>
 			</section>
 
-			<!-- ============= Nuevo Aspirante ================ -->
+			<!-- ============ Ver Mas Aspirante =============== -->
+			<section class="vermas ocultar" id="cont-ver-mas">
+				<!-- para el spinner -->
+				<div hidden class="spinner" id="spinner-ver-mas"></div>
+				<div class="vermas__cont-ppal ocultar" id="ver-mas-un">
+					<div class="vermas__uno">
+						<div id="ver-mas-un-aspi">
+							<!-- ver inscription.js -->
+						</div>
+						<!-- botones -->
+						<div class="vermas__botones">
+							<button class="boton__enlace--s" id="btn-borrar-ver">
+								Borrar
+							</button>
+
+							<button class="boton__enlace--s" id="btn-editar-ver">
+								Editar
+							</button>
+							<button class="boton__enlace--p" id="btn-volver-ver">
+								Volver
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============= Inscripcion (Nuevo Aspirante) =========== -->
 			<section class="inscripcion ocultar" id="cont-inscripcion">
 				<div class="inscripcion__cont-ppal">
-					<div class="inscripcion__titulo">
-						<p class="titulos">Nueva Inscripción</p>
+					<div class="inscripcion__titulos">
+						<p class="" id="inscripcion-titulo">Nueva Inscripción</p>
 					</div>
 
-					<form action="" class="inscripcion__borde" id="nueva-alumna-form">
+					<form id="inscripcion-form">
 						<div class="inscripcion__subtit">
 							<p>DATOS PERSONALES</p>
 						</div>
@@ -380,13 +402,14 @@
 							</div>
 						</div>
 
-						<div>
+						<div class="inscripcion__campo">
 							<label for="titulo">Título:</label>
 							<textarea
 								class="inscripcion__campo--cu-tArea"
 								id="titulo"
 								minlength="6"
 								maxlength="80"
+								required
 								aria-label="Ingrese nombre del título del área seleccionada."
 								placeholder="Título del área seleccionada (hasta 80 caracteres)."
 							></textarea>
@@ -423,7 +446,8 @@
 						</div>
 
 						<!-- botones -->
-						<div class="inscripcion__botones">
+						<div class="inscripcion__botones ocultar" id="btn-nuevo-aspi">
+							<!-- nuevo -->
 							<button
 								type="button"
 								class="boton__enlace--s"
@@ -439,35 +463,28 @@
 							>
 								Guardar
 							</button>
+
+							</div>
+
+						<div class="inscripcion__botones ocultar"  id="btn-editar-aspi">
+							<!-- editar -->
+							<button
+								type="button"
+								class="boton__enlace--s"
+								id="btn-cancelar-editar"
+							>
+								Cancelar E
+							</button>
+
+							<button
+								type="button"
+								class="boton__enlace--p"
+								id="btn-agregar-editar"
+							>
+								Guardar E
+							</button>
 						</div>
 					</form>
-				</div>
-			</section>
-
-			<!-- ============ Ver Mas Aspirante =============== -->
-			<section class="vermas ocultar" id="cont-ver-mas">
-				<!-- para el spinner -->
-				<div hidden class="spinner" id="spinner-ver-mas"></div>
-				<div class="vermas__cont-ppal ocultar" id="ver-mas-un">
-					<div class="vermas__uno">
-						<div id="ver-mas-un-aspi">
-							<!-- ver inscription.js -->
-						</div>
-						<!-- botones -->
-						<div class="vermas__botones">
-							<button class="boton__enlace--s" id="btn-volver-ver">
-								Volver
-							</button>
-
-							<button class="boton__enlace--s" id="btn-borrar-ver">
-								Borrar
-							</button>
-
-							<button class="boton__enlace--p" id="btn-editar-ver">
-								Editar
-							</button>
-						</div>
-					</div>
 				</div>
 			</section>
 
@@ -475,11 +492,14 @@
 			<section class="modal-eliminar ocultar" id="modal-eliminar">
 				<div class="modal-eliminar__cont">
 					<div class="modal-eliminar__cont-info">
-						<div class="modal-eliminar__btn-cerrar" id="modal-eliminar-btn-cerrar">
+						<div
+							class="modal-eliminar__btn-cerrar"
+							id="modal-eliminar-btn-cerrar"
+						>
 							<span class="boton-span material-symbols-outlined">close</span>
 						</div>
 						<div class="modal-eliminar__texto">
-							<p class="titulos">Eliminar Aspirante</p>
+							<p class="modal-eliminar__titulos">Eliminar Aspirante</p>
 							<p>
 								¿Está seguro que desea eliminar definitivamente los datos del
 								aspirante?

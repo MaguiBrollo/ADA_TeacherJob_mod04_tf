@@ -275,7 +275,7 @@ body {
 .modal-eliminar__cont {
   min-width: 300px;
   max-width: 80%;
-  min-height: 200px;
+  min-height: 300px;
   max-height: 50%;
   position: relative;
 }
@@ -288,9 +288,20 @@ body {
   right: 5px;
   top: 5px;
   cursor: pointer;
+  border: 1px solid var(--negro);
+  border-radius: 3px;
+}
+.modal-eliminar__btn-cerrar:hover {
+  box-shadow: 0px 0px 15px var(--negro);
 }
 .modal-eliminar__texto {
   padding: 30px 15px;
+  color: var(--rojo);
+}
+.modal-eliminar__titulos {
+  font-size: 1.5rem;
+  text-shadow: 5px 5px 5px rgb(6, 5, 5);
+  margin-bottom: 15px;
 }
 .modal-eliminar__botones {
   background-color: var(--negro);
@@ -444,6 +455,8 @@ header .nav__cont-menu.ocultar {
 
 .main {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding-top: var(--padding-main-sm);
   min-height: calc(100vh - var(--padding-main-sm) - 21px);
@@ -457,11 +470,6 @@ header .nav__cont-menu.ocultar {
     padding-top: var(--padding-main-md);
     min-height: calc(100vh - var(--padding-main-md) + 14px);
   }
-}
-
-.titulos {
-  font-size: 1.4rem;
-  text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
 
 @media (min-width: 576px) {
@@ -588,6 +596,10 @@ header .nav__cont-menu.ocultar {
   text-decoration: none;
   gap: 10px;
   color: var(--blanco);
+}
+.aspirante__titulos {
+  font-size: 1.5rem;
+  text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
 .aspirante__i-ojos {
   cursor: pointer;
@@ -727,48 +739,44 @@ header .nav__cont-menu.ocultar {
 }
 
 .inscripcion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   min-height: calc(100vh - var(--padding-main-sm) - 180px);
   margin: auto 15px;
   max-width: var(--max-width-cont-ppal);
+  padding: 15px;
+  background-color: var(--col-nav-md-back);
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px var(--negro);
   width: 90%;
 }
 .inscripcion.ocultar {
   display: none;
 }
 .inscripcion__cont-ppal {
-  margin: 15px 0px;
   width: 100%;
-  color: var(--blanco);
-  padding: 15px;
-  background-color: var(--col-nav-md-back);
-  border-radius: 5px;
-  box-shadow: 0px 0px 15px var(--negro);
+  color: var(--negro);
+  background-color: var(--blanco);
+  border-radius: 4px;
 }
-.inscripcion__titulo {
-  margin-bottom: 20px;
-  text-shadow: 5px 5px 5px rgb(6, 5, 5);
+.inscripcion__titulos {
+  font-size: 1.5rem;
+  color: var(--blanco);
+  padding: 10px;
+  background-color: var(--negro);
+  border-radius: 3px 3px 0px 0px;
+  text-align: center;
 }
 .inscripcion__subtit {
-  margin-top: 20px;
-  text-shadow: 5px 5px 5px rgb(6, 5, 5);
-  border-bottom: 1px solid var(--blanco);
-}
-.inscripcion__borde {
-  border: 1px solid var(--blanco);
-  border-radius: 5px;
-  padding: 0 10px 10px 10px;
+  margin: 20px 0px 0px 0px;
+  background-color: rgb(230, 228, 228);
+  text-align: center;
 }
 .inscripcion__campo {
-  margin: 10px 0px;
-  font-weight: 300;
+  margin: 10px 10px;
 }
 .inscripcion__campo--cu {
   height: 25px;
-  border: 1px solid var(--blanco);
+  border: 1px solid var(--negro);
+  background-color: rgb(230, 228, 228);
   border-radius: 5px;
   width: 100%;
   padding-left: 5px;
@@ -778,10 +786,10 @@ header .nav__cont-menu.ocultar {
 .inscripcion__campo--cu-tArea {
   text-transform: uppercase;
   border-radius: 5px;
-  margin-top: 3px;
   resize: none;
   font-size: 0.9rem;
-  background-color: var(--blanco);
+  border: 1px solid var(--negro);
+  background-color: rgb(230, 228, 228);
   width: 100%;
   height: 40px;
   overflow-y: scroll;
@@ -795,10 +803,16 @@ header .nav__cont-menu.ocultar {
   outline: none;
 }
 .inscripcion__botones {
+  background-color: var(--negro);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  padding: 10px 0px 10px 0px;
+  border-radius: 0px 0px 3px 3px;
+}
+.inscripcion__botones.ocultar {
+  display: none;
 }
 .inscripcion__btn {
   margin: 0px 10px;
@@ -809,7 +823,7 @@ header .nav__cont-menu.ocultar {
   flex-direction: column;
 }
 .inscripcion__cont-sec--cu {
-  width: 100%;
+  width: 93%;
   gap: 5px;
 }
 .inscripcion__cont-ter {
@@ -824,15 +838,15 @@ header .nav__cont-menu.ocultar {
 }
 @media (min-width: 576px) {
   .inscripcion__cont-ppal {
-    width: 90%;
+    width: 50%;
   }
 }
 @media (min-width: 768px) {
   .inscripcion {
-    width: 100%;
+    width: 60%;
   }
   .inscripcion__cont-ppal {
-    width: 70%;
+    width: 100%;
   }
   .inscripcion__cont-sec {
     width: 100%;
@@ -851,7 +865,6 @@ header .nav__cont-menu.ocultar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - var(--padding-main-sm) - 180px);
   margin: auto 15px;
   max-width: var(--max-width-cont-ppal);
   width: 90%;

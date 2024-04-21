@@ -43,7 +43,7 @@ const reg = [
 	{ cod: 7, nom: "RVII - C. Elisa" },
 	{ cod: 8, nom: "RVIII - Las Breñas" },
 	{ cod: 9, nom: "RIX - V. Ángela" },
-	{ cod: 10, nom:"RX - Resistencia" },
+	{ cod: 10, nom: "RX - Resistencia" },
 ];
 
 function cargarRegional(input_select) {
@@ -163,19 +163,22 @@ function listarAspirantes() {
 function generarVerMas(btns) {
 	btns.forEach((btn) =>
 		btn.addEventListener("click", () => {
-
 			//--- inscription.js
 			verMasAspirante(btn.getAttribute("data-idAspirante"));
 		})
 	);
 }
 
-
 // ===================================================
 //  Nueva inscripción
 $("#btn-nueva-inscri").addEventListener("click", () => {
 	$("#menu-aspirantes").classList.add("ocultar");
 	$("#cont-inscripcion").classList.remove("ocultar");
+	//Habilita título y botones
+	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
+	$("#btn-editar-aspi").classList.add("ocultar");
+	$("#btn-nuevo-aspi").classList.remove("ocultar");
+
 	funcionesInscrpcion(); //inscription.js
 });
 

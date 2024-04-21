@@ -2,46 +2,44 @@
 // Inscripcion de Aspirantes Crear-Editar-Borrar
 
 .inscripcion {
-	@include flex-dir-al-jus(flex, column, center, center);
 	min-height: calc(100vh - var(--padding-main-sm) - 180px);
 	margin: auto 15px;
 	max-width: var(--max-width-cont-ppal);
+	@include caja;
 	width: 90%;
 	&.ocultar {
 		display: none;
 	}
 
 	&__cont-ppal {
-		margin: 15px 0px;
 		width: 100%;
-		color: var(--blanco);
-		@include caja;
+		color: var(--negro);
+		background-color: var(--blanco);
+		border-radius: 4px;
 	}
 
-	&__titulo {
-		margin-bottom: 20px;
-		text-shadow: 5px 5px 5px rgb(6, 5, 5);
+	&__titulos {
+		font-size: 1.5rem;
+		color: var(--blanco);
+		padding: 10px;
+		background-color: var(--negro);
+		border-radius: 3px 3px 0px 0px;
+		text-align: center;
 	}
 
 	&__subtit {
-		margin-top: 20px;
-		text-shadow: 5px 5px 5px rgb(6, 5, 5);
-		border-bottom: 1px solid var(--blanco);
-	}
-
-	&__borde {
-		border: 1px solid var(--blanco);
-		border-radius: 5px;
-		padding: 0 10px 10px 10px;
+		margin: 20px 0px 0px 0px;
+		background-color: rgb(230, 228, 228);
+		text-align: center;
 	}
 
 	&__campo {
-		margin: 10px 0px;
-		font-weight: 300;
+		margin: 10px 10px;
 
 		&--cu {
 			height: 25px;
-			border: 1px solid var(--blanco);
+			border: 1px solid var(--negro);
+			background-color: rgb(230, 228, 228);
 			border-radius: 5px;
 			width: 100%;
 			padding-left: 5px;
@@ -51,10 +49,10 @@
 		&--cu-tArea {
 			text-transform: uppercase;
 			border-radius: 5px;
-			margin-top: 3px;
 			resize: none;
 			font-size: 0.9rem;
-			background-color: var(--blanco);
+			border: 1px solid var(--negro);
+			background-color: rgb(230, 228, 228);
 			width: 100%;
 			height: 40px;
 			overflow-y: scroll;
@@ -74,8 +72,15 @@
 	}
 
 	&__botones {
-		@include flex-dir-al-jus(flex, row, center, flex-end);
+		background-color: var(--negro);
+		@include flex-dir-al-jus(flex, row, center, center);
+		padding: 10px 0px 10px 0px;
+		border-radius: 0px 0px 3px 3px;
+		&.ocultar {
+			display: none;
+		}
 	}
+
 	&__btn {
 		margin: 0px 10px;
 	}
@@ -85,7 +90,7 @@
 		@include flex-dir-al-jus(flex, column, x, x);
 
 		&--cu {
-			width: 100%;
+			width: 93%;
 			gap: 5px;
 		}
 	}
@@ -103,16 +108,16 @@
 	//================================== 576
 	@media (min-width: #{$sm}px) {
 		&__cont-ppal {
-			width: 90%;
+			width: 50%;
 		}
 	}
 
 	//================================== 768
 	@media (min-width: #{$md}px) {
-		width: 100%;
+		width: 60%;
 
 		&__cont-ppal {
-			width: 70%;
+			width: 100%;
 		}
 
 		&__cont-sec {
@@ -130,7 +135,7 @@
 //---------------------------------------------
 .vermas {
 	@include flex-dir-al-jus(flex, column, center, center);
-	min-height: calc(100vh - var(--padding-main-sm) - 180px);
+	//min-height: calc(100vh - var(--padding-main-sm) - 180px);
 	margin: auto 15px;
 	max-width: var(--max-width-cont-ppal);
 	width: 90%;

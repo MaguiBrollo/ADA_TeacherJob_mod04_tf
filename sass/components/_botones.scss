@@ -18,7 +18,7 @@
 
 .boton {
 	&__enlace {
-		//@include enlace("ppal"); //ver mixins
+
 		&--p {
 			@include enlace("ppal");
 			white-space: nowrap; //evita que ocupe 2 líneas
