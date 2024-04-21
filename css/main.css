@@ -577,6 +577,7 @@ header .nav__cont-menu.ocultar {
   display: none;
 }
 .aspirante__cont-filtros {
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -585,40 +586,37 @@ header .nav__cont-menu.ocultar {
   border-radius: 5px;
   box-shadow: 0px 0px 15px var(--negro);
 }
-.aspirante__cont-filtro-encab {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid var(--blanco);
-}
-.aspirante__filtro-tit {
+.aspirante__filtro-encab {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .aspirante__titulos {
   font-size: 1.5rem;
   text-shadow: 5px 5px 5px rgb(6, 5, 5);
+  width: 50%;
 }
-.aspirante__ocu-lim {
+.aspirante__ocultar {
   width: 50%;
   cursor: pointer;
   font-size: 0.8rem;
-  margin-top: 10px;
-  padding: 0px 35px;
-  gap: 5px;
+  gap: 4px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+.aspirante__form-filtro {
+  border-top: 2px solid var(--blanco);
 }
 .aspirante__label {
   font-style: italic;
   padding-left: 5px;
 }
 .aspirante__cont-select {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .aspirante__select {
   color: var(--negro);
@@ -635,6 +633,17 @@ header .nav__cont-menu.ocultar {
 .aspirante__select:focus {
   box-shadow: 0 0 1px 2px var(--negro);
   outline: none;
+}
+.aspirante__botones {
+  background-color: var(--negro);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.6rem;
 }
 .aspirante__cont-sin-con-aspi {
   min-height: calc(100vh - var(--padding-main-sm) - 250px);
@@ -718,11 +727,11 @@ header .nav__cont-menu.ocultar {
   .aspirante__cont-filtros {
     width: 30%;
   }
+  .aspirante__btn-filtro {
+    font-size: 0.6rem;
+  }
   .aspirante__cont-sin-con-aspi {
     min-height: calc(100vh - var(--padding-main-sm) - 180px);
-  }
-  .aspirante__encabezado {
-    margin: 10px;
   }
   .aspirante__cont-card {
     grid-template-columns: 1fr 1fr;
@@ -731,6 +740,9 @@ header .nav__cont-menu.ocultar {
 @media (min-width: 1024px) {
   .aspirante {
     width: 95%;
+  }
+  .aspirante__btn-filtro {
+    font-size: 0.8rem;
   }
   .aspirante__cont-card {
     grid-template-columns: 1fr 1fr 1fr;
@@ -809,6 +821,7 @@ header .nav__cont-menu.ocultar {
   justify-content: center;
   padding: 10px 0px 10px 0px;
   border-radius: 0px 0px 3px 3px;
+  gap: 10px;
 }
 .inscripcion__botones.ocultar {
   display: none;
@@ -940,6 +953,7 @@ header .nav__cont-menu.ocultar {
   align-items: center;
   justify-content: center;
   padding: 10px 0px 10px 0px;
+  gap: 10px;
 }
 @media (min-width: 576px) {
   .vermas__descripcion-h4 {

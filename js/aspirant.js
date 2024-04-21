@@ -117,31 +117,21 @@ $("#ocultar-filtros").addEventListener("click", () => {
 });
 
 // ===================================================
-// Limpiar Filtros
+// Limpiar Filtros y mostrar TODOS
 $("#limpiar-filtros").addEventListener("click", () => {
 	$("#contenedor-filtros").reset();
-	//----------------------------------------------------------------------------
-	//FALTAAAAAAAAAAAAAAAAA  CONTROLAR
-	mostrarTodosAspirantes();
+	mostrarAspirantes("todos");
 });
 
 // ===================================================
-//  función de filtrado.
-let filtrar = () => {
-	// para educación física
+// Habilitar input "sexo" solo para educación física
+$("#filtro-area").addEventListener("change", () => {
 	if ($("#filtro-area").value === "edfi") {
 		$("#filtro-sexo").removeAttribute("disabled");
 	} else {
 		$("#filtro-sexo").setAttribute("disabled", "");
 	}
-};
-// ===================================================
-//  Seleccionar Filtros
-$("#filtro-orden").addEventListener("change", filtrar);
-$("#filtro-area").addEventListener("change", filtrar);
-$("#filtro-regional").addEventListener("change", filtrar);
-$("#filtro-horas").addEventListener("change", filtrar);
-$("#filtro-sexo").addEventListener("change", filtrar);
+});
 
 // ===================================================
 // Buscar ASPIRANTES (MOCKAPI.IO)
@@ -214,26 +204,41 @@ let listarAspirantes = () => {
 
 // ===================================================
 // Muestra spinner
-let mostrarTodosAspirantes = () => {
+let mostrarAspirantes = (cuantos) => {
 	$("#aspirante-cont-card").innerHTML = "";
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
 
-	buscarTodosAspirantes();
+	if ((cuantos = "todos")) {
+		buscarTodosAspirantes();
+	} else {
+		//FUNCION para armar filtros y buscar
+	}
 
 	setTimeout(() => {
-		$("#spinner").setAttribute("hidden", "");
 
-		filtrar();
+		$("#spinner").setAttribute("hidden", "");
 
 		if (aspiListado.length > 0) {
 			$("#cont-con-aspi").classList.remove("ocultar");
+			ordenarPuntaje();
 			listarAspirantes();
 		} else {
 			$("#cont-sin-aspi").classList.remove("ocultar");
 			$("#cont-con-aspi").classList.add("ocultar");
 		}
+
 	}, 2000);
+};
+
+// ===================================================
+//  Nueva inscripción
+let ordenarPuntaje = ()=>{
+	let orden = $("#filtro-orden").value;
+	$("#ordenado-por").innerHTML = (orden === "MEN"?"Orden: Menor Puntaje":"Orden: Mayor Puntaje");
+	return aspiListado.sort((a, b) => {
+		return orden === "MEN" ? a.puntaje - b.puntaje : b.puntaje - a.puntaje;
+	});
 };
 
 // ===================================================
@@ -241,7 +246,8 @@ let mostrarTodosAspirantes = () => {
 $("#btn-nueva-inscri").addEventListener("click", () => {
 	$("#menu-aspirantes").classList.add("ocultar");
 	$("#cont-inscripcion").classList.remove("ocultar");
-	$("#cont-inscripcion").reset();
+	$("#inscripcion-form").reset();
+
 	//Habilita título y botones
 	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
 	$("#btn-editar-aspi").classList.add("ocultar");
@@ -258,5 +264,5 @@ let funcionesAspirantes = () => {
 	cargarHsDispoMin($("#filtro-horas"));
 	//--------------------------------------
 	mostrarFiltros768();
-	mostrarTodosAspirantes();
+	mostrarAspirantes("todos");
 };

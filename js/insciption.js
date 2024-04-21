@@ -51,7 +51,6 @@ let mostrarVerMas = (aspi) => {
 }
 //---------------------
 let mostrarUno = (asp) => {
-	console.log("aqui ", $("#ver-mas-un-aspi"));
 	$("#ver-mas-un-aspi").innerHTML = `
 	<div>	
 		<div class="vermas__encabezado">
@@ -96,7 +95,7 @@ $("#btn-volver-ver").addEventListener("click", () => {
 });
 
 // ===================================================
-// VER MAS -  Eliminar
+// VER MAS - MODAL Eliminar
 $("#btn-borrar-ver").addEventListener("click", () => {
 	$("#cont-inscripcion").classList.add("ocultar");
 	$("#modal-eliminar").classList.remove("ocultar");

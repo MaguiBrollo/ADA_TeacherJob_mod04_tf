@@ -110,25 +110,16 @@
 			<section class="aspirante ocultar" id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
-					<div class="aspirante__cont-filtro-encab">
+					<div class="aspirante__filtro-encab">
 						<p class="aspirante__titulos">Filtros</p>
-						<div class="aspirante__filtro-tit">
-							<div class="aspirante__ocu-lim" id="ocultar-filtros">
-								<i class="fa-regular fa-eye"></i>
-								<p>Mostrar</p>
-							</div>
-
-							<div class="aspirante__ocu-lim" id="limpiar-filtros">
-								<i class="fa-solid fa-broom"></i>
-								<p>Limpiar</p>
-							</div>
+						<div class="aspirante__ocultar" id="ocultar-filtros">
+							<i class="fa-regular fa-eye"></i>
+							Mostrar
 						</div>
 					</div>
+
 					<!-- contenedor FILTROS (se oculta) -->
-					
-					<form class="ocultar"
-						id="contenedor-filtros"
-					>
+					<form class="aspirante__form-filtro ocultar" id="contenedor-filtros">
 						<div class="aspirante__cont-select">
 							<label class="aspirante__label" for="filtro-area">Área...</label>
 							<div class="">
@@ -194,7 +185,9 @@
 							</div>
 						</div>
 						<div class="aspirante__cont-select">
-							<label class="aspirante__label" for="filtro-tipo">Puntaje...</label>
+							<label class="aspirante__label" for="filtro-tipo"
+								>Puntaje...</label
+							>
 							<div class="aspirante__orden-select">
 								<select
 									class="aspirante__select"
@@ -205,6 +198,25 @@
 									<option value="MEN">Menor</option>
 								</select>
 							</div>
+						</div>
+
+						<div class="aspirante__botones" id="">
+							<button
+								type="submit"
+								class="boton__enlace--s aspirante__btn-filtro"
+								id="limpiar-filtros"
+							>
+								<i class="fa-solid fa-broom"></i>Limpiar
+							</button>
+
+							<button
+								type="button"
+								class="boton__enlace--p aspirante__btn-filtro"
+								id="aplicar-filtros"
+							>
+								<i class="fa-solid fa-magnifying-glass"></i>
+								Buscar
+							</button>
 						</div>
 					</form>
 				</div>
@@ -243,10 +255,12 @@
 
 					<!-- contenedor CON Aspirantes -->
 					<div class="ocultar" id="cont-con-aspi">
-						<div class="aspirante__filtrado-por" id="filtrado-por">
-							<p>
-								Filtros: Lengua y Literatura - R VIII Las Breñas - Hs: 3 - Sexo:
-								F. - Orden: Mayor puntaje.
+						<div class="aspirante__filtrado-por" >
+							<p id="filtrado-por">
+								Lengua y Literatura | R VIII - Las Breñas | Hs >= 3 | Femenino
+							</p>
+							<p id="ordenado-por">
+								Orden:.
 							</p>
 						</div>
 						<div class="aspirante__cont-card" id="aspirante-cont-card">
@@ -451,14 +465,14 @@
 						</div>
 
 						<!-- botones -->
-						<div class="inscripcion__botones ocultar" id="btn-nuevo-aspi">
+						<div class="inscripcion__botones" id="btn-nuevo-aspi">
 							<!-- nuevo -->
 							<button
 								type="button"
 								class="boton__enlace--s"
 								id="btn-cancelar-insc"
 							>
-								Cancelar
+								Cancelar.
 							</button>
 
 							<button
@@ -466,7 +480,7 @@
 								class="boton__enlace--p"
 								id="btn-agregar-insc"
 							>
-								Guardar
+								Guardar.
 							</button>
 						</div>
 
