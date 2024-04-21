@@ -35,8 +35,9 @@
 		width: 50%;
 	}
 
-	//-------------------------------
+	//================================== 576
 	@media (min-width: #{$sm}px) {
+		width: 95%;
 		&__texto-titulo {
 			font-size: 2rem;
 		}
@@ -48,12 +49,10 @@
 		}
 	}
 
-	//------------------------------------
+	//================================== 768
 	@media (min-width: #{$md}px) {
+		width: 95%;
 		max-width: var(--max-width-cont-ppal);
-		width: 100%;
-		//padding: 50px 0px;
-
 		background-color: var(--col-nav-md-back);
 		@include flex-dir-al-jus(flex, row, center, center);
 

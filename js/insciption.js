@@ -12,7 +12,7 @@ const buscarRegional = (busco) => {
 	return reg.find((e) => e.cod === busco) ?? -1;
 };
 
-function quitaAcentos(frase) {
+let quitaAcentos = (frase)=> {
 	frase = frase.replace(/[áäâàÁÀÄÂ]/g, "a");
 	frase = frase.replace(/[éëêèÉÈËÊ]/g, "e");
 	frase = frase.replace(/[íïîìÍÌÏÎ]/g, "i");
@@ -23,7 +23,7 @@ function quitaAcentos(frase) {
 
 // ===================================================
 // Ver Mas (datos de un aspirante)  (viene de aspirant.js)
-async function verMasAspirante(idAspirante) {
+let verMasAspirante = async (idAspirante) => {
 	id = idAspirante;
 	await fetch(`${urlBase}/teacher/${idAspirante}`)
 		.then((res) => res.json())
@@ -36,7 +36,7 @@ async function verMasAspirante(idAspirante) {
 		);
 }
 //-------------------------
-function mostrarVerMas(aspi) {
+let mostrarVerMas = (aspi) => {
 	$("#aspirante-cont-card").innerHTML = "";
 	$("#ver-mas-un-aspi").innerHTML = "";
 	$("#menu-aspirantes").classList.add("ocultar");
@@ -46,11 +46,12 @@ function mostrarVerMas(aspi) {
 	setTimeout(() => {
 		$("#spinner-ver-mas").setAttribute("hidden", "");
 		$("#ver-mas-un").classList.remove("ocultar");
-		mostrar(aspi);
+		mostrarUno(aspi);
 	}, 2000);
 }
 //---------------------
-function mostrar(asp) {
+let mostrarUno = (asp) => {
+	console.log("aqui ", $("#ver-mas-un-aspi"));
 	$("#ver-mas-un-aspi").innerHTML = `
 	<div>	
 		<div class="vermas__encabezado">
@@ -90,18 +91,23 @@ $("#btn-volver-ver").addEventListener("click", () => {
 	$("#cont-ver-mas").classList.add("ocultar");
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
+	$("#cont-inscripcion").classList.add("ocultar");
 	mostrarTodosAspirantes(); //aspirant.js
 });
 
 // ===================================================
 // VER MAS -  Eliminar
 $("#btn-borrar-ver").addEventListener("click", () => {
+	$("#cont-inscripcion").classList.add("ocultar");
 	$("#modal-eliminar").classList.remove("ocultar");
 });
+
 $("#modal-eliminar-btn-cerrar").addEventListener("click", () => {
 	$("#modal-eliminar").classList.add("ocultar");
 });
+
 $("#btn-eliminar-aspi").addEventListener("click", async () => {
+	$("#cont-inscripcion").classList.add("ocultar");
 	//funcion eliminar
 	await borrarAspirante();
 	$("#modal-eliminar").classList.add("ocultar");
@@ -261,7 +267,7 @@ $("#btn-cancelar-insc").addEventListener("click", () => {
 
 // ====================================
 // Vienes de aspirant.js
-function funcionesInscrpcion() {
+let funcionesInscrpcion = ()=> {
 	cargarArea($("#area")); //(aspirant.js)
 	cargarRegional($("#regional"));
 }

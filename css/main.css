@@ -43,6 +43,7 @@ body {
   --padding-main-sm: 60px;
   --padding-main-md: 110px;
   --max-width-cont-ppal:1200px;
+  --sm: 576;
   --md: 768;
   --lg: 1024;
 }
@@ -521,6 +522,9 @@ header .nav__cont-menu.ocultar {
   width: 50%;
 }
 @media (min-width: 576px) {
+  .inicio {
+    width: 95%;
+  }
   .inicio__texto-titulo {
     font-size: 2rem;
   }
@@ -533,8 +537,8 @@ header .nav__cont-menu.ocultar {
 }
 @media (min-width: 768px) {
   .inicio {
+    width: 95%;
     max-width: var(--max-width-cont-ppal);
-    width: 100%;
     background-color: var(--col-nav-md-back);
     display: flex;
     flex-direction: row;
@@ -583,44 +587,31 @@ header .nav__cont-menu.ocultar {
 }
 .aspirante__cont-filtro-encab {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   padding-bottom: 5px;
+  margin-bottom: 15px;
   border-bottom: 2px solid var(--blanco);
 }
 .aspirante__filtro-tit {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  width: 50%;
-  text-decoration: none;
-  gap: 10px;
-  color: var(--blanco);
 }
 .aspirante__titulos {
   font-size: 1.5rem;
   text-shadow: 5px 5px 5px rgb(6, 5, 5);
 }
-.aspirante__i-ojos {
+.aspirante__ocu-lim {
+  width: 50%;
   cursor: pointer;
   font-size: 0.8rem;
+  margin-top: 10px;
+  padding: 0px 35px;
   gap: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-}
-.aspirante__cont-orden {
-  border-left: 2px solid var(--blanco);
-  padding-left: 15px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.aspirante__orden-select {
-  width: 100%;
+  justify-content: center;
 }
 .aspirante__label {
   font-style: italic;
@@ -718,7 +709,7 @@ header .nav__cont-menu.ocultar {
   .aspirante {
     padding: 10px 0px;
     max-width: var(--max-width-cont-ppal);
-    width: 100%;
+    width: 95%;
     margin: 0px 15px;
     display: flex;
     flex-direction: row;
@@ -732,6 +723,14 @@ header .nav__cont-menu.ocultar {
   }
   .aspirante__encabezado {
     margin: 10px;
+  }
+  .aspirante__cont-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .aspirante {
+    width: 95%;
   }
   .aspirante__cont-card {
     grid-template-columns: 1fr 1fr 1fr;
@@ -836,14 +835,9 @@ header .nav__cont-menu.ocultar {
   width: 49%;
   gap: 5px;
 }
-@media (min-width: 576px) {
-  .inscripcion__cont-ppal {
-    width: 50%;
-  }
-}
 @media (min-width: 768px) {
   .inscripcion {
-    width: 60%;
+    width: 70%;
   }
   .inscripcion__cont-ppal {
     width: 100%;
@@ -948,9 +942,6 @@ header .nav__cont-menu.ocultar {
   padding: 10px 0px 10px 0px;
 }
 @media (min-width: 576px) {
-  .vermas__cont-ppal {
-    width: 80%;
-  }
   .vermas__descripcion-h4 {
     font-size: 1.1rem;
   }

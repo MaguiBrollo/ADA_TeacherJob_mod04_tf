@@ -21,36 +21,28 @@
 		@include caja;
 	}
 	&__cont-filtro-encab {
-		@include flex-dir-al-jus(flex, row, center, x);
+		@include flex-dir-al-jus(flex, column, x, x);
 		padding-bottom: 5px;
+		margin-bottom: 15px;
 		border-bottom: 2px solid var(--blanco);
 	}
 	&__filtro-tit {
-		@include flex-dir-al-jus(flex, column, center, x);
-		width: 50%;
-		text-decoration: none;
-		gap: 10px;
-		color: var(--blanco);
+		@include flex-dir-al-jus(flex, row, center, x);
 	}
-	&__titulos{
+	&__titulos {
 		@include titulos;
 	}
 
-	&__i-ojos {
+	&__ocu-lim {
+		width: 50%;
 		cursor: pointer;
 		font-size: 0.8rem;
+		margin-top: 10px;
+		padding: 0px 35px;
 		gap: 5px;
-		@include flex-dir-al-jus(flex, row, center, space-between);
+		@include flex-dir-al-jus(flex, row, center, center);
 	}
-	&__cont-orden {
-		border-left: 2px solid var(--blanco);
-		padding-left: 15px;
-		width: 50%;
-		@include flex-dir-al-jus(flex, column, center, space-between);
-	}
-	&__orden-select {
-		width: 100%;
-	}
+
 	&__label {
 		font-style: italic;
 		padding-left: 5px;
@@ -132,9 +124,8 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 5px;
+		//estilos para CARD, ver card.scss
 	}
-	//estilos para CARD, ver card.scss
-	//-------------------------
 
 	//================================== 576
 	@media (min-width: #{$sm}px) {
@@ -149,7 +140,7 @@
 	@media (min-width: #{$md}px) {
 		padding: 10px 0px;
 		max-width: var(--max-width-cont-ppal);
-		width: 100%;
+		width: 95%;
 		margin: 0px 15px;
 		@include flex-dir-al-jus(flex, row, x, center);
 
@@ -165,6 +156,14 @@
 			margin: 10px;
 		}
 
+		&__cont-card {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	//================================== 1024
+	@media (min-width: #{$lg}px) {
+		width: 95%;
 		&__cont-card {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
