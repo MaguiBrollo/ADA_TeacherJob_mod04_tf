@@ -1,10 +1,22 @@
-//======== Variables globales (main.js) =========
+/* =========== VARIABLES GLOBALES ============= */
+let filtroPor;
+let ordenPor;
+let urlBase = "https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/teacher";
+
+/* =========== FUNCIONES GLOBALES ============= */
+const buscarArea = (busco) => {
+	return area.find((e) => e.cod === busco) ?? -1;
+};
+const buscarRegional = (busco) => {
+	return reg.find((e) => e.cod === busco) ?? -1;
+};
+
 /* ======================== BREAKPOINT ========================  */
 let breakPoint768 = () =>
 	parseInt(getComputedStyle(document.documentElement).getPropertyValue("--md"));
 
 // ============================================
-// Mantener vsible los filtros a pantalla >= 768
+// Mantener visible los filtros a pantalla >= 768
 function mostrarFiltros768() {
 	if (
 		window.innerWidth >= breakPoint768() &&
@@ -55,7 +67,7 @@ const area = [
 ];
 
 let cargarArea = (input_select) => {
-	let area_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let area_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	area.sort((a, b) => {
 		return a.nom.localeCompare(b.nom);
 	});
@@ -82,7 +94,7 @@ const reg = [
 ];
 
 let cargarRegional = (input_select) => {
-	let reg_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let reg_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	for (var i = 0; i < reg.length; i++) {
 		reg_listado +=
 			`<option value="` + reg[i].cod + `">` + reg[i].nom + `</option>`;
@@ -93,7 +105,7 @@ let cargarRegional = (input_select) => {
 // ============================================
 // Input Select - Hs Disponibles (mínimo)
 let cargarHsDispoMin = (input_select) => {
-	let hs_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let hs_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	const hs = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 	for (var i = 0; i < hs.length; i++) {
 		hs_listado += `<option value="` + hs[i] + `">` + hs[i] + `</option>`;
@@ -117,51 +129,44 @@ $("#ocultar-filtros").addEventListener("click", () => {
 });
 
 // ===================================================
-// Limpiar Filtros
+// Limpiar Filtros y mostrar TODOS
 $("#limpiar-filtros").addEventListener("click", () => {
 	$("#contenedor-filtros").reset();
-	//----------------------------------------------------------------------------
-	//FALTAAAAAAAAAAAAAAAAA  CONTROLAR
-	mostrarTodosAspirantes();
+	mostrarAspirantes("todos");
 });
 
 // ===================================================
-//  función de filtrado.
-let filtrar = () => {
-	// para educación física
+// Limpiar Filtros y mostrar TODOS
+$("#buscar-filtros").addEventListener("click", () => {
+	mostrarAspirantes("filtrados");
+});
+
+// ===================================================
+// Habilitar input "sexo" solo para educación física
+$("#filtro-area").addEventListener("change", () => {
 	if ($("#filtro-area").value === "edfi") {
 		$("#filtro-sexo").removeAttribute("disabled");
 	} else {
 		$("#filtro-sexo").setAttribute("disabled", "");
 	}
-};
-// ===================================================
-//  Seleccionar Filtros
-$("#filtro-orden").addEventListener("change", filtrar);
-$("#filtro-area").addEventListener("change", filtrar);
-$("#filtro-regional").addEventListener("change", filtrar);
-$("#filtro-horas").addEventListener("change", filtrar);
-$("#filtro-sexo").addEventListener("change", filtrar);
+});
 
 // ===================================================
 // Buscar ASPIRANTES (MOCKAPI.IO)
-let buscarTodosAspirantes = () => {
-	fetch(urlBase + "teacher", {
-		method: "GET",
-		headers: {
-			Accept: "application/json",
-			"Content-Type": "application/json; charset=utf-8",
-		},
-	})
-		.then((respuesta) => {
-			return respuesta.json();
-		})
-		.then((datos) => {
-			aspiListado = [...datos];
-		})
-		.catch((error) => {
-			console.log("ERROR - BUSCAR TODOS LOS ASPIRANTES: ", error);
+let buscarAspirantes = async (url) => {
+	try {
+		let respuestaFetch = await fetch(url, {
+			method: "GET",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json; charset=utf-8",
+			},
 		});
+		let listado = await respuestaFetch.json();
+		return listado;
+	} catch (error) {
+		console.log("ERROR - buscar aspirantes: ", error);
+	}
 };
 
 // ===================================================
@@ -176,9 +181,12 @@ let generarVerMas = (btns) => {
 };
 
 // ===================================================
-let listarAspirantes = () => {
+let listarAspirantes = (aspirantes) => {
+	$("#filtrado-por").innerHTML = filtroPor;
+	$("#ordenado-por").innerHTML = ordenPor;
+
 	$("#aspirante-cont-card").innerHTML = "";
-	for (const asp of aspiListado) {
+	for (const asp of aspirantes) {
 		$("#aspirante-cont-card").innerHTML += `
 
 			<div class="tarjeta">
@@ -198,7 +206,6 @@ let listarAspirantes = () => {
 					<h4 class="tarjeta__descripcion-h4">${asp.nombres}</h4>
 					<p class="tarjeta__descripcion-p">${asp.titulo_area}</p>	
 					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${asp.horas_dispo}</p>	
-					
 				</div>
 
 				<div class="tarjeta__btn-ver-mas">
@@ -213,22 +220,20 @@ let listarAspirantes = () => {
 };
 
 // ===================================================
-// Muestra spinner
-let mostrarTodosAspirantes = () => {
+// Muestra spinner (como = "todos"/"filtrados")
+let mostrarAspirantes = async (como) => {
 	$("#aspirante-cont-card").innerHTML = "";
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
 
-	buscarTodosAspirantes();
+	let aspirantes = await filtrar(como);
 
 	setTimeout(() => {
 		$("#spinner").setAttribute("hidden", "");
 
-		filtrar();
-
-		if (aspiListado.length > 0) {
+		if (aspirantes.length > 0) {
 			$("#cont-con-aspi").classList.remove("ocultar");
-			listarAspirantes();
+			listarAspirantes(aspirantes);
 		} else {
 			$("#cont-sin-aspi").classList.remove("ocultar");
 			$("#cont-con-aspi").classList.add("ocultar");
@@ -237,11 +242,81 @@ let mostrarTodosAspirantes = () => {
 };
 
 // ===================================================
+// Filtrar
+let filtrar = async (como) => {
+	if (como === "todos") {
+		filtroPor = "Filtros: Ninguno";
+		ordenPor = "Orden: Mayor Puntaje";
+		let param = `sortBy=puntaje&order=desc`;
+		let respuesta = await buscarAspirantes(`${urlBase}/?${param}`);
+		return respuesta;
+	} else {
+		let area;
+		let areaF;
+		let regi;
+		let regiF;
+		let sexo;
+		let sexoF;
+		let orden;
+		let hs_d;
+
+		if ($("#filtro-area").value === "SEL") {
+			area = "";
+			areaF = "TODOS";
+		} else {
+			area = $("#filtro-area").value;
+			areaF = buscarArea($("#filtro-area").value).nom;
+		}
+
+		if ($("#filtro-regional").value === "SEL") {
+			regi = "";
+			regiF = "TODOS";
+		} else {
+			regi = $("#filtro-regional").value;
+			regiF = buscarRegional(parseInt($("#filtro-regional").value)).nom;
+		}
+
+		hs_d =
+			$("#filtro-horas").value === "SEL"
+				? ""
+				: parseInt($("#filtro-horas").value);
+
+		if (
+			$("#filtro-sexo").value === "SEL" ||
+			$("#filtro-sexo").value === "mix"
+		) {
+			sexo = "";
+			sexoF = "Mixto";
+		} else {
+			sexo = $("#filtro-sexo").value;
+			sexoF = $("#filtro-sexo").value.toUpperCase();
+		}
+		if ($("#filtro-orden").value === "MAY") {
+			orden = "desc";
+			ordenPor = "Orden: Mayor Puntaje";
+		} else {
+			orden = "asc";
+			ordenPor = "Orden: Menor Puntaje";
+		}
+
+		filtroPor = `Filtros: ${areaF} | ${regiF} | >= ${hs_d}| ${sexoF}`;
+		let param = `area=${area}&regional=${regi}&sexo=${sexo}&sortBy=puntaje&order=${orden}`;
+		//ejem
+		//https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/teacher?area=edfi&regional=5&sexo=&horas_dispo=2&sortBy=puntaje&order=asc
+		//----
+		let listado = await buscarAspirantes(`${urlBase}/?${param}`);
+
+		return listado.filter((e) => e.horas_dispo >= hs_d);
+	}
+};
+
+// ===================================================
 //  Nueva inscripción
 $("#btn-nueva-inscri").addEventListener("click", () => {
 	$("#menu-aspirantes").classList.add("ocultar");
 	$("#cont-inscripcion").classList.remove("ocultar");
-	$("#cont-inscripcion").reset();
+	$("#inscripcion-form").reset();
+
 	//Habilita título y botones
 	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
 	$("#btn-editar-aspi").classList.add("ocultar");
@@ -258,5 +333,5 @@ let funcionesAspirantes = () => {
 	cargarHsDispoMin($("#filtro-horas"));
 	//--------------------------------------
 	mostrarFiltros768();
-	mostrarTodosAspirantes();
+	mostrarAspirantes("todos");
 };

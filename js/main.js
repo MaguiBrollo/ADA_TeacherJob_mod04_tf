@@ -1,6 +1,3 @@
-/* =========== VARIABLES GLOBALES ============= */
-let aspiListado = [];
-let urlBase = "https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/";
 
 /* ========= FUNCIONES GLOBALES =============== */
 // Se usa en TODOS los js, en lugar de: "const btn_nueva_oper = document.getElementById("btn-nueva-oper");"

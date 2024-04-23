@@ -76,6 +76,7 @@
 		@include flex-dir-al-jus(flex, row, center, center);
 		padding: 10px 0px 10px 0px;
 		border-radius: 0px 0px 3px 3px;
+		gap:10px;
 		&.ocultar {
 			display: none;
 		}
@@ -216,6 +217,8 @@
 		background-color: var(--negro);
 		@include flex-dir-al-jus(flex, row, center, center);
 		padding: 10px 0px 10px 0px;
+		gap:10px;
+		
 	}
 
 	//================================== 576
