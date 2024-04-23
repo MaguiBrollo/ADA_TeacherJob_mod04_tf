@@ -1,4 +1,5 @@
 //======== Variables globales (main.js) =========
+
 /* ======================== BREAKPOINT ========================  */
 let breakPoint768 = () =>
 	parseInt(getComputedStyle(document.documentElement).getPropertyValue("--md"));
@@ -55,7 +56,7 @@ const area = [
 ];
 
 let cargarArea = (input_select) => {
-	let area_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let area_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	area.sort((a, b) => {
 		return a.nom.localeCompare(b.nom);
 	});
@@ -82,7 +83,7 @@ const reg = [
 ];
 
 let cargarRegional = (input_select) => {
-	let reg_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let reg_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	for (var i = 0; i < reg.length; i++) {
 		reg_listado +=
 			`<option value="` + reg[i].cod + `">` + reg[i].nom + `</option>`;
@@ -93,7 +94,7 @@ let cargarRegional = (input_select) => {
 // ============================================
 // Input Select - Hs Disponibles (mínimo)
 let cargarHsDispoMin = (input_select) => {
-	let hs_listado = `<option value="SELEC" selected>Seleccione...</option>`;
+	let hs_listado = `<option value="SEL" selected>Seleccione...</option>`;
 	const hs = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 	for (var i = 0; i < hs.length; i++) {
 		hs_listado += `<option value="` + hs[i] + `">` + hs[i] + `</option>`;
@@ -124,6 +125,12 @@ $("#limpiar-filtros").addEventListener("click", () => {
 });
 
 // ===================================================
+// Limpiar Filtros y mostrar TODOS
+$("#buscar-filtros").addEventListener("click", () => {
+	mostrarAspirantes("filtros");
+});
+
+// ===================================================
 // Habilitar input "sexo" solo para educación física
 $("#filtro-area").addEventListener("change", () => {
 	if ($("#filtro-area").value === "edfi") {
@@ -135,8 +142,8 @@ $("#filtro-area").addEventListener("change", () => {
 
 // ===================================================
 // Buscar ASPIRANTES (MOCKAPI.IO)
-let buscarTodosAspirantes = () => {
-	fetch(urlBase + "teacher", {
+let buscarAspirantes = (url) => {
+	fetch(url, {
 		method: "GET",
 		headers: {
 			Accept: "application/json",
@@ -150,7 +157,7 @@ let buscarTodosAspirantes = () => {
 			aspiListado = [...datos];
 		})
 		.catch((error) => {
-			console.log("ERROR - BUSCAR TODOS LOS ASPIRANTES: ", error);
+			console.log("ERROR - BUSCAR ASPIRANTES: ", error);
 		});
 };
 
@@ -205,40 +212,78 @@ let listarAspirantes = () => {
 // ===================================================
 // Muestra spinner
 let mostrarAspirantes = (cuantos) => {
+	let filtroPor;
+	let ordenPor;
+
 	$("#aspirante-cont-card").innerHTML = "";
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
 
-	if ((cuantos = "todos")) {
-		buscarTodosAspirantes();
+	if (cuantos === "todos") {
+		filtroPor = "Filtros: Ninguno";
+		ordenPor = "Orden: Mayor Puntje";
+		let param = new URLSearchParams(`sortBy=puntaje&order=desc`);
+		buscarAspirantes(`${urlBase}/?${param}`);
 	} else {
-		//FUNCION para armar filtros y buscar
+		let param = armarQueryParam();
+		buscarAspirantes(`${urlBase}/?${param}`);
 	}
 
 	setTimeout(() => {
-
 		$("#spinner").setAttribute("hidden", "");
 
 		if (aspiListado.length > 0) {
 			$("#cont-con-aspi").classList.remove("ocultar");
-			ordenarPuntaje();
+			$("#filtrado-por").innerHTML = filtroPor;
+			$("#ordenado-por").innerHTML = ordenPor;
 			listarAspirantes();
 		} else {
 			$("#cont-sin-aspi").classList.remove("ocultar");
 			$("#cont-con-aspi").classList.add("ocultar");
 		}
-
 	}, 2000);
 };
 
 // ===================================================
-//  Nueva inscripción
-let ordenarPuntaje = ()=>{
-	let orden = $("#filtro-orden").value;
-	$("#ordenado-por").innerHTML = (orden === "MEN"?"Orden: Menor Puntaje":"Orden: Mayor Puntaje");
-	return aspiListado.sort((a, b) => {
-		return orden === "MEN" ? a.puntaje - b.puntaje : b.puntaje - a.puntaje;
-	});
+// Filtrar
+let armarQueryParam = () => {
+	let sexo;
+	let orden;
+	let area = $("#filtro-area").value === "SEL" ? "" : $("#filtro-area").value;
+	let regi =
+		$("#filtro-regional").value === "SEL"
+			? ""
+			: parseInt($("#filtro-regional").value);
+	let hs =
+		$("#filtro-horas").value === "SEL"
+			? ""
+			: parseInt($("#filtro-horas").value);
+
+	if ($("#filtro-sexo").value === "SEL" || $("#filtro-sexo").value === "mix") {
+		sexo = "";
+	} else {
+		sexo = $("#filtro-sexo").value;
+	}
+	if ($("#filtro-orden").value === "MAY") {
+		orden = "desc";
+		ordenPor = "Orden: Mayor Puntaje";
+	} else {
+		orden = "asc";
+		ordenPor = "Orden: Menor Puntaje";
+	}
+
+	filtroPor = "Filtros";
+	console.log(
+		`area=${area}&regional=${regi}&horas_dispo>-${hs}&sexo=${sexo}&sortBy=puntaje&order=${orden}`
+	);
+	let x = new URLSearchParams(
+		`area=${area}&regional=${regi}&horas_dispo>%3D${hs}&sexo=${sexo}&sortBy=puntaje&order=${orden}`
+	);
+	return x;
+
+	//ejem
+
+	//https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/teacher?area=edfi&regional=5&sexo=&horas_dispo>%3D&sortBy=puntaje&order=asc
 };
 
 // ===================================================

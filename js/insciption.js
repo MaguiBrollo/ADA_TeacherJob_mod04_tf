@@ -12,20 +12,20 @@ const buscarRegional = (busco) => {
 	return reg.find((e) => e.cod === busco) ?? -1;
 };
 
-let quitaAcentos = (frase)=> {
+let quitaAcentos = (frase) => {
 	frase = frase.replace(/[áäâàÁÀÄÂ]/g, "a");
 	frase = frase.replace(/[éëêèÉÈËÊ]/g, "e");
 	frase = frase.replace(/[íïîìÍÌÏÎ]/g, "i");
 	frase = frase.replace(/[óöôòÓÒÖÔ]/g, "o");
 	frase = frase.replace(/[úüûùÚÚÜÛ]/g, "u");
 	return frase;
-}
+};
 
 // ===================================================
 // Ver Mas (datos de un aspirante)  (viene de aspirant.js)
 let verMasAspirante = async (idAspirante) => {
 	id = idAspirante;
-	await fetch(`${urlBase}/teacher/${idAspirante}`)
+	await fetch(`${urlBase}/${idAspirante}`)
 		.then((res) => res.json())
 		.then((data) => {
 			objAspirante = data;
@@ -34,7 +34,7 @@ let verMasAspirante = async (idAspirante) => {
 		.catch((err) =>
 			console.log("ERROR: buscar una aspirante para Ver Más: ", err)
 		);
-}
+};
 //-------------------------
 let mostrarVerMas = (aspi) => {
 	$("#aspirante-cont-card").innerHTML = "";
@@ -48,7 +48,7 @@ let mostrarVerMas = (aspi) => {
 		$("#ver-mas-un").classList.remove("ocultar");
 		mostrarUno(aspi);
 	}, 2000);
-}
+};
 //---------------------
 let mostrarUno = (asp) => {
 	$("#ver-mas-un-aspi").innerHTML = `
@@ -82,7 +82,7 @@ let mostrarUno = (asp) => {
 		</div>
 	</div>
 `;
-}
+};
 
 // ===================================================
 // VER MAS -  Cancelar
@@ -91,7 +91,7 @@ $("#btn-volver-ver").addEventListener("click", () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 	$("#cont-inscripcion").classList.add("ocultar");
-	mostrarTodosAspirantes(); //aspirant.js
+	mostrarAspirantes("filtros"); //aspirant.js
 });
 
 // ===================================================
@@ -114,12 +114,12 @@ $("#btn-eliminar-aspi").addEventListener("click", async () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 
-	mostrarTodosAspirantes(); //aspirant.js
+	mostrarAspirantes("filtros"); //aspirant.js
 });
 //----- Función eliminar
 let borrarAspirante = async () => {
 	try {
-		const peticion = await fetch(`${urlBase}/teacher/${id}`, {
+		const peticion = await fetch(`${urlBase}/${id}`, {
 			method: "DELETE",
 			headers: {
 				Accept: "application/json",
@@ -198,7 +198,7 @@ $("#btn-agregar-editar").addEventListener("click", async (e) => {
 // -------------------------
 let registrarEditarInscripcion = async (inscrip) => {
 	try {
-		let peticion = await fetch(`${urlBase}/teacher/${id}`, {
+		let peticion = await fetch(`${urlBase}/${id}`, {
 			method: "PUT",
 			headers: {
 				Accept: "application/json",
@@ -242,7 +242,7 @@ $("#inscripcion-form").addEventListener("submit", (e) => {
 // -------------------------
 let registrarInscripcion = async (inscrip) => {
 	try {
-		let peticion = await fetch(urlBase + "teacher", {
+		let peticion = await fetch(urlBase, {
 			method: "POST",
 			headers: {
 				Accept: "application/json",
@@ -253,7 +253,7 @@ let registrarInscripcion = async (inscrip) => {
 	} catch (error) {
 		console.log("ERROR - Nueva Inscripción: ", error);
 	}
-	mostrarTodosAspirantes(); // (aspirant.js)
+	mostrarAspirantes("filtros"); // (aspirant.js)
 };
 
 // ===================================================
@@ -266,7 +266,7 @@ $("#btn-cancelar-insc").addEventListener("click", () => {
 
 // ====================================
 // Vienes de aspirant.js
-let funcionesInscrpcion = ()=> {
+let funcionesInscrpcion = () => {
 	cargarArea($("#area")); //(aspirant.js)
 	cargarRegional($("#regional"));
-}
+};
