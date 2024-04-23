@@ -132,17 +132,45 @@ $("#ocultar-filtros").addEventListener("click", () => {
 // ===================================================
 // Limpiar Filtros y mostrar TODOS
 $("#limpiar-filtros").addEventListener("click", () => {
-	$("#contenedor-filtros").reset();
-	pasoPorFiltros = false;
-	mostrarAspirantes();
+	if (
+		!(
+			$("#filtro-area").value === "SEL" &&
+			$("#filtro-regional").value === "SEL" &&
+			$("#filtro-horas").value === "SEL" &&
+			$("#filtro-orden").value === "SEL"
+		)
+	) {
+		console.log("si hay");
+		$("#contenedor-filtros").reset();
+		pasoPorFiltros = false;
+		mostrarAspirantes();
+	}
 });
 
 // ===================================================
 // Filtrar y mostrar filtrados.
 $("#buscar-filtros").addEventListener("click", () => {
-	pasoPorFiltros = true;
-	mostrarAspirantes();
+	if (
+		$("#filtro-area").value === "SEL" &&
+		$("#filtro-regional").value === "SEL" &&
+		$("#filtro-horas").value === "SEL" &&
+		$("#filtro-orden").value === "SEL"
+	) {
+		mnsSeleccionarFiltros();
+	} else {
+		pasoPorFiltros = true;
+		mostrarAspirantes();
+	}
 });
+
+//========================================================
+// MENSAJE que DESAPARECE DSPS DE 5segundos
+function mnsSeleccionarFiltros() {
+	$("#mns-seleccionar-filtros").classList.remove("ocultar");
+	setTimeout(function () {
+		$("#mns-seleccionar-filtros").classList.add("ocultar");
+	}, 3000);
+}
 
 // ===================================================
 // Habilitar input "sexo" solo para educación física
@@ -223,7 +251,7 @@ let listarAspirantes = (aspirantes) => {
 };
 
 // ===================================================
-// Muestra spinner 
+// Muestra spinner
 let mostrarAspirantes = async () => {
 	$("#filtrado-por").innerHTML = "";
 	$("#ordenado-por").innerHTML = "";

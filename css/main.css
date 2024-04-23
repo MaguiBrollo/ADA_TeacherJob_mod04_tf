@@ -634,6 +634,17 @@ header .nav__cont-menu.ocultar {
   box-shadow: 0 0 1px 2px var(--negro);
   outline: none;
 }
+.aspirante__mns-seleccionar-filtros {
+  margin: 20px 0px 5px 0px;
+  animation: parpadeo 1s ease-in-out infinite;
+  background-color: var(--blanco);
+  color: var(--rojo);
+  text-align: center;
+  border-radius: 10px;
+}
+.aspirante__mns-seleccionar-filtros.ocultar {
+  display: none;
+}
 .aspirante__botones {
   background-color: var(--negro);
   display: flex;
@@ -749,6 +760,17 @@ header .nav__cont-menu.ocultar {
   }
 }
 
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .inscripcion {
   min-height: calc(100vh - var(--padding-main-sm) - 180px);
   margin: auto 15px;
