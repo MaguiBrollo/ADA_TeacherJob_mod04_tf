@@ -5,13 +5,6 @@ let objAspirante;
 let id;
 
 // ============================================
-const buscarArea = (busco) => {
-	return area.find((e) => e.cod === busco) ?? -1;
-};
-const buscarRegional = (busco) => {
-	return reg.find((e) => e.cod === busco) ?? -1;
-};
-
 let quitaAcentos = (frase) => {
 	frase = frase.replace(/[áäâàÁÀÄÂ]/g, "a");
 	frase = frase.replace(/[éëêèÉÈËÊ]/g, "e");
@@ -32,7 +25,7 @@ let verMasAspirante = async (idAspirante) => {
 			mostrarVerMas(data);
 		})
 		.catch((err) =>
-			console.log("ERROR: buscar una aspirante para Ver Más: ", err)
+			console.log("ERROR: buscar un aspirante para Ver Más: ", err)
 		);
 };
 //-------------------------
@@ -91,7 +84,7 @@ $("#btn-volver-ver").addEventListener("click", () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 	$("#cont-inscripcion").classList.add("ocultar");
-	mostrarAspirantes("filtros"); //aspirant.js
+	mostrarAspirantes("filtrados"); //aspirant.js
 });
 
 // ===================================================
@@ -114,7 +107,7 @@ $("#btn-eliminar-aspi").addEventListener("click", async () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 
-	mostrarAspirantes("filtros"); //aspirant.js
+	mostrarAspirantes("filtrados"); //aspirant.js
 });
 //----- Función eliminar
 let borrarAspirante = async () => {
@@ -207,7 +200,7 @@ let registrarEditarInscripcion = async (inscrip) => {
 			body: JSON.stringify(inscrip),
 		});
 	} catch (error) {
-		console.log("ERROR - Editar Inscripción: ", error);
+		console.log("ERROR - Editar datos de Aspirante: ", error);
 	}
 };
 
@@ -253,7 +246,7 @@ let registrarInscripcion = async (inscrip) => {
 	} catch (error) {
 		console.log("ERROR - Nueva Inscripción: ", error);
 	}
-	mostrarAspirantes("filtros"); // (aspirant.js)
+	mostrarAspirantes("filtrados"); // (aspirant.js)
 };
 
 // ===================================================
