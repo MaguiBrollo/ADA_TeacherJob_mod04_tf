@@ -1,6 +1,7 @@
 /* =========== VARIABLES GLOBALES ============= */
 let filtroPor;
 let ordenPor;
+let pasoPorFiltros = false;
 let urlBase = "https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/teacher";
 
 /* =========== FUNCIONES GLOBALES ============= */
@@ -132,13 +133,15 @@ $("#ocultar-filtros").addEventListener("click", () => {
 // Limpiar Filtros y mostrar TODOS
 $("#limpiar-filtros").addEventListener("click", () => {
 	$("#contenedor-filtros").reset();
-	mostrarAspirantes("todos");
+	pasoPorFiltros = false;
+	mostrarAspirantes();
 });
 
 // ===================================================
-// Limpiar Filtros y mostrar TODOS
+// Filtrar y mostrar filtrados.
 $("#buscar-filtros").addEventListener("click", () => {
-	mostrarAspirantes("filtrados");
+	pasoPorFiltros = true;
+	mostrarAspirantes();
 });
 
 // ===================================================
@@ -220,13 +223,16 @@ let listarAspirantes = (aspirantes) => {
 };
 
 // ===================================================
-// Muestra spinner (como = "todos"/"filtrados")
-let mostrarAspirantes = async (como) => {
+// Muestra spinner 
+let mostrarAspirantes = async () => {
+	$("#filtrado-por").innerHTML = "";
+	$("#ordenado-por").innerHTML = "";
 	$("#aspirante-cont-card").innerHTML = "";
+
 	$("#cont-sin-aspi").classList.add("ocultar");
 	$("#spinner").removeAttribute("hidden");
 
-	let aspirantes = await filtrar(como);
+	let aspirantes = await filtrar();
 
 	setTimeout(() => {
 		$("#spinner").setAttribute("hidden", "");
@@ -243,12 +249,15 @@ let mostrarAspirantes = async (como) => {
 
 // ===================================================
 // Filtrar
-let filtrar = async (como) => {
-	if (como === "todos") {
-		filtroPor = "Filtros: Ninguno";
-		ordenPor = "Orden: Mayor Puntaje";
+let filtrar = async () => {
+	if (!pasoPorFiltros) {
 		let param = `sortBy=puntaje&order=desc`;
+
 		let respuesta = await buscarAspirantes(`${urlBase}/?${param}`);
+
+		filtroPor = "Filtros: Ninguno";
+		ordenPor = `Orden: Mayor puntaje | Aspirantes: ${respuesta.length}`;
+
 		return respuesta;
 	} else {
 		let area;
@@ -262,7 +271,7 @@ let filtrar = async (como) => {
 
 		if ($("#filtro-area").value === "SEL") {
 			area = "";
-			areaF = "TODOS";
+			areaF = "Todas";
 		} else {
 			area = $("#filtro-area").value;
 			areaF = buscarArea($("#filtro-area").value).nom;
@@ -270,7 +279,7 @@ let filtrar = async (como) => {
 
 		if ($("#filtro-regional").value === "SEL") {
 			regi = "";
-			regiF = "TODOS";
+			regiF = "Todas";
 		} else {
 			regi = $("#filtro-regional").value;
 			regiF = buscarRegional(parseInt($("#filtro-regional").value)).nom;
@@ -278,7 +287,7 @@ let filtrar = async (como) => {
 
 		hs_d =
 			$("#filtro-horas").value === "SEL"
-				? ""
+				? 0
 				: parseInt($("#filtro-horas").value);
 
 		if (
@@ -286,17 +295,17 @@ let filtrar = async (como) => {
 			$("#filtro-sexo").value === "mix"
 		) {
 			sexo = "";
-			sexoF = "Mixto";
+			sexoF = "Todos";
 		} else {
 			sexo = $("#filtro-sexo").value;
-			sexoF = $("#filtro-sexo").value.toUpperCase();
+			sexoF = $("#filtro-sexo").value === "fem" ? "Mujeres" : "Varones";
 		}
 		if ($("#filtro-orden").value === "MAY") {
 			orden = "desc";
-			ordenPor = "Orden: Mayor Puntaje";
+			ordenPor = "Orden: Mayor puntaje";
 		} else {
 			orden = "asc";
-			ordenPor = "Orden: Menor Puntaje";
+			ordenPor = "Orden: Menor puntaje";
 		}
 
 		filtroPor = `Filtros: ${areaF} | ${regiF} | >= ${hs_d}| ${sexoF}`;
@@ -304,9 +313,14 @@ let filtrar = async (como) => {
 		//ejem
 		//https://6617f92b9a41b1b3dfbbdd87.mockapi.io/teacherJOB/teacher?area=edfi&regional=5&sexo=&horas_dispo=2&sortBy=puntaje&order=asc
 		//----
+
 		let listado = await buscarAspirantes(`${urlBase}/?${param}`);
 
-		return listado.filter((e) => e.horas_dispo >= hs_d);
+		let filtrado = listado.filter((e) => e.horas_dispo >= hs_d);
+
+		ordenPor += ` | Aspirantes: ${filtrado.length}`;
+
+		return filtrado;
 	}
 };
 
@@ -333,5 +347,6 @@ let funcionesAspirantes = () => {
 	cargarHsDispoMin($("#filtro-horas"));
 	//--------------------------------------
 	mostrarFiltros768();
-	mostrarAspirantes("todos");
+	pasoPorFiltros = false;
+	mostrarAspirantes();
 };

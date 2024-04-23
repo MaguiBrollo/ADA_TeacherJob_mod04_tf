@@ -84,7 +84,7 @@ $("#btn-volver-ver").addEventListener("click", () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 	$("#cont-inscripcion").classList.add("ocultar");
-	mostrarAspirantes("filtrados"); //aspirant.js
+	mostrarAspirantes(); //aspirant.js
 });
 
 // ===================================================
@@ -107,7 +107,7 @@ $("#btn-eliminar-aspi").addEventListener("click", async () => {
 	$("#ver-mas-un").classList.add("ocultar");
 	$("#menu-aspirantes").classList.remove("ocultar");
 
-	mostrarAspirantes("filtrados"); //aspirant.js
+	mostrarAspirantes(); //aspirant.js
 });
 //----- Función eliminar
 let borrarAspirante = async () => {
@@ -132,6 +132,7 @@ $("#btn-cancelar-Eliminar-aspi").addEventListener("click", () => {
 // ============================================
 // VER MAS -  Editar
 $("#btn-editar-ver").addEventListener("click", () => {
+	window.scrollBy(0,3000);
 	funcionesInscrpcion();
 
 	$("#apellidos").value = objAspirante.apellidos;
@@ -246,7 +247,7 @@ let registrarInscripcion = async (inscrip) => {
 	} catch (error) {
 		console.log("ERROR - Nueva Inscripción: ", error);
 	}
-	mostrarAspirantes("filtrados"); // (aspirant.js)
+	mostrarAspirantes(); // (aspirant.js)
 };
 
 // ===================================================
