@@ -1,4 +1,3 @@
-
 /* ========= FUNCIONES GLOBALES =============== */
 // Se usa en TODOS los js, en lugar de: "const btn_nueva_oper = document.getElementById("btn-nueva-oper");"
 const $ = (selector) => document.querySelector(selector);
@@ -22,7 +21,6 @@ $("#nav-btn-cerrar").addEventListener("click", cerrarMenuNav);
 function mostrar(mostrar) {
 	$("#menu-inicio").classList.add("ocultar");
 	$("#menu-aspirantes").classList.add("ocultar");
-	$("#menu-sesion").classList.add("ocultar");
 	$("#cont-inscripcion").classList.add("ocultar"); //inscripcion
 	$("#cont-ver-mas").classList.add("ocultar"); //inscripcion
 	$("#ver-mas-un").classList.add("ocultar"); //inscripcion
@@ -43,7 +41,7 @@ $("#enlace-aspirantes").addEventListener("click", () => {
 
 $("#enlace-sesion").addEventListener("click", () => {
 	cerrarMenuNav();
-	mostrar($("#menu-sesion"));
+	funcionesInicioSesion(); //modal_sesion.js
 });
 
 /* ------------------------------------------------------------------------------------------------ */

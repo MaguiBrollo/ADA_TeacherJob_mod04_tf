@@ -70,6 +70,18 @@
 		outline: none;
 	}
 
+	&__mns-seleccionar-filtros {
+		margin: 20px 0px 5px 0px;
+		animation: parpadeo 1s ease-in-out infinite; //"parpadeo" ver al final
+		background-color: var(--blanco);
+		color: var(--rojo);
+		text-align: center;
+		border-radius: 10px;
+		&.ocultar {
+			display: none;
+		}
+	}
+
 	&__botones {
 		background-color: var(--negro);
 		@include flex-dir-al-jus(flex, row, center, center);
@@ -156,7 +168,7 @@
 		@include flex-dir-al-jus(flex, row, x, center);
 
 		&__cont-filtros {
-			width: 30%;
+			width: 40%;
 		}
 		&__btn-filtro {
 			font-size: 0.6rem;
@@ -179,5 +191,18 @@
 		&__cont-card {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
+	}
+}
+
+//---------------------
+@keyframes parpadeo {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

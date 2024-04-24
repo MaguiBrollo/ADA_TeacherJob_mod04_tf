@@ -9,7 +9,7 @@ header {
 		@include flex-dir-al-jus(flex, column, x, x);
 
 		&__cont-ppal {
-			@include flex-dir-al-jus(flex, row, x, x);
+			@include flex-dir-al-jus(flex, row, x,space-between);
 			width: 100%;
 			padding: 10px 15px;
 		}
@@ -31,10 +31,20 @@ header {
 			white-space: nowrap; //evita que ocupe 2 líneas
 		}
 		&__cont-hamb {
-			width: 40%;
+			width: 15%;
 			@include flex-dir-al-jus(flex, x, center, flex-end);
 		}
 
+		&__cont-img-us {
+			width: 90px;
+			border-radius: 100%;
+			text-align: end;
+		}
+		&__img-us {
+			width: 50%;
+			border-radius: 50%;
+			border: 1px solid var(--blanco);
+		}
 		&__cont-menu {
 			@include flex-dir-al-jus(flex, column, center, center);
 			transition: padding-top 0.3s, padding-bottom 0.3s;
