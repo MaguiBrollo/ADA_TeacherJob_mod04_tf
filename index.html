@@ -38,6 +38,15 @@
 						<h1 class="nav__nombre">Teacher JOB</h1>
 					</div>
 
+					<div class="nav__cont-img-us">
+						<img
+							class="nav__img-us"
+							src="img/usuario.jpg"
+							alt="Imagen usuario"
+							id="nav-img-us"
+						/>
+					</div>
+
 					<!-- Menú hamb -->
 					<div class="nav__cont-hamb">
 						<button class="" id="nav-btn-abrir">
@@ -48,6 +57,7 @@
 							<span class="boton-span material-symbols-outlined">close</span>
 						</button>
 					</div>
+					
 				</div>
 
 				<div class="nav__cont-menu ocultar" id="nav-cont-menu">
@@ -66,7 +76,7 @@
 		<!--                   MAIN                         -->
 		<!-- ============================================== -->
 		<main class="main">
-			<!-- =============== Menú Inicio ================== -->
+			<!-- ============= Menú Inicio ================== -->
 			<section class="inicio" id="menu-inicio">
 				<div class="inicio__cont-texto">
 					<p class="inicio__texto-titulo">Teacher Job</p>
@@ -106,7 +116,7 @@
 				</div>
 			</section>
 
-			<!-- ================= Aspirantes ================= -->
+			<!-- =============== Aspirantes ================= -->
 			<section class="aspirante ocultar" id="menu-aspirantes">
 				<!-- contenedor TITULO-FILTRO -->
 				<div class="aspirante__cont-filtros">
@@ -235,7 +245,7 @@
 							<p class="aspirante__titulos">Aspirantes</p>
 						</div>
 						<div class="aspirante__btn-nueva-aspi-cont">
-							<button class="boton__enlace--p" id="btn-nueva-inscri">
+							<button disabled class="boton__enlace--p" id="btn-nueva-inscri">
 								INSCRIBIR
 							</button>
 						</div>
@@ -275,7 +285,7 @@
 				</div>
 			</section>
 
-			<!-- ============ Ver Mas Aspirante =============== -->
+			<!-- ========== Ver Mas Aspirante =============== -->
 			<section class="vermas ocultar" id="cont-ver-mas">
 				<!-- para el spinner -->
 				<div hidden class="spinner" id="spinner-ver-mas"></div>
@@ -286,11 +296,11 @@
 						</div>
 						<!-- botones -->
 						<div class="vermas__botones">
-							<button class="boton__enlace--s" id="btn-borrar-ver">
+							<button disabled class="boton__enlace--s" id="btn-borrar-ver">
 								Borrar
 							</button>
 
-							<button class="boton__enlace--s" id="btn-editar-ver">
+							<button disabled class="boton__enlace--s" id="btn-editar-ver">
 								Editar
 							</button>
 							<button class="boton__enlace--p" id="btn-volver-ver">
@@ -300,7 +310,8 @@
 					</div>
 				</div>
 			</section>
-			<!-- ============= Inscripcion (Nuevo Aspirante) =========== -->
+
+			<!-- ======= Inscripcion (Nuevo Aspirante) ====== -->
 			<section class="inscripcion ocultar" id="cont-inscripcion">
 				<div class="inscripcion__cont-ppal">
 					<div class="inscripcion__titulos">
@@ -509,7 +520,7 @@
 				</div>
 			</section>
 
-			<!-- ============= Modal Elimnar ================== -->
+			<!-- ============= Modal Elimnar ================ -->
 			<section class="modal-eliminar ocultar" id="modal-eliminar">
 				<div class="modal-eliminar__cont">
 					<div class="modal-eliminar__cont-info">
@@ -541,9 +552,99 @@
 				</div>
 			</section>
 
-			<!-- ================ Iniciar Sesión ============== -->
-			<section class="main__seccion ocultar" id="menu-sesion">
-				<h2>Próximamente MODAL: Inicio Sesión</h2>
+			<!-- ============ Modal Iniciar Sesión ========== -->
+			<section class="modal-sesion ocultar" id="iniciar-sesion">
+				<div class="modal-sesion__cont">
+					<div class="modal-sesion__cont-info">
+						<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar">
+							<span class="boton-span material-symbols-outlined">close</span>
+						</div>
+						<div class="modal-sesion__texto">
+							<p class="modal-sesion__titulos">Iniciar sesión</p>
+
+							<div class="modal-sesion__inputs">
+								<form action="" id="modal-sesion-form">
+									<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
+										<label for="usuario">Usuario:</label>
+										<input
+											type="text"
+											class="modal-sesion__campo--cu"
+											id="usuario"
+											required
+											maxlength="20"
+											aria-label="Ingrese nombre de usuario."
+											placeholder="Usuario"
+										/>
+									</div>
+
+									<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
+										<label for="contrasenia">Contraseña:</label>
+										<input
+											disabled
+											type="password"
+											autocomplete="on"
+											class="modal-sesion__campo--cu"
+											id="contrasenia"
+											required
+											aria-label="Ingrese clave."
+											placeholder="Contraseña"
+										/>
+									</div>
+								</form>
+								<div class="modal-sesion__cont-img">
+									<img
+										class="modal-sesion__img"
+										id="modal-sesion-img"
+										src="img/usuario.jpg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+
+						<!-- mensaje de error -->
+						<div class="modal-sesion__mens ocultar" id="mns-modal">.</div>
+
+						<!-- botones -->
+						<div class="modal-sesion__botones">
+							<button class="boton__enlace--s" id="btn-cancelar-sesion">
+								Cancelar
+							</button>
+							<button class="boton__enlace--p" id="btn-iniciar-sesion">
+								Iniciar
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- ============ Modal Cerrar Sesión =========== -->
+			<section class="modal-sesion ocultar" id="cerrar-sesion">
+				<div class="modal-sesion__cont">
+					<div class="modal-sesion__cont-info">
+						<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar2">
+							<span class="boton-span material-symbols-outlined">close</span>
+						</div>
+						<div class="modal-sesion__texto">
+							<p class="modal-sesion__titulos">Cerrar sesión</p>
+
+							<p class="modal-sesion__texto">
+								¿Está seguro que desea Cerrar Sesión?
+							</p>
+						</div>
+
+						<!-- botones -->
+						<div class="modal-sesion__botones">
+							<button class="boton__enlace--s" id="btn-cancelar-sesion2">
+								Cancelar
+							</button>
+
+							<button class="boton__enlace--p" id="btn-SALIR-sesion">
+								Cerrar
+							</button>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
 
@@ -586,4 +687,5 @@
 	<script src="js/carrusel.js"></script>
 	<script src="js/aspirant.js"></script>
 	<script src="js/insciption.js"></script>
+	<script src="js/modal_sesion.js"></script>
 </html>

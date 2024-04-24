@@ -183,7 +183,7 @@ $("#filtro-area").addEventListener("change", () => {
 });
 
 // ===================================================
-// Buscar ASPIRANTES (MOCKAPI.IO)
+// Buscar ASPIRANTES
 let buscarAspirantes = async (url) => {
 	try {
 		let respuestaFetch = await fetch(url, {
