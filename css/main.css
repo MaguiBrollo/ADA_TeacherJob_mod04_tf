@@ -10,6 +10,10 @@
   transition: var(--transition);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background-color: var(--rojo);
@@ -427,6 +431,28 @@ body {
     opacity: 1;
   }
 }
+.flecha.ocultar {
+  display: none;
+}
+.flecha__btn {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(225, 232, 24);
+  box-shadow: 0px 0px 15px var(--blanco);
+  cursor: pointer;
+  padding: 5px;
+}
+.flecha__span {
+  width: 25px;
+  height: 25px;
+}
+.flecha__btn:hover {
+  box-shadow: 0px 0px 15px rgb(225, 232, 24);
+  color: var(--rojo);
+}
+
 header .nav {
   background-color: var(--col-nav-sm-back);
   position: fixed;

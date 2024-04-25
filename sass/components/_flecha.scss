@@ -1,0 +1,26 @@
+//------------------ FLECHA
+.flecha {
+	&.ocultar {
+		display: none;
+	}
+
+	&__btn {
+		position: fixed;
+		bottom: 50px;
+		right: 20px;
+		border-radius: 50%;
+		border: 2px solid rgb(225, 232, 24);
+		box-shadow: 0px 0px 15px var(--blanco);
+		cursor: pointer;
+		padding: 5px;
+	}
+	&__span {
+		width: 25px;
+		height: 25px;
+	}
+
+	&__btn:hover {
+		box-shadow: 0px 0px 15px rgb(225, 232, 24);
+		color: var(--rojo);
+	}
+}
