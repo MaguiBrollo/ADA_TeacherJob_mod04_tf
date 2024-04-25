@@ -140,7 +140,6 @@ $("#limpiar-filtros").addEventListener("click", () => {
 			$("#filtro-orden").value === "SEL"
 		)
 	) {
-		console.log("si hay");
 		$("#contenedor-filtros").reset();
 		pasoPorFiltros = false;
 		mostrarAspirantes();
@@ -370,11 +369,14 @@ $("#btn-nueva-inscri").addEventListener("click", () => {
 // ====================================
 // Viene de main.js
 let funcionesAspirantes = () => {
-	cargarArea($("#filtro-area"));
-	cargarRegional($("#filtro-regional"));
-	cargarHsDispoMin($("#filtro-horas"));
-	//--------------------------------------
-	mostrarFiltros768();
-	pasoPorFiltros = false;
+
+	mostrarFiltros768(); //Para ver desplegados los filtros
+
+	if (!pasoPorFiltros) {
+		//Si nunca pasó por filtros.
+		cargarArea($("#filtro-area"));
+		cargarRegional($("#filtro-regional"));
+		cargarHsDispoMin($("#filtro-horas"));
+	}
 	mostrarAspirantes();
 };

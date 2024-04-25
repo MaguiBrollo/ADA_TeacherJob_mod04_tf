@@ -44,4 +44,23 @@ $("#enlace-sesion").addEventListener("click", () => {
 	funcionesInicioSesion(); //modal_sesion.js
 });
 
+
+// -- Fecla arriba
+
+window.addEventListener('scroll', () =>{
+	funcionDeScroll();
+})
+
+let funcionDeScroll = () =>{
+	if(window.scrollY > 20){
+		$("#flecha").classList.remove("ocultar")
+	}else{
+		$("#flecha").classList.add("ocultar");
+	}
+}
+
+$("#flecha").addEventListener("click",()=>{
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+});
 /* ------------------------------------------------------------------------------------------------ */

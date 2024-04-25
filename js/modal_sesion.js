@@ -22,16 +22,16 @@ $("#btn-cancelar-sesion2").addEventListener("click", () => {
 
 //==========================================
 $("#btn-SALIR-sesion").addEventListener("click", () => {
+	inicioSesion = false;
+
 	$("#cerrar-sesion").classList.add("ocultar");
 	$("#enlace-sesion").innerHTML = "Iniciar Sesión";
-
 	//Deshabilitar botones
 	$("#btn-nueva-inscri").setAttribute("disabled", "");
 	$("#btn-borrar-ver").setAttribute("disabled", "");
 	$("#btn-editar-ver").setAttribute("disabled", "");
-	inicioSesion = false;
 	//Sacar logo de usuario
-	$("#nav-img-us").setAttribute("src","img/usuario.jpg");
+	$("#nav-img-us").setAttribute("src", "img/usuario.jpg");
 });
 
 //=============================================
@@ -58,17 +58,16 @@ $("#btn-iniciar-sesion").addEventListener("click", () => {
 	if (us.contrasenia !== contra) {
 		mnsUsuarioContasIncorrecto("contrasenia");
 	} else {
+		inicioSesion = true;
+
 		$("#iniciar-sesion").classList.add("ocultar");
 		$("#enlace-sesion").innerHTML = "Cerrar Sesión";
-		//habilitar botones
+		//Habilitar botones
 		$("#btn-nueva-inscri").removeAttribute("disabled");
 		$("#btn-borrar-ver").removeAttribute("disabled");
 		$("#btn-editar-ver").removeAttribute("disabled");
-
-		inicioSesion = true;
 		//Mostrar logo de usuario
 		$("#nav-img-us").setAttribute("src", `${us.foto}`);
-		console.log("inicio  ", us.usuario);
 	}
 });
 

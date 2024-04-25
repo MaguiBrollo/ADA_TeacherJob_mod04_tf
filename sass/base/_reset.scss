@@ -7,9 +7,10 @@
 	transition: var(--transition);
 }
 
-// html{
-// 	height: 100vh;
-// }
+html {
+	scroll-behavior: smooth; //desplazamiento lento
+	// 	height: 100vh;
+}
 
 body {
 	min-height: 100vh;
