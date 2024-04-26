@@ -354,22 +354,12 @@ let filtrar = async () => {
 // ===================================================
 //  Nueva inscripción
 $("#btn-nueva-inscri").addEventListener("click", () => {
-	$("#menu-aspirantes").classList.add("ocultar");
-	$("#cont-inscripcion").classList.remove("ocultar");
-	$("#inscripcion-form").reset();
-
-	//Habilita título y botones
-	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
-	$("#btn-editar-aspi").classList.add("ocultar");
-	$("#btn-nuevo-aspi").classList.remove("ocultar");
-
-	funcionesInscrpcion(); //inscription.js
+	funcionesInscripcion(); //inscription.js
 });
 
 // ====================================
 // Viene de main.js
 let funcionesAspirantes = () => {
-
 	mostrarFiltros768(); //Para ver desplegados los filtros
 
 	if (!pasoPorFiltros) {

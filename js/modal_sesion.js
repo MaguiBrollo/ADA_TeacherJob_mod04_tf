@@ -55,7 +55,7 @@ $("#btn-iniciar-sesion").addEventListener("click", () => {
 
 	let us = usuarios.find((e) => e.usuario === $("#usuario").value);
 
-	if (us.contrasenia !== contra) {
+	if (us === undefined || us.contrasenia !== contra) {
 		mnsUsuarioContasIncorrecto("contrasenia");
 	} else {
 		inicioSesion = true;
@@ -111,10 +111,12 @@ let funcionesInicioSesion = async () => {
 	if (inicioSesion) {
 		//salir sesión
 		$("#cerrar-sesion").classList.remove("ocultar");
+		$("#btn-cancelar-sesion2").focus();
 	} else {
 		//iniciar sesión
 		usuarios = await buscarUsuarios();
 		$("#iniciar-sesion").classList.remove("ocultar");
+		$("#usuario").focus();
 		$("#mns-modal").innerHTML = "";
 		$("#modal-sesion-img").setAttribute("src", "img/usuario.jpg");
 		$("#modal-sesion-form").reset();

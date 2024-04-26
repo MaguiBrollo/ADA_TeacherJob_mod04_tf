@@ -1,8 +1,8 @@
-// ============================================
-// Variables globales (main.js)
+/* =========== VARIABLES GLOBALES ============= */
 let inscripcion = {};
 let objAspirante;
 let id;
+let nuevaInscripcion = true;
 
 // ============================================
 let quitaAcentos = (frase) => {
@@ -132,8 +132,10 @@ $("#btn-cancelar-Eliminar-aspi").addEventListener("click", () => {
 // ============================================
 // VER MAS -  Editar
 $("#btn-editar-ver").addEventListener("click", () => {
-	window.scrollBy(0,3000);
+	window.scrollBy(0, 3000);
+
 	funcionesInscrpcion();
+	nuevaInscripcion = false;
 
 	$("#apellidos").value = objAspirante.apellidos;
 	$("#nombres").value = objAspirante.nombres;
@@ -147,8 +149,8 @@ $("#btn-editar-ver").addEventListener("click", () => {
 	$("#hs-dispo").value = objAspirante.horas_dispo;
 	$("#puntaje").value = objAspirante.puntaje;
 
-	//Habilita título y botones
 	$("#cont-inscripcion").classList.remove("ocultar");
+	$("#apellidos").focus();
 	$("#inscripcion-titulo").innerHTML = "Editar Inscripción";
 	$("#btn-nuevo-aspi").classList.add("ocultar");
 	$("#btn-editar-aspi").classList.remove("ocultar");
@@ -162,34 +164,7 @@ $("#btn-cancelar-editar").addEventListener("click", () => {
 });
 
 // ============================================
-// VER MAS -  Guardar Editar
-$("#btn-agregar-editar").addEventListener("click", async (e) => {
-	e.preventDefault();
-
-	inscripcion = {
-		apellidos: quitaAcentos($("#apellidos").value).toUpperCase(),
-		nombres: quitaAcentos($("#nombres").value).toUpperCase(),
-		sexo: $("#sexo").value,
-		telefono: $("#telefono").value,
-		email: $("#correo").value.toUpperCase(),
-		foto_perfil: $("#url-foto").value,
-		area: $("#area").value,
-		regional: parseInt($("#regional").value),
-		titulo_area: quitaAcentos($("#titulo").value).toUpperCase(),
-		horas_dispo: parseInt($("#hs-dispo").value),
-		puntaje: parseInt($("#puntaje").value),
-	};
-
-	await registrarEditarInscripcion(inscripcion);
-
-	$("#inscripcion-form").reset();
-	$("#cont-inscripcion").classList.add("ocultar");
-	$("#ver-mas-un").classList.add("ocultar");
-
-	await verMasAspirante(id);
-});
-
-// -------------------------
+// Guarda la inscripción editada.
 let registrarEditarInscripcion = async (inscrip) => {
 	try {
 		let peticion = await fetch(`${urlBase}/${id}`, {
@@ -208,8 +183,8 @@ let registrarEditarInscripcion = async (inscrip) => {
 // ============================================
 //                 INSCRIPCIÓN
 // ============================================
-// Nueva Inscripción
-$("#inscripcion-form").addEventListener("submit", (e) => {
+// Nueva Inscripción  | VER MAS: Guardar Editar
+$("#inscripcion-form").addEventListener("submit", async (e) => {
 	e.preventDefault();
 
 	inscripcion = {
@@ -226,11 +201,20 @@ $("#inscripcion-form").addEventListener("submit", (e) => {
 		puntaje: parseInt($("#puntaje").value),
 	};
 
-	registrarInscripcion(inscripcion);
-
-	$("#inscripcion-form").reset();
-	$("#cont-inscripcion").classList.add("ocultar");
-	$("#menu-aspirantes").classList.remove("ocultar");
+	if (nuevaInscripcion) {
+		//Viene de Nueva inscripción
+		await registrarInscripcion(inscripcion);
+		$("#inscripcion-form").reset();
+		$("#cont-inscripcion").classList.add("ocultar");
+		$("#menu-aspirantes").classList.remove("ocultar");
+	} else {
+		//Viene de "Ver mas Editar"
+		await registrarEditarInscripcion(inscripcion);
+		$("#inscripcion-form").reset();
+		$("#cont-inscripcion").classList.add("ocultar");
+		$("#ver-mas-un").classList.add("ocultar");
+		await verMasAspirante(id);
+	}
 });
 
 // -------------------------
@@ -260,7 +244,15 @@ $("#btn-cancelar-insc").addEventListener("click", () => {
 
 // ====================================
 // Vienes de aspirant.js
-let funcionesInscrpcion = () => {
+let funcionesInscripcion = () => {
+	$("#menu-aspirantes").classList.add("ocultar");
+	$("#cont-inscripcion").classList.remove("ocultar");
+	$("#inscripcion-form").reset();
+	$("#apellidos").focus();
+	$("#inscripcion-titulo").innerHTML = "Nueva Inscripción";
+	$("#btn-editar-aspi").classList.add("ocultar");
+	$("#btn-nuevo-aspi").classList.remove("ocultar");
 	cargarArea($("#area")); //(aspirant.js)
 	cargarRegional($("#regional"));
+	nuevaInscripcion = true;
 };
