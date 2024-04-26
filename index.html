@@ -82,8 +82,8 @@
 						<p class="inicio__texto-titulo">Teacher Job</p>
 						<p class="inicio__texto-frase">
 							Somos una organización sin fines de lucro, que pretende ayudar a
-							diferentes instituciones educativas a encontrar aspirantes para
-							cubrir horas cátedras en diferentes espacios curriculares.
+							profesores a dar a conocer su disponibilidad horaria para cubrir
+							horas cátedras en diferentes espacios curriculares.
 						</p>
 					</div>
 					<div class="inicio__cont-carrusel">
@@ -219,7 +219,7 @@
 						</div>
 						<div class="aspirante__botones">
 							<button
-								type="submit"
+								type="button"
 								class="boton__enlace--s aspirante__btn-filtro"
 								id="limpiar-filtros"
 							>
@@ -227,7 +227,7 @@
 							</button>
 
 							<button
-								type="button"
+								type="submit"
 								class="boton__enlace--p aspirante__btn-filtro"
 								id="buscar-filtros"
 							>
@@ -550,66 +550,74 @@
 			<!-- ============ Modal Iniciar Sesión ========== -->
 			<section class="modal-sesion ocultar" id="iniciar-sesion">
 				<div class="modal-sesion__cont">
-					<div class="modal-sesion__cont-info">
-						<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar">
-							<span class="boton-span material-symbols-outlined">close</span>
-						</div>
-						<div class="modal-sesion__texto">
-							<p class="modal-sesion__titulos">Iniciar sesión</p>
+					<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar">
+						<span class="boton-span material-symbols-outlined">close</span>
+					</div>
 
+					<p class="modal-sesion__titulos">Iniciar sesión</p>
+
+					<form id="modal-sesion-form">
+						<div class="modal-sesion__inp-img">
 							<div class="modal-sesion__inputs">
-								<form id="modal-sesion-form">
-									<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
-										<label for="usuario">Usuario:</label>
-										<input
-											type="text"
-											class="modal-sesion__campo--cu"
-											id="usuario"
-											required
-											maxlength="20"
-											aria-label="Ingrese nombre de usuario."
-											placeholder="Usuario"
-										/>
-									</div>
-
-									<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
-										<label for="contrasenia">Contraseña:</label>
-										<input
-											disabled
-											type="password"
-											autocomplete="on"
-											class="modal-sesion__campo--cu"
-											id="contrasenia"
-											required
-											aria-label="Ingrese clave."
-											placeholder="Contraseña"
-										/>
-									</div>
-								</form>
-								<div class="modal-sesion__cont-img">
-									<img
-										class="modal-sesion__img"
-										id="modal-sesion-img"
-										src="img/usuario.jpg"
-										alt=""
+								<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
+									<label for="usuario">Usuario:</label>
+									<input
+										type="text"
+										class="modal-sesion__campo--cu"
+										id="usuario"
+										required
+										maxlength="20"
+										aria-label="Ingrese nombre de usuario."
+										placeholder="Usuario"
 									/>
 								</div>
+
+								<div class="modal-sesion__campo modal-sesion__cont-sec--cu">
+									<label for="contrasenia">Contraseña:</label>
+									<input
+										disabled
+										type="password"
+										autocomplete="on"
+										class="modal-sesion__campo--cu"
+										id="contrasenia"
+										required
+										aria-label="Ingrese clave."
+										placeholder="Contraseña"
+									/>
+								</div>
+							</div>
+
+							<div class="modal-sesion__cont-img">
+								<img
+									class="modal-sesion__img"
+									id="modal-sesion-img"
+									src="img/usuario.jpg"
+									alt=""
+								/>
 							</div>
 						</div>
 
 						<!-- mensaje de error -->
-						<div class="modal-sesion__mens ocultar" id="mns-modal">.</div>
+						<div class="modal-sesion__mens" id="mns-modal">lkñlkñl.</div>
 
 						<!-- botones -->
 						<div class="modal-sesion__botones">
-							<button class="boton__enlace--s" id="btn-cancelar-sesion">
+							<button
+								type="button"
+								class="boton__enlace--s"
+								id="btn-cancelar-sesion"
+							>
 								Cancelar
 							</button>
-							<button class="boton__enlace--p" id="btn-iniciar-sesion">
+							<button
+								type="submit"
+								class="boton__enlace--p"
+								id="btn-iniciar-sesion"
+							>
 								Iniciar
 							</button>
 						</div>
-					</div>
+					</form>
 				</div>
 			</section>
 
@@ -630,12 +638,11 @@
 
 						<!-- botones -->
 						<div class="modal-sesion__botones">
-							<button class="boton__enlace--s" id="btn-cancelar-sesion2">
-								Cancelar
-							</button>
-
-							<button class="boton__enlace--p" id="btn-SALIR-sesion">
+							<button class="boton__enlace--s" id="btn-SALIR-sesion">
 								Cerrar
+							</button>
+							<button class="boton__enlace--p" id="btn-cancelar-sesion2">
+								Cancelar
 							</button>
 						</div>
 					</div>
@@ -646,7 +653,9 @@
 		<!-- BOTON DE IR PARA ARRIBA. -->
 		<div class="flecha ocultar" id="flecha">
 			<button class="flecha__btn">
-				<span class="flecha__span material-symbols-outlined"> arrow_upward </span>
+				<span class="flecha__span material-symbols-outlined">
+					arrow_upward
+				</span>
 			</button>
 		</div>
 		<!-- ============================================== -->

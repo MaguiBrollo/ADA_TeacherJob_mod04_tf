@@ -335,13 +335,7 @@ body {
   display: none;
 }
 .modal-sesion__cont {
-  min-width: 300px;
-  max-width: 80%;
-  min-height: 300px;
-  max-height: 50%;
   position: relative;
-}
-.modal-sesion__cont-info {
   background-color: var(--blanco);
   border-radius: 10px;
 }
@@ -356,20 +350,23 @@ body {
 .modal-sesion__btn-cerrar:hover {
   box-shadow: 0px 0px 15px var(--negro);
 }
-.modal-sesion__texto {
-  padding: 30px 15px;
-  color: var(--rojo);
-}
 .modal-sesion__titulos {
   font-size: 1.5rem;
   text-shadow: 5px 5px 5px rgb(6, 5, 5);
   margin-bottom: 15px;
+  color: var(--rojo);
+  margin: 15px;
 }
-.modal-sesion__inputs {
+.modal-sesion__inp-img {
+  margin: 10px;
   gap: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.modal-sesion__inputs {
+  display: flex;
+  flex-direction: column;
 }
 .modal-sesion__cont-img {
   width: 100px;

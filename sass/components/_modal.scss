@@ -71,13 +71,7 @@
 	}
 
 	&__cont {
-		min-width: 300px;
-		max-width: 80%;
-		min-height: 300px;
-		max-height: 50%;
 		position: relative;
-	}
-	&__cont-info {
 		background-color: var(--blanco);
 		border-radius: 10px;
 	}
@@ -94,18 +88,20 @@
 		box-shadow: 0px 0px 15px var(--negro);
 	}
 
-	&__texto {
-		padding: 30px 15px;
-		color: var(--rojo);
-	}
-
 	&__titulos {
 		@include titulos;
 		margin-bottom: 15px;
+		color: var(--rojo);
+		margin: 15px
+	}
+
+	&__inp-img {
+		margin: 10px;
+		gap:10px;
+		@include flex-dir-al-jus(flex, row, center, x);
 	}
 	&__inputs {
-		gap: 10px;
-		@include flex-dir-al-jus(flex, row, center, x);
+		@include flex-dir-al-jus(flex, column, x, x);
 	}
 	&__cont-img {
 		width: 100px;
