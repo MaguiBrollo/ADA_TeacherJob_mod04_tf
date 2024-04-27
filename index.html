@@ -129,7 +129,7 @@
 					</div>
 
 					<!-- contenedor FILTROS (se oculta) -->
-					<form class="aspirante__form-filtro ocultar" id="contenedor-filtros">
+					<form class="aspirante__form-filtro ocultar" id="form-filtros">
 						<div class="aspirante__cont-select">
 							<label class="aspirante__label" for="filtro-area">Área...</label>
 							<div class="">
@@ -504,7 +504,7 @@
 							</button>
 
 							<button
-								type="button"
+								type="submit"
 								class="boton__enlace--p"
 								id="btn-agregar-editar"
 							>
@@ -598,7 +598,7 @@
 						</div>
 
 						<!-- mensaje de error -->
-						<div class="modal-sesion__mens" id="mns-modal">lkñlkñl.</div>
+						<div class="modal-sesion__mens" id="mns-modal">Error....</div>
 
 						<!-- botones -->
 						<div class="modal-sesion__botones">
@@ -624,27 +624,23 @@
 			<!-- ============ Modal Cerrar Sesión =========== -->
 			<section class="modal-sesion ocultar" id="cerrar-sesion">
 				<div class="modal-sesion__cont">
-					<div class="modal-sesion__cont-info">
-						<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar2">
-							<span class="boton-span material-symbols-outlined">close</span>
-						</div>
-						<div class="modal-sesion__texto">
-							<p class="modal-sesion__titulos">Cerrar sesión</p>
+					<div class="modal-sesion__btn-cerrar" id="modal-sesion-btn-cerrar2">
+						<span class="boton-span material-symbols-outlined">close</span>
+					</div>
+					<div class="modal-sesion__texto">
+						<p class="modal-sesion__titulos">Cerrar sesión</p>
 
-							<p class="modal-sesion__texto">
-								¿Está seguro que desea Cerrar Sesión?
-							</p>
-						</div>
+						<p>¿Está seguro que desea Cerrar Sesión?</p>
+					</div>
 
-						<!-- botones -->
-						<div class="modal-sesion__botones">
-							<button class="boton__enlace--s" id="btn-SALIR-sesion">
-								Cerrar
-							</button>
-							<button class="boton__enlace--p" id="btn-cancelar-sesion2">
-								Cancelar
-							</button>
-						</div>
+					<!-- botones -->
+					<div class="modal-sesion__botones">
+						<button class="boton__enlace--s" id="btn-SALIR-sesion">
+							Cerrar
+						</button>
+						<button class="boton__enlace--p" id="btn-cancelar-sesion2">
+							Cancelar
+						</button>
 					</div>
 				</div>
 			</section>
