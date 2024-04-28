@@ -44,7 +44,10 @@ let mostrarVerMas = (aspi) => {
 };
 //---------------------
 let mostrarUno = (asp) => {
+	$("#btn-volver-ver").focus();
+
 	$("#ver-mas-un-aspi").innerHTML = `
+	
 	<div>	
 		<div class="vermas__encabezado">
 			<div class="vermas__circulo"></div>
@@ -92,6 +95,7 @@ $("#btn-volver-ver").addEventListener("click", () => {
 $("#btn-borrar-ver").addEventListener("click", () => {
 	$("#cont-inscripcion").classList.add("ocultar");
 	$("#modal-eliminar").classList.remove("ocultar");
+	$("#btn-cancelar-Eliminar-aspi").focus();
 });
 
 $("#modal-eliminar-btn-cerrar").addEventListener("click", () => {
@@ -134,7 +138,7 @@ $("#btn-cancelar-Eliminar-aspi").addEventListener("click", () => {
 $("#btn-editar-ver").addEventListener("click", () => {
 	window.scrollBy(0, 3000);
 
-	funcionesInscrpcion();
+	funcionesInscripcion();
 	nuevaInscripcion = false;
 
 	$("#apellidos").value = objAspirante.apellidos;

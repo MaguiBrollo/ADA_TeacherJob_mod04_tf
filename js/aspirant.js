@@ -21,30 +21,30 @@ let breakPoint768 = () =>
 function mostrarFiltros768() {
 	if (
 		window.innerWidth >= breakPoint768() &&
-		$("#contenedor-filtros").classList.contains("ocultar")
+		$("#form-filtros").classList.contains("ocultar")
 	) {
 		$(
 			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye-slash"></i><p>Ocultar </p>`;
-		$("#contenedor-filtros").classList.remove("ocultar");
+		$("#form-filtros").classList.remove("ocultar");
 	}
 }
 window.visualViewport.addEventListener("resize", () => {
 	if (
 		window.innerWidth >= breakPoint768() &&
-		$("#contenedor-filtros").classList.contains("ocultar")
+		$("#form-filtros").classList.contains("ocultar")
 	) {
 		$(
 			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye-slash"></i><p>Ocultar </p>`;
-		$("#contenedor-filtros").classList.remove("ocultar");
+		$("#form-filtros").classList.remove("ocultar");
 	}
 
 	if (window.innerWidth < breakPoint768()) {
 		$(
 			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye"></i><p>Mostrar </p>`;
-		$("#contenedor-filtros").classList.add("ocultar");
+		$("#form-filtros").classList.add("ocultar");
 	}
 });
 
@@ -117,8 +117,8 @@ let cargarHsDispoMin = (input_select) => {
 // ===================================================
 // Ver-Ocultar Filtros
 $("#ocultar-filtros").addEventListener("click", () => {
-	$("#contenedor-filtros").classList.toggle("ocultar");
-	if ($("#contenedor-filtros").classList.contains("ocultar")) {
+	$("#form-filtros").classList.toggle("ocultar");
+	if ($("#form-filtros").classList.contains("ocultar")) {
 		$(
 			"#ocultar-filtros"
 		).innerHTML = `<i class="fa-regular fa-eye"></i><p>Mostrar </p>`;
@@ -140,7 +140,7 @@ $("#limpiar-filtros").addEventListener("click", () => {
 			$("#filtro-orden").value === "SEL"
 		)
 	) {
-		$("#contenedor-filtros").reset();
+		$("#form-filtros").reset();
 		pasoPorFiltros = false;
 		mostrarAspirantes();
 	}
@@ -148,7 +148,9 @@ $("#limpiar-filtros").addEventListener("click", () => {
 
 // ===================================================
 // Filtrar y mostrar filtrados.
-$("#buscar-filtros").addEventListener("click", () => {
+//$("#buscar-filtros").addEventListener("click", () => {
+$("#form-filtros").addEventListener("submit", (e) => {
+	e.preventDefault();
 	if (
 		$("#filtro-area").value === "SEL" &&
 		$("#filtro-regional").value === "SEL" &&
@@ -252,6 +254,7 @@ let listarAspirantes = (aspirantes) => {
 // ===================================================
 // Muestra spinner
 let mostrarAspirantes = async () => {
+	$("#filtro-area").focus();
 	$("#filtrado-por").innerHTML = "";
 	$("#ordenado-por").innerHTML = "";
 	$("#aspirante-cont-card").innerHTML = "";

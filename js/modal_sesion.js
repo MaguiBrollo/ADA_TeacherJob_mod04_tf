@@ -49,7 +49,10 @@ $("#usuario").addEventListener("change", () => {
 });
 
 //=============================================
-$("#btn-iniciar-sesion").addEventListener("click", () => {
+//$("#btn-iniciar-sesion").addEventListener("click", () => {
+$("#modal-sesion-form").addEventListener("submit", (e) => {
+	e.preventDefault();
+
 	$("#mns-modal").innerHTML = "";
 	let contra = $("#contrasenia").value;
 
