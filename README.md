@@ -11,7 +11,6 @@
 <div align="center">
 
 [![TeacherJOB - link](https://img.shields.io/static/v1?label=Teacher+JOB&message=link&color=yellow&logo=EA4335&logoColor=yellow)](https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/ "Visita la App: Teacher JOB")
-
 ![GitHub Tag](https://img.shields.io/github/v/tag/MaguiBrollo/https%3A%2F%2Fgithub.com%2FMaguiBrollo%2FADA_TeacherJob_mod04_tf)
 
 </div>
@@ -190,7 +189,7 @@ Si al intentar iniciar sesión, se comete un error en el usuario o contraseña, 
 
 <br>
 
-Al lograr iniciar sesión correctamente, se observará en la parte superior la imagen correspondiete al usuario.
+Al lograr iniciar sesión correctamente, se observará en la parte superior la imagen correspondiente al usuario.
 
 <p align="center" >
    <img src="imgReadme/SesionIniciada.png" width="600px" alt-text="Sesión iniciada.">
