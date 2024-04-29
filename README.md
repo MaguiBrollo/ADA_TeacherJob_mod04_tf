@@ -10,8 +10,7 @@
 
 <div align="center">
 
-<a href="https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/"><img alt="Teacher JOB" src="https://img.shields.io/badge/Teacher%20JOB-Link-%23fa0130%20?labelColor=black&link=https%3A%2F%2Fmaguibrollo.github.io%2FADA_TeacherJob_mod04_tf%2F
-"></a>
+<a href="https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/"><img alt="Teacher JOB" src="https://img.shields.io/badge/Teacher%20JOB-Link-%23fa0130%20?labelColor=black&link=https%3A%2F%2Fmaguibrollo.github.io%2FADA_TeacherJob_mod04_tf%2F"></a>
 
 ![GitHub Tag](https://img.shields.io/github/v/tag/MaguiBrollo/ADA_TeacherJob_mod04_tf?sort=semver&labelColor=black&color=fa0130 "Versión")
 
@@ -112,7 +111,7 @@ En primer lugar, al acceder a este menú se puede ver el listado completo de Asp
 </p>
 
 > [!NOTE]
-> Cuando la información visualizada -listado, ver más, editar, inscripción- habilite el scroll vertical se puede visualizar la aparición de una flecha que le permitirá volder al menú d emanera más práctica.
+> Cuando la información visualizada -listado, ver más, editar, inscripción- habilite el scroll vertical se puede visualizar la aparición de una flecha que le permitirá volder al menú de manera más práctica.
 
 <p align="center" >
    <img src="imgReadme/flecha.png" width="300px" alt-text="Flecha">
@@ -186,7 +185,7 @@ Por medio de este menú es posible iniciar o cerrar sesión. Solo podrán inicia
 Si al intentar iniciar sesión, se comete un error en el usuario o contraseña, se informará mediante mensaje.
 
 <p align="center" >
-   <img src="imgReadme/SesionError.gif" width="150px" alt-text="Error de iniciar sesión.">
+   <img src="imgReadme/SesionError.gif" width="250px" alt-text="Error de iniciar sesión.">
 </p>
 
 <br>
@@ -229,11 +228,9 @@ Todas las opciones antes descriptas, se encuentran diposnibles para los diferent
 
 [:top:](#tabla-de-contenidos) <br>
 
-<a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130?style=flat&logo=linkedin&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F
-"></a>
+<a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130%20?logo=linkedin&labelColor=black"></a>
 <a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb%40gmail.com-%23fa0130?style=flat&logo=gmail&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F"></a>
-<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130?style=flat&logo=discord&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F
-"></a>
+<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130%20?logo=discord&abelColor=black"></a>
 ---
 
 ![](https://komarev.com/ghpvc/?username=MaguiBrollo&color=fa0130 "Visitas")
