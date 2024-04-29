@@ -835,6 +835,14 @@ header .nav__cont-menu.ocultar {
   justify-content: flex-end;
   margin: 10px 2px;
 }
+.aspirante__deshab:disabled {
+  background-color: rgb(245, 236, 236);
+  color: gray;
+}
+.aspirante__deshab:disabled:hover {
+  color: gray;
+  background-color: rgb(213, 212, 212);
+}
 .aspirante__btn-mas {
   margin-right: 5px;
 }
@@ -855,8 +863,7 @@ header .nav__cont-menu.ocultar {
 }
 .aspirante__p-sin-aspi {
   color: var(--colRojo);
-  text-align: center;
-  font-weight: 200;
+  font-weight: 300;
 }
 .aspirante__filtrado-por {
   font-size: 0.8rem;
@@ -1073,6 +1080,13 @@ header .nav__cont-menu.ocultar {
   background: var(--blanco);
   border-radius: 5px;
   margin: 5px;
+}
+.vermas__deshab:disabled {
+  color: gray;
+}
+.vermas__deshab:disabled:hover {
+  color: gray;
+  background-color: rgb(243, 223, 223);
 }
 .vermas__encabezado {
   height: 125px;

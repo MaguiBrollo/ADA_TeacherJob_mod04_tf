@@ -1,0 +1,122 @@
+// ================================
+// Ver Más
+.vermas {
+	@include flex-dir-al-jus(flex, column, center, center);
+	margin: auto 15px;
+	max-width: var(--max-width-cont-ppal);
+	width: 90%;
+	&.ocultar {
+		display: none;
+	}
+
+	&__cont-ppal {
+		margin: 15px 0px;
+		width: 100%;
+		color: var(--blanco);
+		@include caja;
+		&.ocultar {
+			display: none;
+		}
+	}
+
+	&__uno {
+		position: relative;
+		overflow: hidden;
+		transition: 0.5s;
+		background: var(--blanco);
+		border-radius: 5px;
+		margin: 5px;
+	}
+
+	&__deshab:disabled {
+		color: gray;
+	}
+	&__deshab:disabled:hover{
+		color: gray;
+		background-color: rgb(243, 223, 223);
+	}
+
+	&__encabezado {
+		height: 125px;
+		width: 100%;
+		position: relative;
+	}
+
+	&__circulo {
+		position: absolute;
+		width: 100%;
+		height: 300px;
+		border-radius: 50%;
+		background: var(--rojo);
+		bottom: 0;
+	}
+
+	&__img {
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		background: var(--negro);
+		padding: 5px;
+		border-radius: 50%;
+		bottom: -30%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	&__img-img {
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+	}
+
+	&__descripcion {
+		min-height: 200px;
+		@include flex-dir-al-jus(flex, column, center, space-around);
+		padding: 40px 10px 10px 10px;
+		text-align: center;
+		color: var(--negro);
+	}
+
+	&__descripcion-h4 {
+		color: var(--negro);
+	}
+
+	&__descripcion-p {
+		margin-top: 5px;
+		font-size: 0.7rem;
+	}
+
+	&__botones {
+		background-color: var(--negro);
+		@include flex-dir-al-jus(flex, row, center, center);
+		padding: 10px 0px 10px 0px;
+		gap: 10px;
+	}
+
+	//================================== 576
+	@media (min-width: #{$sm}px) {
+		&__descripcion-h4 {
+			font-size: 1.1rem;
+		}
+		&__descripcion-p {
+			font-size: 0.9rem;
+		}
+	}
+
+	//================================== 768
+	@media (min-width: #{$md}px) {
+		width: 100%;
+
+		&__cont-ppal {
+			width: 60%;
+		}
+
+		&__descripcion-h4 {
+			font-size: 1.3rem;
+		}
+		&__descripcion-p {
+			font-size: 1rem;
+		}
+	}
+}
