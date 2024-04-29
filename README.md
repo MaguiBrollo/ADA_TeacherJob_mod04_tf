@@ -10,9 +10,10 @@
 
 <div align="center">
 
-[![TeacherJOB - link](https://img.shields.io/static/v1?label=Teacher+JOB&message=link&color=yellow&logo=EA4335&logoColor=yellow)](https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/ "Visita la App: Teacher JOB")
+<a href="https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/"><img alt="Teacher JOB" src="https://img.shields.io/badge/Teacher%20JOB-Link-%23fa0130%20?labelColor=black&link=https%3A%2F%2Fmaguibrollo.github.io%2FADA_TeacherJob_mod04_tf%2F
+"></a>
 
-![GitHub Tag](https://img.shields.io/github/v/tag/MaguiBrollo/https%3A%2F%2Fgithub.com%2FMaguiBrollo%2FADA_TeacherJob_mod04_tf)
+![GitHub Tag](https://img.shields.io/github/v/tag/MaguiBrollo/ADA_TeacherJob_mod04_tf?sort=semver&labelColor=black&color=fa0130 "Versión")
 
 </div>
 
@@ -228,10 +229,11 @@ Todas las opciones antes descriptas, se encuentran diposnibles para los diferent
 
 [:top:](#tabla-de-contenidos) <br>
 
-<a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-blue?style=flat-square&logo=linkedin"></a>
-<a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb@gmail.com-blue?style=flat-square&logo=gmail"></a>
-<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-blue?style=flat-square&logo=discord"></a>
-
+<a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130?style=flat&logo=linkedin&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F
+"></a>
+<a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb%40gmail.com-%23fa0130?style=flat&logo=gmail&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F"></a>
+<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130?style=flat&logo=discord&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F
+"></a>
 ---
 
-![Profile Views](https://komarev.com/ghpvc/?username=MaguiBrollo&color=yellow "Visitas")
+![](https://komarev.com/ghpvc/?username=MaguiBrollo&color=fa0130 "Visitas")
