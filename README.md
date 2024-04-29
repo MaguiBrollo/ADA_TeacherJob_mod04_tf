@@ -10,7 +10,7 @@
 
 <div align="center">
 
-<a href="https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/"><img alt="Teacher JOB" src="https://img.shields.io/badge/Teacher%20JOB-Link-%23fa0130%20?labelColor=black&link=https%3A%2F%2Fmaguibrollo.github.io%2FADA_TeacherJob_mod04_tf%2F"></a>
+<a target="_blank" href="https://maguibrollo.github.io/ADA_TeacherJob_mod04_tf/"><img alt="Teacher JOB" src="https://img.shields.io/badge/Teacher%20JOB-Link-%23fa0130%20?labelColor=black&link=https%3A%2F%2Fmaguibrollo.github.io%2FADA_TeacherJob_mod04_tf%2F"></a>
 
 ![GitHub Tag](https://img.shields.io/github/v/tag/MaguiBrollo/ADA_TeacherJob_mod04_tf?sort=semver&labelColor=black&color=fa0130 "Versión")
 
@@ -228,9 +228,9 @@ Todas las opciones antes descriptas, se encuentran disposnibles para los diferen
 
 [:top:](#tabla-de-contenidos) <br>
 
-<a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130%20?logo=linkedin&labelColor=black"></a>
+<a target="_blank" href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130%20?logo=linkedin&labelColor=black"></a>
 <a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb%40gmail.com-%23fa0130?style=flat&logo=gmail&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F"></a>
-<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130%20?logo=discord&labelColor=black"></a>
+<a target="_blank" href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130%20?logo=discord&labelColor=black"></a>
 
 ---
 

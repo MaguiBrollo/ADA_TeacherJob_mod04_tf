@@ -111,6 +111,15 @@
 		margin: 10px 2px;
 	}
 
+	&__deshab:disabled{
+		background-color: rgb(245, 236, 236);
+		color: gray;
+	}
+	&__deshab:disabled:hover{
+		color: gray;
+		background-color: rgb(213, 212, 212);
+	}
+
 	&__btn-mas {
 		margin-right: 5px;
 	}
@@ -130,8 +139,7 @@
 	}
 	&__p-sin-aspi {
 		color: var(--colRojo);
-		text-align: center;
-		font-weight: 200;
+		font-weight: 300;
 	}
 
 	//CON aspirantes
