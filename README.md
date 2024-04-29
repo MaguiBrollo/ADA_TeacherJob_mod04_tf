@@ -51,7 +51,7 @@ La aplicación `Teacher JOB`, fue diseñada de tal manera que puede ser utilizad
 
 <br>
 
-Teacher JOB es una app desarrollada como Trabajo Final del "Módulo 4 - Aisncronismo", de la capacitación de `"Desarrollo Frontend"` dictado por [ADA ITW](https://www.linkedin.com/school/ada-itw/), y se encuentra incluido en mi `Portfolio Personal`, de tal manera de reflejar el grado de avance, apropiación y uso de los conocimiento adquiridos y asimilados durante la capacitación.
+Teacher JOB es una app desarrollada como Trabajo Final del "Módulo 4 - Asincronismo", de la capacitación de `"Desarrollo Frontend"` dictado por [ADA ITW](https://www.linkedin.com/school/ada-itw/), y se encuentra incluido en mi `Portfolio Personal`, de tal manera de reflejar el grado de avance, apropiación y uso de los conocimiento adquiridos y asimilados durante la capacitación.
 
 > [!NOTE]
 > Visite mi portafolio personal: [PORTFOLIO](https://maguibrollo.github.io/ADA_Portafolio_mod01_tf/).
@@ -77,13 +77,14 @@ Teacher JOB fue desarrollada utilizando las siguientes tecnologías:
 
 [:top:](#tabla-de-contenidos) <br>
 
-La aplicación cuenta con los siguientes menúes: [Inicio](#inicio), [Aspirantes](#aspirantes) e [Iniciar sesión](#iniciar-sesión).
+La aplicación cuenta con los siguientes menús: [Inicio](#inicio), [Aspirantes](#aspirantes) e [Iniciar sesión](#iniciar-sesión).
 
 ---
 
 ### _Inicio:_
+
 [:top:](#menús) <br>
-Al iniciar la aplicación, se visualiza un mensaje de bienvenida con un carussel de imágenes alusivas.
+Al iniciar la aplicación, se visualiza un mensaje de bienvenida con un carrusel de imágenes alusivas.
 
 <br>
 <p align="center" >
@@ -93,6 +94,7 @@ Al iniciar la aplicación, se visualiza un mensaje de bienvenida con un carussel
 ---
 
 ### _Aspirantes:_
+
 [:top:](#menús) <br>
 Este menú es el corazón de la aplicación, ya que presenta todas las alternativas de búsqueda de profesores, inscripción, consulta, edición y eliminación de inscripciones. <br>
 En primer lugar, al acceder a este menú se puede ver el listado completo de Aspirantes inscriptos, ordenados por mayor puntaje.
@@ -111,15 +113,14 @@ En primer lugar, al acceder a este menú se puede ver el listado completo de Asp
 </p>
 
 > [!NOTE]
-> Cuando la información visualizada -listado, ver más, editar, inscripción- habilite el scroll vertical se puede visualizar la aparición de una flecha que le permitirá volder al menú de manera más práctica.
+> Cuando la información visualizada -listado, ver más, editar, inscripción- habilite el scroll vertical se puede visualizar la aparición de una flecha que le permitirá volver al menú de manera más práctica.
 
 <p align="center" >
    <img src="imgReadme/flecha.png" width="300px" alt-text="Flecha">
 </p>
 
-
 En la **sección `Filtros`** los directivos de instituciones pueden filtrar la búsqueda por Área, Regional, Horas, Grupo (para Educación Física) y el Orden por puntaje. Esta sección puede ocultarse y volver a visualizarse. <br>
-Luego de seleccionar las opciones de filtrado se deberá selecionar "Buscar", para dar inicio al proceso de filtrado. Al finalizar el proceso se puede observar, además de las fichas, los datos del filtrado, orden y cantidad. El resultado del filtro se visualiza en la sección Aspirantes.
+Luego de seleccionar las opciones de filtrado se deberá seleccionar "Buscar", para dar inicio al proceso de filtrado. Al finalizar el proceso se puede observar, además de las fichas, los datos del filtrado, orden y cantidad. El resultado del filtro se visualiza en la sección Aspirantes.
 
 <br>
 <p align="center" >
@@ -157,7 +158,6 @@ Al seleccionar `Editar`, se puede acceder a la ventana de editar los datos de in
 |<img src="imgReadme/VerMasEditar.png" width="250px" alt-text="Editar datos de inscripción del aspirante."> | <img src="imgReadme/VerMasEditar2.png" width="250px" alt-text="Editar datos de inscripción del aspirante."> |
 </div>
 <br>
-
 
 Si se ha seleccionado la opción `Borrar` antes de que se realice la eliminación definitiva, se deberá aceptar la opción correspondiente.
 <br>
@@ -203,7 +203,7 @@ Al lograr iniciar sesión correctamente, se observará en la parte superior la i
 ## _Mobile_
 
 [:top:](#tabla-de-contenidos) <br>
-Todas las opciones antes descriptas, se encuentran diposnibles para los diferentes dispositivos móviles.
+Todas las opciones antes descriptas, se encuentran disposnibles para los diferentes dispositivos móviles.
 
 <div align="center">
 
@@ -230,7 +230,8 @@ Todas las opciones antes descriptas, se encuentran diposnibles para los diferent
 
 <a href="https://www.linkedin.com/in/magui-brollo/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Magdalena%20Brollo-%23fa0130%20?logo=linkedin&labelColor=black"></a>
 <a href="mailto:maguieb@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Gmail-maguieb%40gmail.com-%23fa0130?style=flat&logo=gmail&labelColor=black&link=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmagui-brollo%2F"></a>
-<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130%20?logo=discord&abelColor=black"></a>
+<a href="https://discord.gg/v7cZYHDz"><img alt="Discord" src="https://img.shields.io/badge/Discord-Magui-%23fa0130%20?logo=discord&labelColor=black"></a>
+
 ---
 
 ![](https://komarev.com/ghpvc/?username=MaguiBrollo&color=fa0130 "Visitas")
