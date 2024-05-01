@@ -198,6 +198,18 @@ Al lograr iniciar sesión correctamente, se observará en la parte superior la i
 
 <br>
 
+Además, luego de iniciar sesión se habilitan las opciones de "Inscribir", "Editar" y "Borrar"
+
+
+<div align="center"  >
+
+|Sesión cerrada                   |Sesión iniciada|
+|:--:                         |:--:      |
+|<img src="imgReadme/btn inscribir.png" width="70px" alt-text="Sin sesión."> | <img src="imgReadme/btn inscribir2.png" width="70px" alt-text="Conr sesión"> |
+| <img src="imgReadme/btn e y b.png" width="150px" alt-text="Sin sesión."> | <img src="imgReadme/btn e y b 2.png" width="150px" alt-text="Conr sesión"> |
+
+</div>
+
 ---
 
 ## _Mobile_
