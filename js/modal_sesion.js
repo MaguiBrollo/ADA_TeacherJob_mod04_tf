@@ -44,7 +44,9 @@ $("#usuario").addEventListener("change", () => {
 		mnsUsuarioContasIncorrecto("usuario");
 	} else {
 		$("#contrasenia").removeAttribute("disabled");
-		$("#modal-sesion-img").setAttribute("src", `${us.foto}`);
+		if (us.foto.trim() === "")
+			$("#modal-sesion-img").setAttribute("src", "img/usuario.jpg");
+		else $("#modal-sesion-img").setAttribute("src", `${us.foto}`);
 	}
 });
 
@@ -70,7 +72,9 @@ $("#modal-sesion-form").addEventListener("submit", (e) => {
 		$("#btn-borrar-ver").removeAttribute("disabled");
 		$("#btn-editar-ver").removeAttribute("disabled");
 		//Mostrar logo de usuario
-		$("#nav-img-us").setAttribute("src", `${us.foto}`);
+		if (us.foto.trim() === "")
+			$("#nav-img-us").setAttribute("src", "img/usuario.jpg");
+		else $("#nav-img-us").setAttribute("src", `${us.foto}`);
 	}
 });
 

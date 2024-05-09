@@ -245,7 +245,11 @@
 							<p class="aspirante__titulos">Aspirantes</p>
 						</div>
 						<div class="aspirante__btn-nueva-aspi-cont">
-							<button disabled class="boton__enlace--p aspirante__deshab" id="btn-nueva-inscri">
+							<button
+								disabled
+								class="boton__enlace--p aspirante__deshab"
+								id="btn-nueva-inscri"
+							>
 								INSCRIBIR
 							</button>
 						</div>
@@ -265,8 +269,8 @@
 
 						<div class="aspirante__p-sin-aspi">
 							<p>No se puede generar el listado de Aspirantes.</p>
-							<p> * Diríjase a "Inscribir" y registre nuevos Aspirantes.</p>
-							<p> * Seleccione los "Filtros" deseadas.</p>
+							<p>* Diríjase a "Inscribir" y registre nuevos Aspirantes.</p>
+							<p>* Seleccione los "Filtros" deseadas.</p>
 						</div>
 					</div>
 
@@ -296,11 +300,19 @@
 						</div>
 						<!-- botones -->
 						<div class="vermas__botones">
-							<button disabled class="boton__enlace--s vermas__deshab" id="btn-borrar-ver">
+							<button
+								disabled
+								class="boton__enlace--s vermas__deshab"
+								id="btn-borrar-ver"
+							>
 								Borrar
 							</button>
 
-							<button disabled class="boton__enlace--s vermas__deshab" id="btn-editar-ver">
+							<button
+								disabled
+								class="boton__enlace--s vermas__deshab"
+								id="btn-editar-ver"
+							>
 								Editar
 							</button>
 							<button class="boton__enlace--p" id="btn-volver-ver">
@@ -358,8 +370,9 @@
 									class="inscripcion__campo--cu"
 									id="sexo"
 									aria-label="Seleccione sexo"
+									required
 								>
-									<option value="SELEC" selected>Seleccione...</option>
+									<option value="" selected>Seleccione...</option>
 									<option value="fem">Femenino</option>
 									<option value="mas">Masculino</option>
 								</select>
@@ -412,8 +425,9 @@
 									class="inscripcion__campo--cu"
 									id="area"
 									aria-label="Seleccie el área."
+									required
 								>
-									<option value="SELEC" selected>Seleccione...</option>
+									<option value="" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
 								</select>
 							</div>
@@ -424,8 +438,9 @@
 									class="inscripcion__campo--cu"
 									id="regional"
 									aria-label="Seleccione la regional."
+									required
 								>
-									<option value="SELEC" selected>Seleccione...</option>
+									<option value="" selected>Seleccione...</option>
 									<!-- Se completa con un array en el js -->
 								</select>
 							</div>
@@ -436,6 +451,7 @@
 							<textarea
 								class="inscripcion__campo--cu-tArea"
 								id="titulo"
+								required
 								minlength="6"
 								maxlength="80"
 								aria-label="Ingrese nombre del título del área seleccionada."

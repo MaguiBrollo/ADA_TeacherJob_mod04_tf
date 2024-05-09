@@ -54,7 +54,7 @@ let mostrarUno = (asp) => {
 			<div class="vermas__img">
 				<img
 					class="vermas__img-img"
-					src="${asp.foto_perfil}"
+					src="${asp.foto_perfil.trim() === "" ? "img/usuario.jpg" : asp.foto_perfil}"
 					alt=""
 				/>
 			</div>
