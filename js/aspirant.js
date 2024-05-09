@@ -68,7 +68,7 @@ const area = [
 ];
 
 let cargarArea = (input_select) => {
-	let area_listado = `<option value="SEL" selected>Seleccione...</option>`;
+	let area_listado = `<option value="" selected>Seleccione...</option>`;
 	area.sort((a, b) => {
 		return a.nom.localeCompare(b.nom);
 	});
@@ -95,7 +95,7 @@ const reg = [
 ];
 
 let cargarRegional = (input_select) => {
-	let reg_listado = `<option value="SEL" selected>Seleccione...</option>`;
+	let reg_listado = `<option value="" selected>Seleccione...</option>`;
 	for (var i = 0; i < reg.length; i++) {
 		reg_listado +=
 			`<option value="` + reg[i].cod + `">` + reg[i].nom + `</option>`;
@@ -134,8 +134,8 @@ $("#ocultar-filtros").addEventListener("click", () => {
 $("#limpiar-filtros").addEventListener("click", () => {
 	if (
 		!(
-			$("#filtro-area").value === "SEL" &&
-			$("#filtro-regional").value === "SEL" &&
+			$("#filtro-area").value === "" &&
+			$("#filtro-regional").value === "" &&
 			$("#filtro-horas").value === "SEL" &&
 			$("#filtro-orden").value === "SEL"
 		)
@@ -151,8 +151,8 @@ $("#limpiar-filtros").addEventListener("click", () => {
 $("#form-filtros").addEventListener("submit", (e) => {
 	e.preventDefault();
 	if (
-		$("#filtro-area").value === "SEL" &&
-		$("#filtro-regional").value === "SEL" &&
+		$("#filtro-area").value === "" &&
+		$("#filtro-regional").value === "" &&
 		$("#filtro-horas").value === "SEL" &&
 		$("#filtro-orden").value === "SEL"
 	) {
@@ -232,7 +232,7 @@ let listarAspirantes = (aspirantes) => {
 					<div class="tarjeta__img">
 						<img
 							class="tarjeta__img-img"
-							src="${asp.foto_perfil}"
+							src="${asp.foto_perfil.trim() === "" ? "img/usuario.jpg" : asp.foto_perfil} "
 							alt=""
 						/>
 					</div>
@@ -242,7 +242,9 @@ let listarAspirantes = (aspirantes) => {
 					<h4 class="tarjeta__descripcion-h3">${asp.apellidos}</h4>
 					<h4 class="tarjeta__descripcion-h4">${asp.nombres}</h4>
 					<p class="tarjeta__descripcion-p">${asp.titulo_area}</p>	
-					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${asp.horas_dispo}</p>	
+					<p class="tarjeta__descripcion-p">Puntaje: ${asp.puntaje} - Hs.Disp.: ${
+			asp.horas_dispo
+		}</p>	
 				</div>
 
 				<div class="tarjeta__btn-ver-mas">
@@ -310,7 +312,7 @@ let filtrar = async () => {
 		let orden;
 		let hs_d;
 
-		if ($("#filtro-area").value === "SEL") {
+		if ($("#filtro-area").value === "") {
 			area = "";
 			areaF = "Todas";
 		} else {
@@ -318,7 +320,7 @@ let filtrar = async () => {
 			areaF = buscarArea($("#filtro-area").value).nom;
 		}
 
-		if ($("#filtro-regional").value === "SEL") {
+		if ($("#filtro-regional").value === "") {
 			regi = "";
 			regiF = "Todas";
 		} else {
